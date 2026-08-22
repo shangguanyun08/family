@@ -61,7 +61,7 @@ tbody tr:hover td { background:#fbfcfc; }
 .checkbox input:checked+span { border-color:#207b72; background:#207b72; color:white; }
 .known-row td { background:#f7fbfa; }.known-row .word-cell strong,.known-row .meaning-cell,.known-row .example-cell { color:#8a9690; text-decoration:line-through; text-decoration-color:#bac7c1; }
 .pill { display:inline-block; padding:6px 8px; border-radius:8px; white-space:nowrap; font-size:.62rem; font-weight:900; }
-.section-S { background:#e0f2ed;color:#276f63 }.section-T { background:#e7edf7;color:#4e6287 }.section-U { background:#efe5f3;color:#795b84 }.section-Review { background:#fff0df;color:#9c6335 }
+.source-Harry { background:#e0f2ed;color:#276f63 }.source-Video { background:#e7edf7;color:#4e6287 }.source-Both { background:#fff0df;color:#9c6335 }
 .grade-4 { background:#e4f3ef;color:#246d62 }.grade-5 { background:#edf0f7;color:#536386 }.grade-6 { background:#f1e6ef;color:#825f7e }
 .empty-state,.loading { text-align:center; padding:90px 20px; color:#68758a; }.empty-state strong,.empty-state span { display:block; }.empty-state strong { color:#17253f; font:1.35rem Georgia,serif; }
 footer { display:flex; align-items:center; justify-content:space-between; gap:15px; padding:12px 17px; background:#fafbfb; }
