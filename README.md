@@ -1,14 +1,14 @@
 # Family learning sites
 
-## Harry's Combined Vocabulary — 1,981 Words
+## Harry's Focused Vocabulary — 1,500 Words
 
-The original 1,551-entry Harry list and the 545-word video extraction, merged into 1,981 unique entries.
+A focused study list built from the original Harry list and video extraction.
 
 - **Live website:** https://shangguanyun08.github.io/family/
+- Exactly 1,500 unique study entries
+- 481 familiar Grade 2–3 words removed across the full list
 - Sorted from easiest to hardest
-- Short English meanings
-- Simple sentence examples
+- Short English meanings and simple sentence examples
 - Estimated grade level in the last column
-- Search, filters, saved checkmarks, copy, download, and print
 
 The published static site is stored in `docs/`.
