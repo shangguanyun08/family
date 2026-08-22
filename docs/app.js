@@ -1,4 +1,4 @@
-const storageKey = "harry-combined-vocabulary-known-v1";
+const storageKey = "harry-combined-vocabulary-known-v2";
 const labels = { Harry: "Harry list", Video: "Video list", Both: "Both lists" };
 const state = { words: [], known: new Set(), query: "", source: "all", grade: "all", status: "all", sort: "easy" };
 const el = (id) => document.getElementById(id);
