@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Harry's combined 1,981-word vocabulary library, sorted from easy to hard.">
-  <title>Harry's Vocabulary — 1,981 Words</title>
+  <meta name="description" content="Harry's focused 1,500-word vocabulary library, sorted from easy to hard.">
+  <title>Harry's Vocabulary — 1,500 Words</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -13,11 +13,11 @@
       <div class="hero-inner">
         <p class="eyebrow">✦ Harry's complete vocabulary library</p>
         <h1>Every visible word.<br><em>One clear list.</em></h1>
-        <p class="intro">The original Harry list and every word captured from the video, combined without duplicates and ranked from easiest to hardest.</p>
+        <p class="intro">A focused study list from the original Harry and video words, with familiar Grade 2–3 vocabulary removed and the rest ranked from easiest to hardest.</p>
         <div class="hero-stats" aria-label="List totals">
-          <div><strong>1,981</strong><span>unique entries</span></div>
-          <div><strong>1,551</strong><span>Harry entries</span></div>
-          <div><strong>545</strong><span>video entries</span></div>
+          <div><strong>1,500</strong><span>study entries</span></div>
+          <div><strong>481</strong><span>easy words removed</span></div>
+          <div><strong>4–6</strong><span>grade span</span></div>
         </div>
       </div>
     </header>
@@ -26,12 +26,12 @@
       <section class="progress-card" aria-label="Overall progress">
         <div class="progress-copy"><span>Overall check</span><strong id="percent">0% complete</strong></div>
         <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
-        <div class="progress-numbers"><b id="known-count">0</b> known · <b id="learn-count">1,981</b> to learn</div>
+        <div class="progress-numbers"><b id="known-count">0</b> known · <b id="learn-count">1,500</b> to learn</div>
         <button class="primary-button" id="show-learn">Show words to learn</button>
       </section>
 
       <section class="list-intro" id="word-list">
-        <div><p class="kicker">THE COMBINED LIST</p><h2>1,981 unique entries, easy to hard</h2></div>
+        <div><p class="kicker">THE FOCUSED LIST</p><h2>1,500 study entries, easy to hard</h2></div>
         <p>Check a word when it is known. Checkmarks save automatically on this device.</p>
       </section>
 
@@ -47,17 +47,17 @@
 
         <div class="filter-row">
           <div class="filter-tabs" aria-label="Knowledge filter">
-            <button class="active" data-status="all">All <b id="all-tab">1,981</b></button>
-            <button data-status="learn">To learn <b id="learn-tab">1,981</b></button>
+            <button class="active" data-status="all">All <b id="all-tab">1,500</b></button>
+            <button data-status="learn">To learn <b id="learn-tab">1,500</b></button>
             <button data-status="known">Known <b id="known-tab">0</b></button>
           </div>
-          <span><strong id="shown-count">1,981</strong> shown</span>
+          <span><strong id="shown-count">1,500</strong> shown</span>
         </div>
 
         <div class="table-wrap">
           <table>
             <thead><tr><th class="check-column">Known</th><th class="number-column">Rank</th><th>Word</th><th>Short meaning</th><th>Simple example</th><th class="list-column">Source</th><th class="grade-column">Grade level</th></tr></thead>
-            <tbody id="rows"><tr><td colspan="7" class="loading">Loading all 1,981 entries…</td></tr></tbody>
+            <tbody id="rows"><tr><td colspan="7" class="loading">Loading all 1,500 entries…</td></tr></tbody>
           </table>
           <div class="empty-state" id="empty" hidden><strong>No matching words</strong><span>Try a different search or filter.</span></div>
         </div>
