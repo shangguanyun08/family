@@ -1,10 +1,8 @@
-# Family learning sites
+# Harry Vocabulary 1500
 
-## Harry's Focused Vocabulary — 1,500 Words
+A focused study list built from Harry's original list and the extracted video vocabulary.
 
-A focused study list built from the original Harry list and video extraction.
-
-- **Live website:** https://shangguanyun08.github.io/family/
+- **Live website:** https://shangguanyun08.github.io/harry-vocabulary-1500/
 - Exactly 1,500 unique study entries
 - 481 familiar Grade 2–3 words removed across the full list
 - Sorted from easiest to hardest
