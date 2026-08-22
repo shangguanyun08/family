@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="545 vocabulary words extracted frame by frame from the video.">
+  <title>Video Vocabulary — 545 Words</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">✦ Frame-by-frame vocabulary library</p>
+        <h1>Every visible word.<br><em>One clear list.</em></h1>
+        <p class="intro">545 distinct words captured from the S, T, U, and review screens—each with a short English meaning, a simple sentence, and one estimated grade level.</p>
+        <div class="hero-stats" aria-label="List totals">
+          <div><strong>545</strong><span>distinct words</span></div>
+          <div><strong>4</strong><span>video lists</span></div>
+          <div><strong>4–6</strong><span>grade span</span></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="progress-card" aria-label="Overall progress">
+        <div class="progress-copy"><span>Overall check</span><strong id="percent">0% complete</strong></div>
+        <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+        <div class="progress-numbers"><b id="known-count">0</b> known · <b id="learn-count">545</b> to learn</div>
+        <button class="primary-button" id="show-learn">Show words to learn</button>
+      </section>
+
+      <section class="list-intro" id="word-list">
+        <div><p class="kicker">THE COMPLETE EXTRACTION</p><h2>545 distinct visible words</h2></div>
+        <p>Check a word when it is known. Checkmarks save automatically on this device.</p>
+      </section>
+
+      <div class="notice" id="notice" role="status" hidden></div>
+
+      <section class="library-card">
+        <div class="toolbar">
+          <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search word, meaning, or example" aria-label="Search vocabulary"></label>
+          <label class="select-box"><span>List</span><select id="section"><option value="all">All lists</option><option value="S">S list</option><option value="T">T list</option><option value="U">U list</option><option value="Review">Review list</option></select></label>
+          <label class="select-box"><span>Grade</span><select id="grade"><option value="all">All grades</option><option value="4">Grade 4</option><option value="5">Grade 5</option><option value="6">Grade 6</option></select></label>
+          <label class="select-box"><span>Sort</span><select id="sort"><option value="video">Video order</option><option value="az">A → Z</option><option value="grade">Grade level</option></select></label>
+        </div>
+
+        <div class="filter-row">
+          <div class="filter-tabs" aria-label="Knowledge filter">
+            <button class="active" data-status="all">All <b>545</b></button>
+            <button data-status="learn">To learn <b id="learn-tab">545</b></button>
+            <button data-status="known">Known <b id="known-tab">0</b></button>
+          </div>
+          <span><strong id="shown-count">545</strong> shown</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th class="check-column">Known</th><th class="number-column">#</th><th>Word</th><th>Short meaning</th><th>Simple example</th><th class="list-column">List</th><th class="grade-column">Grade level</th></tr></thead>
+            <tbody id="rows"><tr><td colspan="7" class="loading">Loading all 545 words…</td></tr></tbody>
+          </table>
+          <div class="empty-state" id="empty" hidden><strong>No matching words</strong><span>Try a different search or filter.</span></div>
+        </div>
+
+        <footer>
+          <div class="footer-actions"><button id="copy">Copy words to learn</button><button id="download">Download .txt</button><button id="print">Print list</button></div>
+          <button class="reset-button" id="reset">Reset checkmarks</button>
+        </footer>
+      </section>
+    </div>
+  </main>
+  <script src="./app.js" defer></script>
+</body>
+</html>
