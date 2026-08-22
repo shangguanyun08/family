@@ -1,6 +1,6 @@
-const storageKey = "video-vocabulary-known-v1";
-const labels = { S: "S list", T: "T list", U: "U list", Review: "Review list" };
-const state = { words: [], known: new Set(), query: "", section: "all", grade: "all", status: "all", sort: "video" };
+const storageKey = "harry-combined-vocabulary-known-v1";
+const labels = { Harry: "Harry list", Video: "Video list", Both: "Both lists" };
+const state = { words: [], known: new Set(), query: "", source: "all", grade: "all", status: "all", sort: "easy" };
 const el = (id) => document.getElementById(id);
 
 function escapeHtml(value) {
@@ -17,12 +17,12 @@ function saveKnown() { localStorage.setItem(storageKey, JSON.stringify([...state
 function visibleWords() {
   const query = state.query.trim().toLowerCase();
   return state.words.filter((item) => {
-    if (state.section !== "all" && item.section !== state.section) return false;
+    if (state.source !== "all" && item.source !== state.source) return false;
     if (state.grade !== "all" && item.grade !== Number(state.grade)) return false;
     if (state.status === "known" && !state.known.has(item.id)) return false;
     if (state.status === "learn" && state.known.has(item.id)) return false;
     return !query || item.word.toLowerCase().includes(query) || item.meaning.toLowerCase().includes(query) || item.example.toLowerCase().includes(query);
-  }).sort((a, b) => state.sort === "az" ? a.word.localeCompare(b.word) : state.sort === "grade" ? a.grade - b.grade || a.id - b.id : a.id - b.id);
+  }).sort((a, b) => state.sort === "az" ? a.word.localeCompare(b.word) : state.sort === "hard" ? b.id - a.id : a.id - b.id);
 }
 
 function updateProgress() {
@@ -33,6 +33,7 @@ function updateProgress() {
   el("learn-count").textContent = learn;
   el("known-tab").textContent = known;
   el("learn-tab").textContent = learn;
+  el("all-tab").textContent = state.words.length;
   el("percent").textContent = `${percent}% complete`;
   el("progress-bar").style.width = `${percent}%`;
 }
@@ -49,7 +50,7 @@ function render() {
       <td class="word-cell" data-label="Word"><strong>${escapeHtml(item.word)}</strong></td>
       <td class="meaning-cell" data-label="Short meaning">${escapeHtml(item.meaning)}</td>
       <td class="example-cell" data-label="Simple example">${escapeHtml(item.example)}</td>
-      <td class="list-column" data-label="List"><span class="pill section-${item.section}">${labels[item.section]}</span></td>
+      <td class="list-column" data-label="Source"><span class="pill source-${item.source}">${labels[item.source]}</span></td>
       <td class="grade-column" data-label="Grade level"><span class="pill grade-${item.grade}">Grade ${item.grade}</span></td>
     </tr>`;
   }).join("");
@@ -58,13 +59,13 @@ function render() {
 
 function exportText() {
   const remaining = state.words.filter((item) => !state.known.has(item.id));
-  return [`Complete Video Vocabulary — Words to Learn (${remaining.length})`, "Short English meanings, simple examples, and estimated grade levels", "", ...remaining.map((item, i) => `${i + 1}. ${item.word} — ${item.meaning} — ${item.example} — Grade ${item.grade}`)].join("\n");
+  return [`Harry's Combined Vocabulary — Words to Learn (${remaining.length})`, "Short English meanings, simple examples, and estimated grade levels", "", ...remaining.map((item, i) => `${i + 1}. ${item.word} — ${item.meaning} — ${item.example} — Grade ${item.grade}`)].join("\n");
 }
 
 function notice(message) { el("notice").textContent = message; el("notice").hidden = false; }
 
 el("search").addEventListener("input", (event) => { state.query = event.target.value; render(); });
-el("section").addEventListener("change", (event) => { state.section = event.target.value; render(); });
+el("source").addEventListener("change", (event) => { state.source = event.target.value; render(); });
 el("grade").addEventListener("change", (event) => { state.grade = event.target.value; render(); });
 el("sort").addEventListener("change", (event) => { state.sort = event.target.value; render(); });
 document.querySelector(".filter-tabs").addEventListener("click", (event) => {
@@ -78,13 +79,13 @@ el("rows").addEventListener("change", (event) => {
   const id = Number(input.dataset.id); input.checked ? state.known.add(id) : state.known.delete(id); saveKnown(); render();
 });
 el("show-learn").addEventListener("click", () => {
-  state.status = "learn"; state.query = ""; state.section = "all"; state.grade = "all";
-  el("search").value = ""; el("section").value = "all"; el("grade").value = "all";
+  state.status = "learn"; state.query = ""; state.source = "all"; state.grade = "all";
+  el("search").value = ""; el("source").value = "all"; el("grade").value = "all";
   document.querySelectorAll(".filter-tabs button").forEach((item) => item.classList.toggle("active", item.dataset.status === "learn"));
   render(); el("word-list").scrollIntoView({ behavior: "smooth" });
 });
 el("copy").addEventListener("click", async () => { try { await navigator.clipboard.writeText(exportText()); notice("Words to learn copied."); } catch { notice("Copy was blocked. Use Download instead."); } });
-el("download").addEventListener("click", () => { const url = URL.createObjectURL(new Blob([exportText()], { type: "text/plain;charset=utf-8" })); const a = document.createElement("a"); a.href = url; a.download = "video-vocabulary-words-to-learn.txt"; a.click(); URL.revokeObjectURL(url); notice("Words to learn saved."); });
+el("download").addEventListener("click", () => { const url = URL.createObjectURL(new Blob([exportText()], { type: "text/plain;charset=utf-8" })); const a = document.createElement("a"); a.href = url; a.download = "harry-combined-vocabulary-words-to-learn.txt"; a.click(); URL.revokeObjectURL(url); notice("Words to learn saved."); });
 el("print").addEventListener("click", () => window.print());
 el("reset").addEventListener("click", () => { if (!confirm("Clear every checkmark and start again?")) return; state.known.clear(); state.status = "all"; saveKnown(); document.querySelectorAll(".filter-tabs button").forEach((item) => item.classList.toggle("active", item.dataset.status === "all")); render(); notice("All checkmarks were cleared."); });
 
