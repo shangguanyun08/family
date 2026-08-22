@@ -1,14 +1,14 @@
 # Family learning sites
 
-## Video Vocabulary — 545 Words
+## Harry's Combined Vocabulary — 1,981 Words
 
-A frame-by-frame vocabulary library extracted from the uploaded recording.
+The original 1,551-entry Harry list and the 545-word video extraction, merged into 1,981 unique entries.
 
 - **Live website:** https://shangguanyun08.github.io/family/
-- 545 distinct visible words
+- Sorted from easiest to hardest
 - Short English meanings
 - Simple sentence examples
-- Estimated Grade 4, 5, or 6 level in the last column
+- Estimated grade level in the last column
 - Search, filters, saved checkmarks, copy, download, and print
 
 The published static site is stored in `docs/`.
