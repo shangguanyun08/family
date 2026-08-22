@@ -1,0 +1,4907 @@
+[
+  {
+    "id": 1,
+    "word": "attempt",
+    "meaning": "an effort to do something",
+    "example": "This is Ben’s second attempt to climb Mt. Everest.",
+    "section": "S",
+    "grade": 4,
+    "time": 0.0
+  },
+  {
+    "id": 2,
+    "word": "extension",
+    "meaning": "an added part or extra length",
+    "example": "We learned about extension in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 0.0
+  },
+  {
+    "id": 3,
+    "word": "wealthy",
+    "meaning": "rich; having much money",
+    "example": "The wealthy businessman owns an airplane and an expensive car.",
+    "section": "S",
+    "grade": 4,
+    "time": 0.0
+  },
+  {
+    "id": 4,
+    "word": "schedule",
+    "meaning": "a plan of times and events",
+    "example": "Here is a new schedule for you.",
+    "section": "S",
+    "grade": 4,
+    "time": 1.4
+  },
+  {
+    "id": 5,
+    "word": "restore",
+    "meaning": "to return to good condition",
+    "example": "We learned how to restore.",
+    "section": "S",
+    "grade": 4,
+    "time": 1.6
+  },
+  {
+    "id": 6,
+    "word": "function",
+    "meaning": "the purpose or job of something",
+    "example": "We learned about function in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 1.7
+  },
+  {
+    "id": 7,
+    "word": "harass",
+    "meaning": "to repeatedly bother or threaten",
+    "example": "The young girl would often harass her baby brother.",
+    "section": "S",
+    "grade": 4,
+    "time": 1.8
+  },
+  {
+    "id": 8,
+    "word": "volunteer",
+    "meaning": "a person who helps freely",
+    "example": "We learned about volunteer in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 2.0
+  },
+  {
+    "id": 9,
+    "word": "fascinating",
+    "meaning": "extremely interesting",
+    "example": "The museum is really fascinating.",
+    "section": "S",
+    "grade": 4,
+    "time": 2.2
+  },
+  {
+    "id": 10,
+    "word": "disappoint",
+    "meaning": "to fail to meet hopes",
+    "example": "We learned how to disappoint.",
+    "section": "S",
+    "grade": 4,
+    "time": 2.3
+  },
+  {
+    "id": 11,
+    "word": "mysterious",
+    "meaning": "difficult to explain or understand",
+    "example": "We discovered a mysterious tomb built of stone.",
+    "section": "S",
+    "grade": 4,
+    "time": 2.5
+  },
+  {
+    "id": 12,
+    "word": "analyze",
+    "meaning": "to study something carefully",
+    "example": "The scientist will analyze the blood sample.",
+    "section": "S",
+    "grade": 4,
+    "time": 2.8
+  },
+  {
+    "id": 13,
+    "word": "method",
+    "meaning": "a way of doing something",
+    "example": "We learned about method in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 2.8
+  },
+  {
+    "id": 14,
+    "word": "regret",
+    "meaning": "sadness about a past action",
+    "example": "We learned about regret in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 3.0
+  },
+  {
+    "id": 15,
+    "word": "invade",
+    "meaning": "to enter by force",
+    "example": "The enemy forces tried to invade our country from the sky.",
+    "section": "S",
+    "grade": 4,
+    "time": 3.1
+  },
+  {
+    "id": 16,
+    "word": "mission",
+    "meaning": "an important task or purpose",
+    "example": "The woman’s mission was to help sick people.",
+    "section": "S",
+    "grade": 4,
+    "time": 3.3
+  },
+  {
+    "id": 17,
+    "word": "devastating",
+    "meaning": "causing great damage or sadness",
+    "example": "The tsunami had devastating effects on the seaside village.",
+    "section": "S",
+    "grade": 4,
+    "time": 3.4
+  },
+  {
+    "id": 18,
+    "word": "relationship",
+    "meaning": "a connection between people or things",
+    "example": "We learned about relationship in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 3.5
+  },
+  {
+    "id": 19,
+    "word": "technology",
+    "meaning": "tools made using scientific knowledge",
+    "example": "Mrs. Jensen encouraged her students to use technology.",
+    "section": "S",
+    "grade": 4,
+    "time": 3.5
+  },
+  {
+    "id": 20,
+    "word": "interact",
+    "meaning": "to communicate or act together",
+    "example": "The kids began to interact when the adults left the room.",
+    "section": "S",
+    "grade": 4,
+    "time": 3.7
+  },
+  {
+    "id": 21,
+    "word": "electronic",
+    "meaning": "using electricity and computer parts",
+    "example": "The story described something electronic.",
+    "section": "S",
+    "grade": 4,
+    "time": 3.9
+  },
+  {
+    "id": 22,
+    "word": "magnificent",
+    "meaning": "very beautiful or impressive",
+    "example": "The man gave his wife a pair of magnificent diamond earrings.",
+    "section": "S",
+    "grade": 4,
+    "time": 3.9
+  },
+  {
+    "id": 23,
+    "word": "supply",
+    "meaning": "an amount available for use",
+    "example": "There was an ample supply of oats to feed the horses.",
+    "section": "S",
+    "grade": 4,
+    "time": 4.0
+  },
+  {
+    "id": 24,
+    "word": "product",
+    "meaning": "something made or sold",
+    "example": "She is trying to decide which product to buy.",
+    "section": "S",
+    "grade": 4,
+    "time": 4.1
+  },
+  {
+    "id": 25,
+    "word": "merchandise",
+    "meaning": "goods offered for sale",
+    "example": "We learned about merchandise in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 4.2
+  },
+  {
+    "id": 26,
+    "word": "influence",
+    "meaning": "the power to affect someone",
+    "example": "Art has had a positive influence on Jennifer's career c.",
+    "section": "S",
+    "grade": 4,
+    "time": 4.3
+  },
+  {
+    "id": 27,
+    "word": "demand",
+    "meaning": "a strong request or need",
+    "example": "I demand that you give me back my pencil!",
+    "section": "S",
+    "grade": 4,
+    "time": 4.5
+  },
+  {
+    "id": 28,
+    "word": "legislature",
+    "meaning": "a group that makes laws",
+    "example": "The senator had served ten years in the national legislature.",
+    "section": "S",
+    "grade": 4,
+    "time": 4.5
+  },
+  {
+    "id": 29,
+    "word": "scholar",
+    "meaning": "a highly educated student or expert",
+    "example": "The scholar knew much about art history.",
+    "section": "S",
+    "grade": 4,
+    "time": 4.6
+  },
+  {
+    "id": 30,
+    "word": "master",
+    "meaning": "to learn or control completely",
+    "example": "We learned how to master.",
+    "section": "S",
+    "grade": 4,
+    "time": 4.7
+  },
+  {
+    "id": 31,
+    "word": "errand",
+    "meaning": "a short trip for a task",
+    "example": "We learned about errand in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 4.8
+  },
+  {
+    "id": 32,
+    "word": "substance",
+    "meaning": "a particular kind of material",
+    "example": "Scientists worry that harmful substance.",
+    "section": "S",
+    "grade": 4,
+    "time": 4.8
+  },
+  {
+    "id": 33,
+    "word": "reflection",
+    "meaning": "an image seen in a mirror",
+    "example": "The man stared at his reflection in the mirror.",
+    "section": "S",
+    "grade": 4,
+    "time": 4.9
+  },
+  {
+    "id": 34,
+    "word": "focus",
+    "meaning": "to give full attention",
+    "example": "Nina needs peace and quiet to focus on her project.",
+    "section": "S",
+    "grade": 4,
+    "time": 5.0
+  },
+  {
+    "id": 35,
+    "word": "suspicious",
+    "meaning": "feeling that something is wrong",
+    "example": "Dad was suspicious of the caller on the line.",
+    "section": "S",
+    "grade": 4,
+    "time": 5.1
+  },
+  {
+    "id": 36,
+    "word": "appetizing",
+    "meaning": "looking or smelling delicious",
+    "example": "The story described something appetizing.",
+    "section": "S",
+    "grade": 4,
+    "time": 5.2
+  },
+  {
+    "id": 37,
+    "word": "intimidate",
+    "meaning": "to frighten or make nervous",
+    "example": "We learned how to intimidate.",
+    "section": "S",
+    "grade": 4,
+    "time": 5.5
+  },
+  {
+    "id": 38,
+    "word": "dominant",
+    "meaning": "more powerful or important",
+    "example": "The gorilla is one of the dominant animals in the jungle.",
+    "section": "S",
+    "grade": 4,
+    "time": 5.6
+  },
+  {
+    "id": 39,
+    "word": "masterpiece",
+    "meaning": "an artist's greatest work",
+    "example": "We learned about masterpiece in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 5.6
+  },
+  {
+    "id": 40,
+    "word": "engrave",
+    "meaning": "to cut words or designs into",
+    "example": "We learned how to engrave.",
+    "section": "S",
+    "grade": 4,
+    "time": 5.7
+  },
+  {
+    "id": 41,
+    "word": "chapel",
+    "meaning": "a small place of worship",
+    "example": "We learned about chapel in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 5.8
+  },
+  {
+    "id": 42,
+    "word": "tolerate",
+    "meaning": "to accept something unpleasant",
+    "example": "When you are in a hurry, it can be hard to tolerate traffic signals.",
+    "section": "S",
+    "grade": 4,
+    "time": 5.9
+  },
+  {
+    "id": 43,
+    "word": "boast",
+    "meaning": "to speak too proudly",
+    "example": "We all became tired of listening to him boast about himself all day.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.2
+  },
+  {
+    "id": 44,
+    "word": "courtesy",
+    "meaning": "polite and respectful behavior",
+    "example": "We learned about courtesy in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.2
+  },
+  {
+    "id": 45,
+    "word": "mock",
+    "meaning": "to make fun of",
+    "example": "We learned how to mock.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.2
+  },
+  {
+    "id": 46,
+    "word": "aisle",
+    "meaning": "a passage between rows",
+    "example": "We learned about aisle in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.3
+  },
+  {
+    "id": 47,
+    "word": "signature",
+    "meaning": "a person's written name",
+    "example": "I put my signature at the end of the document.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.3
+  },
+  {
+    "id": 48,
+    "word": "district",
+    "meaning": "an area of a city or country",
+    "example": "The suburban district has the best scenery in the city.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.4
+  },
+  {
+    "id": 49,
+    "word": "enthusiastic",
+    "meaning": "showing strong excitement",
+    "example": "The man was enthusiastic about his job.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.4
+  },
+  {
+    "id": 50,
+    "word": "diverse",
+    "meaning": "including many different kinds",
+    "example": "Big cities have diverse populations with people of diffe!",
+    "section": "S",
+    "grade": 4,
+    "time": 6.5
+  },
+  {
+    "id": 51,
+    "word": "encourage",
+    "meaning": "to give confidence or support",
+    "example": "We learned how to encourage.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.5
+  },
+  {
+    "id": 52,
+    "word": "resist",
+    "meaning": "to fight against or refuse",
+    "example": "We learned how to resist.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.6
+  },
+  {
+    "id": 53,
+    "word": "arthritis",
+    "meaning": "a disease causing joint pain",
+    "example": "We learned about arthritis in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.8
+  },
+  {
+    "id": 54,
+    "word": "funeral",
+    "meaning": "a ceremony for someone who died",
+    "example": "Only family members attended the funeral.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.8
+  },
+  {
+    "id": 55,
+    "word": "stroke",
+    "meaning": "to touch gently in one direction",
+    "example": "The artist began with a yellow stroke on his painting.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.8
+  },
+  {
+    "id": 56,
+    "word": "space",
+    "meaning": "an empty area or room",
+    "example": "IT will live on a space station.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.9
+  },
+  {
+    "id": 57,
+    "word": "training",
+    "meaning": "practice that builds a skill",
+    "example": "We learned about training in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 6.9
+  },
+  {
+    "id": 58,
+    "word": "right",
+    "meaning": "correct or morally good",
+    "example": "She does not know the right answer.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.0
+  },
+  {
+    "id": 59,
+    "word": "tender",
+    "meaning": "gentle, soft, or caring",
+    "example": "The story described something tender.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.0
+  },
+  {
+    "id": 60,
+    "word": "wage",
+    "meaning": "money paid for work",
+    "example": "She gets an hourly wage of $18 per hour.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.0
+  },
+  {
+    "id": 61,
+    "word": "labor",
+    "meaning": "physical or mental work",
+    "example": "Building the house took a lot of labor.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.1
+  },
+  {
+    "id": 62,
+    "word": "politician",
+    "meaning": "a person active in government",
+    "example": "Each politician spoke about how they would change the law.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.1
+  },
+  {
+    "id": 63,
+    "word": "stable",
+    "meaning": "firm and unlikely to change",
+    "example": "The chair is stable, Its legs are strong.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.1
+  },
+  {
+    "id": 64,
+    "word": "corrupt",
+    "meaning": "dishonest for personal gain",
+    "example": "The story described something corrupt.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.2
+  },
+  {
+    "id": 65,
+    "word": "military",
+    "meaning": "related to armed forces",
+    "example": "Both of this boy's parents are wearing military uniforms.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.2
+  },
+  {
+    "id": 66,
+    "word": "conquer",
+    "meaning": "to defeat and take control",
+    "example": "The soldiers were trying to conquer the world.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.3
+  },
+  {
+    "id": 67,
+    "word": "strategy",
+    "meaning": "a plan for reaching a goal",
+    "example": "We learned about strategy in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.5
+  },
+  {
+    "id": 68,
+    "word": "currency",
+    "meaning": "money used in a country",
+    "example": "We learned about currency in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.6
+  },
+  {
+    "id": 69,
+    "word": "dense",
+    "meaning": "closely packed together",
+    "example": "T easily became lost in the dense forest.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.6
+  },
+  {
+    "id": 70,
+    "word": "poverty",
+    "meaning": "the state of being very poor",
+    "example": "We learned about poverty in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.6
+  },
+  {
+    "id": 71,
+    "word": "reveal",
+    "meaning": "to make something known",
+    "example": "We learned how to reveal.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.6
+  },
+  {
+    "id": 72,
+    "word": "comb",
+    "meaning": "a tool for arranging hair",
+    "example": "T always comb my hair before going out.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.7
+  },
+  {
+    "id": 73,
+    "word": "creepy",
+    "meaning": "strange and frightening",
+    "example": "She is telling her sister a creepy ghost story.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.7
+  },
+  {
+    "id": 74,
+    "word": "bizarre",
+    "meaning": "very strange or unusual",
+    "example": "The story described something bizarre.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.8
+  },
+  {
+    "id": 75,
+    "word": "plantation",
+    "meaning": "a large farm growing crops",
+    "example": "We learned about plantation in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.8
+  },
+  {
+    "id": 76,
+    "word": "plot",
+    "meaning": "the main events of a story",
+    "example": "The plot of the book was long and boring.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.8
+  },
+  {
+    "id": 77,
+    "word": "irrigate",
+    "meaning": "to supply land with water",
+    "example": "We learned how to irrigate.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.9
+  },
+  {
+    "id": 78,
+    "word": "parliament",
+    "meaning": "a national lawmaking group",
+    "example": "It was the first meeting of the parliament in the new year.",
+    "section": "S",
+    "grade": 4,
+    "time": 7.9
+  },
+  {
+    "id": 79,
+    "word": "crisis",
+    "meaning": "a time of serious danger",
+    "example": "The military was called in when the crisis escalated.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.0
+  },
+  {
+    "id": 80,
+    "word": "captive",
+    "meaning": "a person or animal held prisoner",
+    "example": "The story described something captive.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.2
+  },
+  {
+    "id": 81,
+    "word": "social",
+    "meaning": "related to people and society",
+    "example": "Diane is very social. She has many friends.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.2
+  },
+  {
+    "id": 82,
+    "word": "astronomy",
+    "meaning": "the study of space",
+    "example": "We learned about astronomy in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.3
+  },
+  {
+    "id": 83,
+    "word": "convention",
+    "meaning": "a large formal meeting",
+    "example": "We learned about convention in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.3
+  },
+  {
+    "id": 84,
+    "word": "retreat",
+    "meaning": "to move back from danger",
+    "example": "We learned how to retreat.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.3
+  },
+  {
+    "id": 85,
+    "word": "telescope",
+    "meaning": "a tool for viewing distant objects",
+    "example": "We learned about telescope in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.3
+  },
+  {
+    "id": 86,
+    "word": "carnival",
+    "meaning": "a lively public festival",
+    "example": "We learned about carnival in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.4
+  },
+  {
+    "id": 87,
+    "word": "literacy",
+    "meaning": "the ability to read and write",
+    "example": "The examination tested the children's literacy.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.4
+  },
+  {
+    "id": 88,
+    "word": "explanation",
+    "meaning": "a statement that makes something clear",
+    "example": "We learned about explanation in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.5
+  },
+  {
+    "id": 89,
+    "word": "fabric",
+    "meaning": "cloth or woven material",
+    "example": "The towels were made from a soft fabric.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.5
+  },
+  {
+    "id": 90,
+    "word": "terrified",
+    "meaning": "extremely frightened",
+    "example": "When I saw the ghost, I was absolutely terrified!",
+    "section": "S",
+    "grade": 4,
+    "time": 8.5
+  },
+  {
+    "id": 91,
+    "word": "draw",
+    "meaning": "to make a picture",
+    "example": "We learned how to draw.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.6
+  },
+  {
+    "id": 92,
+    "word": "international",
+    "meaning": "involving several countries",
+    "example": "Many people attended the international meeting.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.6
+  },
+  {
+    "id": 93,
+    "word": "boundary",
+    "meaning": "a line marking an edge",
+    "example": "We learned about boundary in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.7
+  },
+  {
+    "id": 94,
+    "word": "refuge",
+    "meaning": "a safe place from danger",
+    "example": "When it started to rain, she found refuge in the house.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.7
+  },
+  {
+    "id": 95,
+    "word": "inuit",
+    "meaning": "an Indigenous Arctic people",
+    "example": "We learned about Inuit in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.9
+  },
+  {
+    "id": 96,
+    "word": "secondhand",
+    "meaning": "previously owned or used",
+    "example": "The story described something secondhand.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.9
+  },
+  {
+    "id": 97,
+    "word": "wardrobe",
+    "meaning": "a cabinet or collection of clothes",
+    "example": "We learned about wardrobe in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 8.9
+  },
+  {
+    "id": 98,
+    "word": "advance",
+    "meaning": "to move forward",
+    "example": "We learned how to advance.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.0
+  },
+  {
+    "id": 99,
+    "word": "entrepreneur",
+    "meaning": "a person who starts a business",
+    "example": "We learned about entrepreneur in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.0
+  },
+  {
+    "id": 100,
+    "word": "income",
+    "meaning": "money received from work",
+    "example": "Farming is my dad's main source of income.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.0
+  },
+  {
+    "id": 101,
+    "word": "division",
+    "meaning": "the act of separating into parts",
+    "example": "We learned about division in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.1
+  },
+  {
+    "id": 102,
+    "word": "goal",
+    "meaning": "something you aim to achieve",
+    "example": "The player hit the puck into the goal.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.1
+  },
+  {
+    "id": 103,
+    "word": "pastime",
+    "meaning": "an activity done for enjoyment",
+    "example": "We learned about pastime in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.1
+  },
+  {
+    "id": 104,
+    "word": "emotional",
+    "meaning": "showing strong feelings",
+    "example": "The sad movie is making them very emotional.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.2
+  },
+  {
+    "id": 105,
+    "word": "frantic",
+    "meaning": "wildly worried or hurried",
+    "example": "The cat became frantic when I tried to give it a bath.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.2
+  },
+  {
+    "id": 106,
+    "word": "wreck",
+    "meaning": "to badly damage or destroy",
+    "example": "We learned how to wreck.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.2
+  },
+  {
+    "id": 107,
+    "word": "contact",
+    "meaning": "communication with someone",
+    "example": "We learned about contact in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.3
+  },
+  {
+    "id": 108,
+    "word": "information",
+    "meaning": "facts or knowledge",
+    "example": "Call the English Study Center at 443-5667 for more information.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.3
+  },
+  {
+    "id": 109,
+    "word": "injustice",
+    "meaning": "unfair treatment",
+    "example": "We learned about injustice in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.3
+  },
+  {
+    "id": 110,
+    "word": "interview",
+    "meaning": "a meeting for questions and answers",
+    "example": "We learned about interview in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.3
+  },
+  {
+    "id": 111,
+    "word": "degree",
+    "meaning": "a unit, level, or qualification",
+    "example": "We learned about degree in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.4
+  },
+  {
+    "id": 112,
+    "word": "heritage",
+    "meaning": "traditions passed down through history",
+    "example": "We learned about heritage in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.4
+  },
+  {
+    "id": 113,
+    "word": "province",
+    "meaning": "a major region of a country",
+    "example": "Have you ever been to another province in China?",
+    "section": "S",
+    "grade": 4,
+    "time": 9.6
+  },
+  {
+    "id": 114,
+    "word": "textile",
+    "meaning": "cloth or woven material",
+    "example": "We learned about textile in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.6
+  },
+  {
+    "id": 115,
+    "word": "traditional",
+    "meaning": "following long-established customs",
+    "example": "The story described something traditional.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.6
+  },
+  {
+    "id": 116,
+    "word": "cooperate",
+    "meaning": "to work together",
+    "example": "We learned how to cooperate.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.7
+  },
+  {
+    "id": 117,
+    "word": "solitary",
+    "meaning": "alone; without others",
+    "example": "The only thing in the room was a solitary chair.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.7
+  },
+  {
+    "id": 118,
+    "word": "young",
+    "meaning": "not old",
+    "example": "The young girl would often harass her baby brother.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.7
+  },
+  {
+    "id": 119,
+    "word": "diameter",
+    "meaning": "a line across a circle's center",
+    "example": "The diameter of the tree was about 60 centimeters.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.8
+  },
+  {
+    "id": 120,
+    "word": "engineer",
+    "meaning": "a person who designs or builds",
+    "example": "I want to be an engineer.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.8
+  },
+  {
+    "id": 121,
+    "word": "fault",
+    "meaning": "responsibility for a mistake",
+    "example": "It’s never just one person's fault.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.8
+  },
+  {
+    "id": 122,
+    "word": "probe",
+    "meaning": "to investigate closely",
+    "example": "We learned how to probe.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.8
+  },
+  {
+    "id": 123,
+    "word": "advise",
+    "meaning": "to give helpful suggestions",
+    "example": "We learned how to advise.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.9
+  },
+  {
+    "id": 124,
+    "word": "defeat",
+    "meaning": "to win against",
+    "example": "We learned how to defeat.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.9
+  },
+  {
+    "id": 125,
+    "word": "trial",
+    "meaning": "a test or court case",
+    "example": "At the end of the trial, John was found to be innocent.",
+    "section": "S",
+    "grade": 4,
+    "time": 9.9
+  },
+  {
+    "id": 126,
+    "word": "break",
+    "meaning": "to separate into pieces",
+    "example": "We learned how to break.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.0
+  },
+  {
+    "id": 127,
+    "word": "disguise",
+    "meaning": "something that hides identity",
+    "example": "Everyone knew that it was Dad in the Santa disguise.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.0
+  },
+  {
+    "id": 128,
+    "word": "ceremony",
+    "meaning": "a formal event or ritual",
+    "example": "We learned about ceremony in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.1
+  },
+  {
+    "id": 129,
+    "word": "pioneer",
+    "meaning": "an early explorer or innovator",
+    "example": "We learned about pioneer in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.1
+  },
+  {
+    "id": 130,
+    "word": "territory",
+    "meaning": "land controlled by a group",
+    "example": "Gibraltar is a territory of Great Britain.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.2
+  },
+  {
+    "id": 131,
+    "word": "apology",
+    "meaning": "words expressing regret",
+    "example": "We learned about apology in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.4
+  },
+  {
+    "id": 132,
+    "word": "atmosphere",
+    "meaning": "the gases surrounding a planet",
+    "example": "We learned about atmosphere in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.4
+  },
+  {
+    "id": 133,
+    "word": "ban",
+    "meaning": "to officially forbid",
+    "example": "We learned about ban in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.4
+  },
+  {
+    "id": 134,
+    "word": "column",
+    "meaning": "a tall support or vertical section",
+    "example": "We learned about column in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.4
+  },
+  {
+    "id": 135,
+    "word": "gloomy",
+    "meaning": "dark, sad, or hopeless",
+    "example": "It is a wet and gloomy day.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.5
+  },
+  {
+    "id": 136,
+    "word": "greedy",
+    "meaning": "wanting more than needed",
+    "example": "The story described something greedy.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.5
+  },
+  {
+    "id": 137,
+    "word": "habitat",
+    "meaning": "an organism's natural home",
+    "example": "We learned about habitat in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.5
+  },
+  {
+    "id": 138,
+    "word": "cathedral",
+    "meaning": "a large important church",
+    "example": "We saw a famous cathedral in Italy.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.6
+  },
+  {
+    "id": 139,
+    "word": "landmark",
+    "meaning": "a well-known place or feature",
+    "example": "We learned about landmark in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.6
+  },
+  {
+    "id": 140,
+    "word": "march",
+    "meaning": "to walk with steady steps",
+    "example": "My birthday is on March 27th.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.6
+  },
+  {
+    "id": 141,
+    "word": "media",
+    "meaning": "systems that share news and entertainment",
+    "example": "Alot of people access media on the internet.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.7
+  },
+  {
+    "id": 142,
+    "word": "mimic",
+    "meaning": "to copy someone's actions or voice",
+    "example": "We learned how to mimic.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.7
+  },
+  {
+    "id": 143,
+    "word": "profit",
+    "meaning": "money earned after costs",
+    "example": "We learned about profit in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.7
+  },
+  {
+    "id": 144,
+    "word": "protect",
+    "meaning": "to keep safe from harm",
+    "example": "We learned how to protect.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.7
+  },
+  {
+    "id": 145,
+    "word": "pollution",
+    "meaning": "harmful waste in the environment",
+    "example": "There will be more pollution.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.8
+  },
+  {
+    "id": 146,
+    "word": "prairie",
+    "meaning": "a wide, grassy plain",
+    "example": "We learned about prairie in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.8
+  },
+  {
+    "id": 147,
+    "word": "strike",
+    "meaning": "to hit or attack",
+    "example": "The workers decided to strike in order to get better pay.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.8
+  },
+  {
+    "id": 148,
+    "word": "research",
+    "meaning": "careful study to discover facts",
+    "example": "We learned about research in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.9
+  },
+  {
+    "id": 149,
+    "word": "route",
+    "meaning": "a path from one place to another",
+    "example": "The route to get to my aunt's house had a lot of turns.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.9
+  },
+  {
+    "id": 150,
+    "word": "species",
+    "meaning": "a group of similar living things",
+    "example": "The whooping crane is an endangered species.",
+    "section": "S",
+    "grade": 4,
+    "time": 10.9
+  },
+  {
+    "id": 151,
+    "word": "balance",
+    "meaning": "a steady and even position",
+    "example": "We learned about balance in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.0
+  },
+  {
+    "id": 152,
+    "word": "creature",
+    "meaning": "a living being",
+    "example": "We learned about creature in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.1
+  },
+  {
+    "id": 153,
+    "word": "current",
+    "meaning": "happening or existing now",
+    "example": "The current time is 7:02 a.m.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.1
+  },
+  {
+    "id": 154,
+    "word": "discovery",
+    "meaning": "something found for the first time",
+    "example": "We learned about discovery in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.1
+  },
+  {
+    "id": 155,
+    "word": "inspire",
+    "meaning": "to fill with ideas or motivation",
+    "example": "We learned how to inspire.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.2
+  },
+  {
+    "id": 156,
+    "word": "lava",
+    "meaning": "hot melted rock from a volcano",
+    "example": "The red-hot lava poured from the volcano.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.2
+  },
+  {
+    "id": 157,
+    "word": "desperate",
+    "meaning": "having little hope",
+    "example": "The story described something desperate.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.3
+  },
+  {
+    "id": 158,
+    "word": "drought",
+    "meaning": "a long period without rain",
+    "example": "We learned about drought in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.3
+  },
+  {
+    "id": 159,
+    "word": "tradition",
+    "meaning": "a custom passed through generations",
+    "example": "Marriage is a tradition all over the world.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.3
+  },
+  {
+    "id": 160,
+    "word": "victim",
+    "meaning": "someone harmed by an event",
+    "example": "Twas a victim of a robbery.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.3
+  },
+  {
+    "id": 161,
+    "word": "astronaut",
+    "meaning": "a person who travels in space",
+    "example": "IT will be an astronaut.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.4
+  },
+  {
+    "id": 162,
+    "word": "gravity",
+    "meaning": "the force pulling objects downward",
+    "example": "There is no gravity in space.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.4
+  },
+  {
+    "id": 163,
+    "word": "launch",
+    "meaning": "to send or start moving",
+    "example": "We learned how to launch.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.4
+  },
+  {
+    "id": 164,
+    "word": "endangered",
+    "meaning": "at serious risk of extinction",
+    "example": "The whooping crane is an endangered species.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.5
+  },
+  {
+    "id": 165,
+    "word": "investigate",
+    "meaning": "to examine in search of facts",
+    "example": "The detective went to investigate the crime.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.5
+  },
+  {
+    "id": 166,
+    "word": "orbit",
+    "meaning": "a curved path around an object",
+    "example": "We learned about orbit in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.5
+  },
+  {
+    "id": 167,
+    "word": "primate",
+    "meaning": "a mammal such as a human or ape",
+    "example": "We learned about primate in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.5
+  },
+  {
+    "id": 168,
+    "word": "ancient",
+    "meaning": "from a very long time ago",
+    "example": "We studied artifacts from an ancient Chinese settlement.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.6
+  },
+  {
+    "id": 169,
+    "word": "colony",
+    "meaning": "a settlement controlled by another country",
+    "example": "The USA was at one time a colony of Great Britain.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.6
+  },
+  {
+    "id": 170,
+    "word": "constitution",
+    "meaning": "a country's basic governing rules",
+    "example": "We learned about constitution in class.",
+    "section": "S",
+    "grade": 4,
+    "time": 11.6
+  },
+  {
+    "id": 171,
+    "word": "brand",
+    "meaning": "a product name or type",
+    "example": "We learned about brand in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 18.1
+  },
+  {
+    "id": 172,
+    "word": "orchestra",
+    "meaning": "a large group of musicians",
+    "example": "The orchestra is playing classical music.",
+    "section": "T",
+    "grade": 5,
+    "time": 18.1
+  },
+  {
+    "id": 173,
+    "word": "population",
+    "meaning": "all people living in an area",
+    "example": "We learned about population in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 18.1
+  },
+  {
+    "id": 174,
+    "word": "renovate",
+    "meaning": "to repair and improve a building",
+    "example": "We learned how to renovate.",
+    "section": "T",
+    "grade": 5,
+    "time": 18.1
+  },
+  {
+    "id": 175,
+    "word": "warp",
+    "meaning": "to bend or twist out of shape",
+    "example": "We learned how to warp.",
+    "section": "T",
+    "grade": 5,
+    "time": 18.8
+  },
+  {
+    "id": 176,
+    "word": "previous",
+    "meaning": "coming before the present one",
+    "example": "The story described something previous.",
+    "section": "T",
+    "grade": 5,
+    "time": 19.0
+  },
+  {
+    "id": 177,
+    "word": "horizontal",
+    "meaning": "level from side to side",
+    "example": "The story described something horizontal.",
+    "section": "T",
+    "grade": 5,
+    "time": 19.2
+  },
+  {
+    "id": 178,
+    "word": "lure",
+    "meaning": "to attract or tempt",
+    "example": "We learned how to lure.",
+    "section": "T",
+    "grade": 5,
+    "time": 19.5
+  },
+  {
+    "id": 179,
+    "word": "illuminate",
+    "meaning": "to light up",
+    "example": "In order to illuminate the stage, the crew turned on the spotlight.",
+    "section": "T",
+    "grade": 5,
+    "time": 19.7
+  },
+  {
+    "id": 180,
+    "word": "enhance",
+    "meaning": "to improve or increase",
+    "example": "We learned how to enhance.",
+    "section": "T",
+    "grade": 5,
+    "time": 19.9
+  },
+  {
+    "id": 181,
+    "word": "microscope",
+    "meaning": "a tool that magnifies tiny objects",
+    "example": "Germs cannot he seen without a microscope.",
+    "section": "T",
+    "grade": 5,
+    "time": 20.0
+  },
+  {
+    "id": 182,
+    "word": "limp",
+    "meaning": "to walk unevenly from pain",
+    "example": "We learned how to limp.",
+    "section": "T",
+    "grade": 5,
+    "time": 20.4
+  },
+  {
+    "id": 183,
+    "word": "project",
+    "meaning": "a planned piece of work",
+    "example": "The teenagers worked together on their history project.",
+    "section": "T",
+    "grade": 5,
+    "time": 20.5
+  },
+  {
+    "id": 184,
+    "word": "model",
+    "meaning": "a copy or example of something",
+    "example": "The white model plane is hers.",
+    "section": "T",
+    "grade": 5,
+    "time": 20.6
+  },
+  {
+    "id": 185,
+    "word": "tourism",
+    "meaning": "travel for pleasure",
+    "example": "Tourism is the most popular reason people visit Spain.",
+    "section": "T",
+    "grade": 5,
+    "time": 20.7
+  },
+  {
+    "id": 186,
+    "word": "rural",
+    "meaning": "related to the countryside",
+    "example": "I want to live in a small house in a rural area.",
+    "section": "T",
+    "grade": 5,
+    "time": 20.8
+  },
+  {
+    "id": 187,
+    "word": "fertile",
+    "meaning": "able to grow plants well",
+    "example": "The farmer grew many vegetables in the fertile soil.",
+    "section": "T",
+    "grade": 5,
+    "time": 20.9
+  },
+  {
+    "id": 188,
+    "word": "heredity",
+    "meaning": "passing traits from parents to children",
+    "example": "The boy’s face is similar to his father’s because of heredity.",
+    "section": "T",
+    "grade": 5,
+    "time": 21.1
+  },
+  {
+    "id": 189,
+    "word": "expose",
+    "meaning": "to uncover or make visible",
+    "example": "He took off his shirt to expose his costume.",
+    "section": "T",
+    "grade": 5,
+    "time": 21.2
+  },
+  {
+    "id": 190,
+    "word": "surgeon",
+    "meaning": "a doctor who performs operations",
+    "example": "The surgeon operated on the old man’s heart.",
+    "section": "T",
+    "grade": 5,
+    "time": 21.2
+  },
+  {
+    "id": 191,
+    "word": "operation",
+    "meaning": "a medical procedure or planned action",
+    "example": "The doctors prepare for a long operation.",
+    "section": "T",
+    "grade": 5,
+    "time": 21.4
+  },
+  {
+    "id": 192,
+    "word": "deceive",
+    "meaning": "to make someone believe a lie",
+    "example": "He tried to deceive his friends with a card trick.",
+    "section": "T",
+    "grade": 5,
+    "time": 21.5
+  },
+  {
+    "id": 193,
+    "word": "mercy",
+    "meaning": "kindness toward someone in your power",
+    "example": "He asked his boss for mercy and to not fire him.",
+    "section": "T",
+    "grade": 5,
+    "time": 21.7
+  },
+  {
+    "id": 194,
+    "word": "credible",
+    "meaning": "believable and trustworthy",
+    "example": "The story described something credible.",
+    "section": "T",
+    "grade": 5,
+    "time": 21.8
+  },
+  {
+    "id": 195,
+    "word": "essay",
+    "meaning": "a short piece of formal writing",
+    "example": "We learned about essay in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 21.8
+  },
+  {
+    "id": 196,
+    "word": "assignment",
+    "meaning": "a task given to complete",
+    "example": "We learned about assignment in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 21.9
+  },
+  {
+    "id": 197,
+    "word": "cite",
+    "meaning": "to name a source as evidence",
+    "example": "We learned about cite in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 21.9
+  },
+  {
+    "id": 198,
+    "word": "revolution",
+    "meaning": "a major change in government or society",
+    "example": "The town had to be rebuilt after the end of the revolution.",
+    "section": "T",
+    "grade": 5,
+    "time": 22.1
+  },
+  {
+    "id": 199,
+    "word": "network",
+    "meaning": "a connected system or group",
+    "example": "We learned about network in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 22.2
+  },
+  {
+    "id": 200,
+    "word": "flee",
+    "meaning": "to run away from danger",
+    "example": "When a predator approaches a deer, the deer will flee.",
+    "section": "T",
+    "grade": 5,
+    "time": 22.3
+  },
+  {
+    "id": 201,
+    "word": "repetitive",
+    "meaning": "repeated again and again",
+    "example": "The story described something repetitive.",
+    "section": "T",
+    "grade": 5,
+    "time": 22.6
+  },
+  {
+    "id": 202,
+    "word": "automatic",
+    "meaning": "working by itself",
+    "example": "Most trains have automatic doors.",
+    "section": "T",
+    "grade": 5,
+    "time": 22.7
+  },
+  {
+    "id": 203,
+    "word": "scenery",
+    "meaning": "the natural view of a place",
+    "example": "I like to drive into the mountains to enjoy the scenery.",
+    "section": "T",
+    "grade": 5,
+    "time": 22.8
+  },
+  {
+    "id": 204,
+    "word": "skeletal",
+    "meaning": "related to bones",
+    "example": "We studied the skeletal system in anatomy class.",
+    "section": "T",
+    "grade": 5,
+    "time": 22.8
+  },
+  {
+    "id": 205,
+    "word": "resolve",
+    "meaning": "to solve or settle",
+    "example": "We learned how to resolve.",
+    "section": "T",
+    "grade": 5,
+    "time": 22.9
+  },
+  {
+    "id": 206,
+    "word": "cruel",
+    "meaning": "causing pain without kindness",
+    "example": "The story described something cruel.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.1
+  },
+  {
+    "id": 207,
+    "word": "spare",
+    "meaning": "extra or available for use",
+    "example": "If you have spare time, do you want to watch a movie with me?",
+    "section": "T",
+    "grade": 5,
+    "time": 23.1
+  },
+  {
+    "id": 208,
+    "word": "frontier",
+    "meaning": "the edge of explored land",
+    "example": "A fence was built along the frontier where the river curved.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.2
+  },
+  {
+    "id": 209,
+    "word": "noble",
+    "meaning": "honorable and morally good",
+    "example": "The Queen invited a noble from a nearby country to dinner.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.2
+  },
+  {
+    "id": 210,
+    "word": "bray",
+    "meaning": "a donkey's loud cry",
+    "example": "Every ass likes to hear himself bray.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.3
+  },
+  {
+    "id": 211,
+    "word": "carriage",
+    "meaning": "a wheeled vehicle pulled by horses",
+    "example": "We took a carriage ride in the park.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.3
+  },
+  {
+    "id": 212,
+    "word": "inhabit",
+    "meaning": "to live in a place",
+    "example": "We learned how to inhabit.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.3
+  },
+  {
+    "id": 213,
+    "word": "vessel",
+    "meaning": "a ship or hollow container",
+    "example": "We toured the area aboard a luxury vessel.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.3
+  },
+  {
+    "id": 214,
+    "word": "misfortune",
+    "meaning": "bad luck or an unlucky event",
+    "example": "We learned about misfortune in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.4
+  },
+  {
+    "id": 215,
+    "word": "notion",
+    "meaning": "an idea or belief",
+    "example": "We learned about notion in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.4
+  },
+  {
+    "id": 216,
+    "word": "contemplate",
+    "meaning": "to think about deeply",
+    "example": "We learned how to contemplate.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.6
+  },
+  {
+    "id": 217,
+    "word": "delay",
+    "meaning": "to make something happen later",
+    "example": "We learned about delay in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.6
+  },
+  {
+    "id": 218,
+    "word": "controversy",
+    "meaning": "strong public disagreement",
+    "example": "There has been a lot of controversy over the judge’s decision.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.7
+  },
+  {
+    "id": 219,
+    "word": "innovation",
+    "meaning": "a useful new idea or method",
+    "example": "We learned about innovation in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.7
+  },
+  {
+    "id": 220,
+    "word": "draft",
+    "meaning": "an early version of writing",
+    "example": "We learned about draft in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.8
+  },
+  {
+    "id": 221,
+    "word": "general",
+    "meaning": "broad; not specific",
+    "example": "We learned about general in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.8
+  },
+  {
+    "id": 222,
+    "word": "persist",
+    "meaning": "to keep going despite difficulty",
+    "example": "We learned how to persist.",
+    "section": "T",
+    "grade": 5,
+    "time": 23.8
+  },
+  {
+    "id": 223,
+    "word": "mistake",
+    "meaning": "an action or idea that is wrong",
+    "example": "Does the teacher know she made a mistake?",
+    "section": "T",
+    "grade": 5,
+    "time": 23.9
+  },
+  {
+    "id": 224,
+    "word": "deadline",
+    "meaning": "the final time to finish",
+    "example": "Marius had a short deadline in which to finish his report.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.0
+  },
+  {
+    "id": 225,
+    "word": "sound",
+    "meaning": "something heard by the ears",
+    "example": "The river makes a loud sound when it rains.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.0
+  },
+  {
+    "id": 226,
+    "word": "refuse",
+    "meaning": "to say no",
+    "example": "This message was written to refuse an invitation.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.1
+  },
+  {
+    "id": 227,
+    "word": "creativity",
+    "meaning": "the ability to make new ideas",
+    "example": "We learned about creativity in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.3
+  },
+  {
+    "id": 228,
+    "word": "invent",
+    "meaning": "to create something new",
+    "example": "We learned how to invent.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.3
+  },
+  {
+    "id": 229,
+    "word": "germ",
+    "meaning": "a tiny organism that may cause disease",
+    "example": "We learned about germ in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.4
+  },
+  {
+    "id": 230,
+    "word": "mythical",
+    "meaning": "existing in traditional stories",
+    "example": "The story described something mythical.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.4
+  },
+  {
+    "id": 231,
+    "word": "ornament",
+    "meaning": "an object used for decoration",
+    "example": "We learned about ornament in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.4
+  },
+  {
+    "id": 232,
+    "word": "physician",
+    "meaning": "a medical doctor",
+    "example": "The physician is speaking to an older patient.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.5
+  },
+  {
+    "id": 233,
+    "word": "rhythm",
+    "meaning": "a regular pattern of beats",
+    "example": "We learned about rhythm in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.5
+  },
+  {
+    "id": 234,
+    "word": "venture",
+    "meaning": "a risky project or journey",
+    "example": "We learned about venture in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.5
+  },
+  {
+    "id": 235,
+    "word": "graduation",
+    "meaning": "the completion of a school program",
+    "example": "We learned about graduation in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.6
+  },
+  {
+    "id": 236,
+    "word": "stunt",
+    "meaning": "a difficult or dangerous trick",
+    "example": "The man jumped over the cars as a promotional stunt.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.6
+  },
+  {
+    "id": 237,
+    "word": "tissue",
+    "meaning": "a group of similar body cells",
+    "example": "There was a box of tissue on the table.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.6
+  },
+  {
+    "id": 238,
+    "word": "routine",
+    "meaning": "a regular way of doing things",
+    "example": "It's your daily routine.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.7
+  },
+  {
+    "id": 239,
+    "word": "celebrity",
+    "meaning": "a famous person",
+    "example": "She is a celebrity who appears in many movies.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.8
+  },
+  {
+    "id": 240,
+    "word": "australia",
+    "meaning": "a country and continent",
+    "example": "We learned about Australia in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 24.9
+  },
+  {
+    "id": 241,
+    "word": "descend",
+    "meaning": "to move downward",
+    "example": "We learned how to descend.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.0
+  },
+  {
+    "id": 242,
+    "word": "passenger",
+    "meaning": "a person riding in a vehicle",
+    "example": "We learned about passenger in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.0
+  },
+  {
+    "id": 243,
+    "word": "transport",
+    "meaning": "to move people or goods",
+    "example": "Cargo ships are used for the transport of manufactured goods.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.0
+  },
+  {
+    "id": 244,
+    "word": "startle",
+    "meaning": "to surprise suddenly",
+    "example": "We learned how to startle.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.1
+  },
+  {
+    "id": 245,
+    "word": "democracy",
+    "meaning": "government chosen by the people",
+    "example": "We learned about democracy in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.2
+  },
+  {
+    "id": 246,
+    "word": "reputation",
+    "meaning": "the general opinion about someone",
+    "example": "The teacher has a reputation for being kind and fair.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.2
+  },
+  {
+    "id": 247,
+    "word": "highlands",
+    "meaning": "an area of high land",
+    "example": "The man had a small home in the highlands.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.3
+  },
+  {
+    "id": 248,
+    "word": "invest",
+    "meaning": "to put money in for future gain",
+    "example": "We learned how to invest.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.4
+  },
+  {
+    "id": 249,
+    "word": "loan",
+    "meaning": "money borrowed and later repaid",
+    "example": "I got a loan from the hank to help buy a new car.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.4
+  },
+  {
+    "id": 250,
+    "word": "gross",
+    "meaning": "total before anything is removed",
+    "example": "The story described something gross.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.6
+  },
+  {
+    "id": 251,
+    "word": "net",
+    "meaning": "remaining after deductions",
+    "example": "The lion could not get out from the net.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.6
+  },
+  {
+    "id": 252,
+    "word": "tactic",
+    "meaning": "a planned action for a goal",
+    "example": "We learned about tactic in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.6
+  },
+  {
+    "id": 253,
+    "word": "duplicate",
+    "meaning": "an exact copy",
+    "example": "We learned about duplicate in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.7
+  },
+  {
+    "id": 254,
+    "word": "pup",
+    "meaning": "a young dog or similar animal",
+    "example": "All the girl wanted for her birthday was a pup.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.7
+  },
+  {
+    "id": 255,
+    "word": "physics",
+    "meaning": "the study of matter and energy",
+    "example": "I learn physics by reading books.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.8
+  },
+  {
+    "id": 256,
+    "word": "sacrifice",
+    "meaning": "giving up something valuable",
+    "example": "Karen has had to sacrifice a lot for her children.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.8
+  },
+  {
+    "id": 257,
+    "word": "theory",
+    "meaning": "an explanation supported by ideas or evidence",
+    "example": "We talked about Einstein’s theory of relativity in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.8
+  },
+  {
+    "id": 258,
+    "word": "molecule",
+    "meaning": "a small group of bonded atoms",
+    "example": "We learned about molecule in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 25.9
+  },
+  {
+    "id": 259,
+    "word": "obey",
+    "meaning": "to follow a rule or order",
+    "example": "My little sister did not obey my mother. !",
+    "section": "T",
+    "grade": 5,
+    "time": 25.9
+  },
+  {
+    "id": 260,
+    "word": "direction",
+    "meaning": "the way something moves or points",
+    "example": "We learned about direction in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.0
+  },
+  {
+    "id": 261,
+    "word": "clue",
+    "meaning": "a fact that helps solve something",
+    "example": "We learned about clue in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.1
+  },
+  {
+    "id": 262,
+    "word": "enlist",
+    "meaning": "to join the armed forces",
+    "example": "We learned how to enlist.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.1
+  },
+  {
+    "id": 263,
+    "word": "economy",
+    "meaning": "a system of making and using wealth",
+    "example": "An increase in tourism will help the town's economy.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.3
+  },
+  {
+    "id": 264,
+    "word": "fierce",
+    "meaning": "strong, violent, or intense",
+    "example": "We learned about fierce in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.3
+  },
+  {
+    "id": 265,
+    "word": "electron",
+    "meaning": "a tiny negatively charged particle",
+    "example": "We learned about electron in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.4
+  },
+  {
+    "id": 266,
+    "word": "tragedy",
+    "meaning": "a terrible event causing suffering",
+    "example": "We learned about tragedy in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.4
+  },
+  {
+    "id": 267,
+    "word": "indigenous",
+    "meaning": "native to a particular place",
+    "example": "We learned about indigenous in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.5
+  },
+  {
+    "id": 268,
+    "word": "pasture",
+    "meaning": "grassland used for grazing animals",
+    "example": "We learned about pasture in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.5
+  },
+  {
+    "id": 269,
+    "word": "reject",
+    "meaning": "to refuse to accept",
+    "example": "We learned how to reject.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.5
+  },
+  {
+    "id": 270,
+    "word": "dilemma",
+    "meaning": "a difficult choice",
+    "example": "We learned about dilemma in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.6
+  },
+  {
+    "id": 271,
+    "word": "catholic",
+    "meaning": "related to the Roman Catholic Church",
+    "example": "Rosanne is Catholic. so she goes to church everv Sunday.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.7
+  },
+  {
+    "id": 272,
+    "word": "contract",
+    "meaning": "a legally binding agreement",
+    "example": "Once we signed the contract, the business was ours.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.7
+  },
+  {
+    "id": 273,
+    "word": "architect",
+    "meaning": "a person who designs buildings",
+    "example": "We learned about architect in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.9
+  },
+  {
+    "id": 274,
+    "word": "arrogant",
+    "meaning": "acting as if better than others",
+    "example": "The story described something arrogant.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.9
+  },
+  {
+    "id": 275,
+    "word": "canyon",
+    "meaning": "a deep valley with steep sides",
+    "example": "We learned about canyon in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 26.9
+  },
+  {
+    "id": 276,
+    "word": "disappear",
+    "meaning": "to stop being visible",
+    "example": "Jacob's picture will disappear when it starts to rain.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.0
+  },
+  {
+    "id": 277,
+    "word": "emperor",
+    "meaning": "the ruler of an empire",
+    "example": "We learned about emperor in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.1
+  },
+  {
+    "id": 278,
+    "word": "explore",
+    "meaning": "to travel and learn about a place",
+    "example": "He wants to explore the world and see new things.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.1
+  },
+  {
+    "id": 279,
+    "word": "atom",
+    "meaning": "the smallest unit of an element",
+    "example": "We learned about atom in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.2
+  },
+  {
+    "id": 280,
+    "word": "complex",
+    "meaning": "made of many connected parts",
+    "example": "We learned about complex in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.2
+  },
+  {
+    "id": 281,
+    "word": "compound",
+    "meaning": "a substance made from joined elements",
+    "example": "The workers waited outside the compound for the gate.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.2
+  },
+  {
+    "id": 282,
+    "word": "committee",
+    "meaning": "a group chosen for a task",
+    "example": "The committee listened as Marianne gave her report.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.3
+  },
+  {
+    "id": 283,
+    "word": "migrate",
+    "meaning": "to move from one region to another",
+    "example": "Many birds migrate to warmer countries in the winter.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.3
+  },
+  {
+    "id": 284,
+    "word": "legend",
+    "meaning": "an old story or famous person",
+    "example": "We learned about legend in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.5
+  },
+  {
+    "id": 285,
+    "word": "rainforest",
+    "meaning": "a dense forest with heavy rainfall",
+    "example": "We learned about rainforest in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.5
+  },
+  {
+    "id": 286,
+    "word": "record",
+    "meaning": "stored information about events",
+    "example": "We learned about record in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.6
+  },
+  {
+    "id": 287,
+    "word": "temperature",
+    "meaning": "a measure of hotness or coldness",
+    "example": "When Cassie is sick, her temperature rises.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.6
+  },
+  {
+    "id": 288,
+    "word": "universe",
+    "meaning": "all space, matter, and energy",
+    "example": "There are billions of stars in the universe.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.6
+  },
+  {
+    "id": 289,
+    "word": "erosion",
+    "meaning": "the wearing away of soil or rock",
+    "example": "We learned about erosion in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.7
+  },
+  {
+    "id": 290,
+    "word": "gas",
+    "meaning": "matter that spreads to fill space",
+    "example": "Gas is coming out of a hole in the earth.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.7
+  },
+  {
+    "id": 291,
+    "word": "insect",
+    "meaning": "a six-legged small animal",
+    "example": "The insect is especially beautiful.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.8
+  },
+  {
+    "id": 292,
+    "word": "interest",
+    "meaning": "curiosity or money earned",
+    "example": "We learned about interest in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.8
+  },
+  {
+    "id": 293,
+    "word": "peninsula",
+    "meaning": "land almost surrounded by water",
+    "example": "The state of Florida is an example of a peninsula.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.8
+  },
+  {
+    "id": 294,
+    "word": "preserve",
+    "meaning": "to protect and keep unchanged",
+    "example": "We learned how to preserve.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.8
+  },
+  {
+    "id": 295,
+    "word": "insurance",
+    "meaning": "protection against financial loss",
+    "example": "The damage may be covered by your house insurance.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.9
+  },
+  {
+    "id": 296,
+    "word": "reproduce",
+    "meaning": "to create offspring or make a copy",
+    "example": "We learned how to reproduce.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.9
+  },
+  {
+    "id": 297,
+    "word": "skeleton",
+    "meaning": "the body's framework of bones",
+    "example": "There is a skeleton in the science classroom.",
+    "section": "T",
+    "grade": 5,
+    "time": 27.9
+  },
+  {
+    "id": 298,
+    "word": "evidence",
+    "meaning": "facts showing something is true",
+    "example": "This city in Peru is evidence of an ancient culture.",
+    "section": "T",
+    "grade": 5,
+    "time": 28.0
+  },
+  {
+    "id": 299,
+    "word": "ballet",
+    "meaning": "a formal style of dance",
+    "example": "The ballet dancers are very graceful.",
+    "section": "T",
+    "grade": 5,
+    "time": 28.1
+  },
+  {
+    "id": 300,
+    "word": "competition",
+    "meaning": "a contest to determine a winner",
+    "example": "We learned about competition in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 28.1
+  },
+  {
+    "id": 301,
+    "word": "hoax",
+    "meaning": "a trick meant to fool people",
+    "example": "We learned about hoax in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 28.2
+  },
+  {
+    "id": 302,
+    "word": "patent",
+    "meaning": "a legal right to an invention",
+    "example": "We learned about patent in class.",
+    "section": "T",
+    "grade": 5,
+    "time": 28.2
+  },
+  {
+    "id": 303,
+    "word": "program",
+    "meaning": "a planned set of activities or instructions",
+    "example": "What's your favorite program?",
+    "section": "T",
+    "grade": 5,
+    "time": 28.2
+  },
+  {
+    "id": 304,
+    "word": "adapt",
+    "meaning": "to change to fit new conditions",
+    "example": "This animal found a way to adapt to its surroundings.",
+    "section": "T",
+    "grade": 5,
+    "time": 28.3
+  },
+  {
+    "id": 305,
+    "word": "alternate",
+    "meaning": "another choice or every other one",
+    "example": "Taking the bus and driving to work are alternate ways to travel.",
+    "section": "T",
+    "grade": 5,
+    "time": 28.3
+  },
+  {
+    "id": 306,
+    "word": "anxious",
+    "meaning": "worried or nervous",
+    "example": "The story described something anxious.",
+    "section": "T",
+    "grade": 5,
+    "time": 28.3
+  },
+  {
+    "id": 307,
+    "word": "ambition",
+    "meaning": "a strong desire to succeed",
+    "example": "His great ambition led him to try to climb the mountain alone.",
+    "section": "T",
+    "grade": 5,
+    "time": 28.4
+  },
+  {
+    "id": 308,
+    "word": "arid",
+    "meaning": "extremely dry",
+    "example": "Not many plants grow in the arid desert.",
+    "section": "T",
+    "grade": 5,
+    "time": 28.4
+  },
+  {
+    "id": 309,
+    "word": "document",
+    "meaning": "a written or digital record",
+    "example": "I put my signature at the end of the document.",
+    "section": "U",
+    "grade": 6,
+    "time": 32.6
+  },
+  {
+    "id": 310,
+    "word": "resourceful",
+    "meaning": "good at finding clever solutions",
+    "example": "The story described something resourceful.",
+    "section": "U",
+    "grade": 6,
+    "time": 32.6
+  },
+  {
+    "id": 311,
+    "word": "tournament",
+    "meaning": "a series of contests",
+    "example": "My dad is playing in a golf tournament tomorrow.",
+    "section": "U",
+    "grade": 6,
+    "time": 33.7
+  },
+  {
+    "id": 312,
+    "word": "urban",
+    "meaning": "related to a city",
+    "example": "It is common to see tall buildings in urban areas.",
+    "section": "U",
+    "grade": 6,
+    "time": 34.3
+  },
+  {
+    "id": 313,
+    "word": "ambassador",
+    "meaning": "an official representing a country",
+    "example": "The ambassador from Korea was in charge of the conference.",
+    "section": "U",
+    "grade": 6,
+    "time": 34.4
+  },
+  {
+    "id": 314,
+    "word": "artificial",
+    "meaning": "made by people, not natural",
+    "example": "The artificial Christmas tree was made of plastic.",
+    "section": "U",
+    "grade": 6,
+    "time": 34.7
+  },
+  {
+    "id": 315,
+    "word": "recognition",
+    "meaning": "identifying or honoring someone",
+    "example": "The hero got recognition for his brave deed.",
+    "section": "U",
+    "grade": 6,
+    "time": 34.9
+  },
+  {
+    "id": 316,
+    "word": "combat",
+    "meaning": "fighting between opponents",
+    "example": "The two warriors were locked in combat.",
+    "section": "U",
+    "grade": 6,
+    "time": 35.1
+  },
+  {
+    "id": 317,
+    "word": "civilian",
+    "meaning": "a person not in the military",
+    "example": "The story described something civilian.",
+    "section": "U",
+    "grade": 6,
+    "time": 35.3
+  },
+  {
+    "id": 318,
+    "word": "casualty",
+    "meaning": "a person hurt or killed",
+    "example": "We learned about casualty in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 35.4
+  },
+  {
+    "id": 319,
+    "word": "federation",
+    "meaning": "a union of states or groups",
+    "example": "We learned about federation in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 35.7
+  },
+  {
+    "id": 320,
+    "word": "blog",
+    "meaning": "a regularly updated online journal",
+    "example": "I write a blog about my daily life.",
+    "section": "U",
+    "grade": 6,
+    "time": 35.9
+  },
+  {
+    "id": 321,
+    "word": "archaeology",
+    "meaning": "the study of ancient human remains",
+    "example": "We learned about archaeology in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 36.0
+  },
+  {
+    "id": 322,
+    "word": "shrine",
+    "meaning": "a sacred place of worship",
+    "example": "He prayed at the shrine for an hour.",
+    "section": "U",
+    "grade": 6,
+    "time": 36.3
+  },
+  {
+    "id": 323,
+    "word": "excavate",
+    "meaning": "to dig out carefully",
+    "example": "We learned how to excavate.",
+    "section": "U",
+    "grade": 6,
+    "time": 36.5
+  },
+  {
+    "id": 324,
+    "word": "temperate",
+    "meaning": "mild; neither very hot nor cold",
+    "example": "In Peru, the weather is temperate and rarely gets too hot or cold.",
+    "section": "U",
+    "grade": 6,
+    "time": 36.5
+  },
+  {
+    "id": 325,
+    "word": "humid",
+    "meaning": "containing much moisture in the air",
+    "example": "It was so humid outside that water dripped down the window.",
+    "section": "U",
+    "grade": 6,
+    "time": 36.6
+  },
+  {
+    "id": 326,
+    "word": "debt",
+    "meaning": "money that is owed",
+    "example": "She is having trouble paying off her debt.",
+    "section": "U",
+    "grade": 6,
+    "time": 36.8
+  },
+  {
+    "id": 327,
+    "word": "puck",
+    "meaning": "a flat disk used in hockey",
+    "example": "The player hit the puck into the goal.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.0
+  },
+  {
+    "id": 328,
+    "word": "check",
+    "meaning": "to examine for correctness",
+    "example": "We learned about check in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.1
+  },
+  {
+    "id": 329,
+    "word": "oblige",
+    "meaning": "to require or do a favor",
+    "example": "We learned how to oblige.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.1
+  },
+  {
+    "id": 330,
+    "word": "condemn",
+    "meaning": "to strongly disapprove of",
+    "example": "We learned how to condemn.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.2
+  },
+  {
+    "id": 331,
+    "word": "threat",
+    "meaning": "a sign of possible danger",
+    "example": "We learned about threat in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.2
+  },
+  {
+    "id": 332,
+    "word": "oath",
+    "meaning": "a serious promise",
+    "example": "We learned about oath in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.3
+  },
+  {
+    "id": 333,
+    "word": "agent",
+    "meaning": "a person acting for another",
+    "example": "We learned about agent in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.5
+  },
+  {
+    "id": 334,
+    "word": "groom",
+    "meaning": "to clean and care for",
+    "example": "The groom looked happy as he walked with his new wife.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.6
+  },
+  {
+    "id": 335,
+    "word": "scribe",
+    "meaning": "a person who copies writing",
+    "example": "We learned about scribe in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.6
+  },
+  {
+    "id": 336,
+    "word": "graze",
+    "meaning": "to eat grass in a field",
+    "example": "The sheep and goats like to graze on the grass outside the village.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.7
+  },
+  {
+    "id": 337,
+    "word": "petition",
+    "meaning": "a formal written request",
+    "example": "We learned about petition in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.7
+  },
+  {
+    "id": 338,
+    "word": "interesting",
+    "meaning": "holding someone's attention",
+    "example": "The story described something interesting.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.8
+  },
+  {
+    "id": 339,
+    "word": "system",
+    "meaning": "connected parts working together",
+    "example": "This device controls the building’s heating system.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.8
+  },
+  {
+    "id": 340,
+    "word": "doubt",
+    "meaning": "a feeling of uncertainty",
+    "example": "We learned about doubt in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 37.9
+  },
+  {
+    "id": 341,
+    "word": "wisdom",
+    "meaning": "good judgment from knowledge and experience",
+    "example": "The monk shared his wisdom with a traveler.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.0
+  },
+  {
+    "id": 342,
+    "word": "cope",
+    "meaning": "to handle a difficult situation",
+    "example": "We learned how to cope.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.2
+  },
+  {
+    "id": 343,
+    "word": "courage",
+    "meaning": "strength to face fear",
+    "example": "We learned about courage in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.2
+  },
+  {
+    "id": 344,
+    "word": "anxiety",
+    "meaning": "strong worry or nervousness",
+    "example": "We learned about anxiety in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.3
+  },
+  {
+    "id": 345,
+    "word": "factual",
+    "meaning": "based on facts",
+    "example": "The story described something factual.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.3
+  },
+  {
+    "id": 346,
+    "word": "reporter",
+    "meaning": "a person who reports news",
+    "example": "We learned about reporter in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.3
+  },
+  {
+    "id": 347,
+    "word": "article",
+    "meaning": "a piece of writing",
+    "example": "We learned about article in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.4
+  },
+  {
+    "id": 348,
+    "word": "copy",
+    "meaning": "a thing made to match another",
+    "example": "This multifunction device can print, scan and copy.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.4
+  },
+  {
+    "id": 349,
+    "word": "editor",
+    "meaning": "a person who prepares writing",
+    "example": "We learned about editor in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.4
+  },
+  {
+    "id": 350,
+    "word": "objective",
+    "meaning": "a goal; also unbiased",
+    "example": "My objective this week is to finish my homework by 7.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.5
+  },
+  {
+    "id": 351,
+    "word": "retire",
+    "meaning": "to stop working permanently",
+    "example": "We learned how to retire.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.5
+  },
+  {
+    "id": 352,
+    "word": "debate",
+    "meaning": "a formal discussion of opposing views",
+    "example": "The debate focused on who should pay for the changes.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.6
+  },
+  {
+    "id": 353,
+    "word": "found",
+    "meaning": "to establish or create",
+    "example": "When it started to rain, she found refuge in the house.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.6
+  },
+  {
+    "id": 354,
+    "word": "contaminate",
+    "meaning": "to make dirty or unsafe",
+    "example": "We learned how to contaminate.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.9
+  },
+  {
+    "id": 355,
+    "word": "hospitable",
+    "meaning": "friendly and welcoming to guests",
+    "example": "The story described something hospitable.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.9
+  },
+  {
+    "id": 356,
+    "word": "organism",
+    "meaning": "an individual living thing",
+    "example": "We learned about organism in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 38.9
+  },
+  {
+    "id": 357,
+    "word": "infection",
+    "meaning": "illness caused by harmful germs",
+    "example": "The doctor is checking the girl's throat infection.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.0
+  },
+  {
+    "id": 358,
+    "word": "element",
+    "meaning": "a basic part or pure substance",
+    "example": "We learned about element in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.1
+  },
+  {
+    "id": 359,
+    "word": "hydrogen",
+    "meaning": "the lightest chemical element",
+    "example": "We learned about hydrogen in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.1
+  },
+  {
+    "id": 360,
+    "word": "terrain",
+    "meaning": "the physical features of land",
+    "example": "We learned about terrain in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.1
+  },
+  {
+    "id": 361,
+    "word": "cap",
+    "meaning": "a soft hat or cover",
+    "example": "IT remembered to bring my cap with me.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.2
+  },
+  {
+    "id": 362,
+    "word": "frequency",
+    "meaning": "how often something happens",
+    "example": "We learned about frequency in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.2
+  },
+  {
+    "id": 363,
+    "word": "greenhouse",
+    "meaning": "a glass building for growing plants",
+    "example": "We learned about greenhouse in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.2
+  },
+  {
+    "id": 364,
+    "word": "supernatural",
+    "meaning": "beyond natural scientific explanation",
+    "example": "The story described something supernatural.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.3
+  },
+  {
+    "id": 365,
+    "word": "prediction",
+    "meaning": "a statement about the future",
+    "example": "What's your prediction about the future?",
+    "section": "U",
+    "grade": 6,
+    "time": 39.4
+  },
+  {
+    "id": 366,
+    "word": "seize",
+    "meaning": "to take quickly or by force",
+    "example": "We learned how to seize.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.5
+  },
+  {
+    "id": 367,
+    "word": "summit",
+    "meaning": "the highest point or top meeting",
+    "example": "We learned about summit in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.5
+  },
+  {
+    "id": 368,
+    "word": "traverse",
+    "meaning": "to travel across",
+    "example": "We learned how to traverse.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.5
+  },
+  {
+    "id": 369,
+    "word": "posture",
+    "meaning": "the way someone holds the body",
+    "example": "Your back will feel better if you improve your posture.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.6
+  },
+  {
+    "id": 370,
+    "word": "western",
+    "meaning": "located in or from the west",
+    "example": "It is a mystery why this western town is deserted.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.6
+  },
+  {
+    "id": 371,
+    "word": "biography",
+    "meaning": "a person's life story",
+    "example": "She is reading a biography about Walt Disney.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.7
+  },
+  {
+    "id": 372,
+    "word": "flexible",
+    "meaning": "able to bend or change easily",
+    "example": "The story described something flexible.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.7
+  },
+  {
+    "id": 373,
+    "word": "diversity",
+    "meaning": "a range of different kinds",
+    "example": "We learned about diversity in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.8
+  },
+  {
+    "id": 374,
+    "word": "ecology",
+    "meaning": "the study of organisms and environments",
+    "example": "We learned about ecology in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.8
+  },
+  {
+    "id": 375,
+    "word": "pardon",
+    "meaning": "forgiveness for an offense",
+    "example": "We learned about pardon in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.9
+  },
+  {
+    "id": 376,
+    "word": "russia",
+    "meaning": "a country in Europe and Asia",
+    "example": "We learned about Russia in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 39.9
+  },
+  {
+    "id": 377,
+    "word": "transportation",
+    "meaning": "the movement of people or goods",
+    "example": "I think that everyone should use public transportation.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.0
+  },
+  {
+    "id": 378,
+    "word": "efficient",
+    "meaning": "working well without waste",
+    "example": "The story described something efficient.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.1
+  },
+  {
+    "id": 379,
+    "word": "exceptional",
+    "meaning": "unusually excellent or rare",
+    "example": "Holly is an exceptional student.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.1
+  },
+  {
+    "id": 380,
+    "word": "pharaoh",
+    "meaning": "a ruler of ancient Egypt",
+    "example": "We learned about pharaoh in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.2
+  },
+  {
+    "id": 381,
+    "word": "virus",
+    "meaning": "a tiny infectious agent",
+    "example": "The scientist is studying a new virus that is killing birds.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.2
+  },
+  {
+    "id": 382,
+    "word": "legitimate",
+    "meaning": "lawful, real, or reasonable",
+    "example": "The story described something legitimate.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.3
+  },
+  {
+    "id": 383,
+    "word": "minimize",
+    "meaning": "to reduce as much as possible",
+    "example": "We learned how to minimize.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.3
+  },
+  {
+    "id": 384,
+    "word": "recipe",
+    "meaning": "instructions for preparing food",
+    "example": "We learned about recipe in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.3
+  },
+  {
+    "id": 385,
+    "word": "toxic",
+    "meaning": "poisonous or harmful",
+    "example": "The story described something toxic.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.3
+  },
+  {
+    "id": 386,
+    "word": "doughnut",
+    "meaning": "a ring-shaped fried pastry",
+    "example": "We learned about doughnut in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.4
+  },
+  {
+    "id": 387,
+    "word": "nurture",
+    "meaning": "to care for and encourage growth",
+    "example": "We learned how to nurture.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.4
+  },
+  {
+    "id": 388,
+    "word": "spectator",
+    "meaning": "a person who watches an event",
+    "example": "We learned about spectator in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.4
+  },
+  {
+    "id": 389,
+    "word": "might",
+    "meaning": "may possibly",
+    "example": "Some people might ask why this cartoon!",
+    "section": "U",
+    "grade": 6,
+    "time": 40.5
+  },
+  {
+    "id": 390,
+    "word": "carbon",
+    "meaning": "a common chemical element",
+    "example": "We learned about carbon in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.6
+  },
+  {
+    "id": 391,
+    "word": "fame",
+    "meaning": "the state of being widely known",
+    "example": "Money and fame don't always make people happy.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.6
+  },
+  {
+    "id": 392,
+    "word": "dioxide",
+    "meaning": "a compound containing two oxygen atoms",
+    "example": "We learned about dioxide in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.7
+  },
+  {
+    "id": 393,
+    "word": "drain",
+    "meaning": "to remove liquid",
+    "example": "We learned how to drain.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.9
+  },
+  {
+    "id": 394,
+    "word": "equator",
+    "meaning": "the line around Earth's middle",
+    "example": "We learned about equator in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.9
+  },
+  {
+    "id": 395,
+    "word": "expedition",
+    "meaning": "an organized journey for a purpose",
+    "example": "We learned about expedition in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 40.9
+  },
+  {
+    "id": 396,
+    "word": "exhibit",
+    "meaning": "to display publicly",
+    "example": "We learned how to exhibit.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.0
+  },
+  {
+    "id": 397,
+    "word": "tropical",
+    "meaning": "related to hot regions near the equator",
+    "example": "The story described something tropical.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.0
+  },
+  {
+    "id": 398,
+    "word": "development",
+    "meaning": "growth or gradual improvement",
+    "example": "We learned about development in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.1
+  },
+  {
+    "id": 399,
+    "word": "endure",
+    "meaning": "to continue through hardship",
+    "example": "She had to endure her husband shouting all day long.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.1
+  },
+  {
+    "id": 400,
+    "word": "manufacture",
+    "meaning": "to make goods in large amounts",
+    "example": "There are many countries that manufacture cars.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.1
+  },
+  {
+    "id": 401,
+    "word": "climate",
+    "meaning": "an area's usual weather pattern",
+    "example": "The climate was too cold for me to live in.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.2
+  },
+  {
+    "id": 402,
+    "word": "senate",
+    "meaning": "a lawmaking council",
+    "example": "We learned about senate in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.2
+  },
+  {
+    "id": 403,
+    "word": "stepmother",
+    "meaning": "a father's wife who is not one's mother",
+    "example": "We learned about stepmother in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.3
+  },
+  {
+    "id": 404,
+    "word": "stun",
+    "meaning": "to shock or temporarily disable",
+    "example": "We learned how to stun.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.3
+  },
+  {
+    "id": 405,
+    "word": "dynasty",
+    "meaning": "a family line of rulers",
+    "example": "We learned about dynasty in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.5
+  },
+  {
+    "id": 406,
+    "word": "tourist",
+    "meaning": "a person traveling for pleasure",
+    "example": "We learned about tourist in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.6
+  },
+  {
+    "id": 407,
+    "word": "antibiotic",
+    "meaning": "medicine that kills bacteria",
+    "example": "The doctor gave me a shot of an antibiotic when I got the flu.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.7
+  },
+  {
+    "id": 408,
+    "word": "artifact",
+    "meaning": "an object made by people",
+    "example": "We learned about artifact in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.7
+  },
+  {
+    "id": 409,
+    "word": "casual",
+    "meaning": "relaxed and informal",
+    "example": "The story described something casual.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.7
+  },
+  {
+    "id": 410,
+    "word": "continent",
+    "meaning": "one of Earth's major land areas",
+    "example": "We learned about continent in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.8
+  },
+  {
+    "id": 411,
+    "word": "expensive",
+    "meaning": "costing a lot of money",
+    "example": "The wealthy businessman owns an airplane and an expensive car.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.8
+  },
+  {
+    "id": 412,
+    "word": "experiment",
+    "meaning": "a test used to discover something",
+    "example": "The student did an experiment in science class.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.8
+  },
+  {
+    "id": 413,
+    "word": "imperial",
+    "meaning": "related to an empire",
+    "example": "The story described something imperial.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.9
+  },
+  {
+    "id": 414,
+    "word": "inspiration",
+    "meaning": "a person or idea that motivates",
+    "example": "We learned about inspiration in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 41.9
+  },
+  {
+    "id": 415,
+    "word": "invention",
+    "meaning": "a newly created device or idea",
+    "example": "We learned about invention in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.1
+  },
+  {
+    "id": 416,
+    "word": "communication",
+    "meaning": "the sharing of information",
+    "example": "It's the only communication they have.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.2
+  },
+  {
+    "id": 417,
+    "word": "treasure",
+    "meaning": "something very valuable",
+    "example": "We learned about treasure in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.3
+  },
+  {
+    "id": 418,
+    "word": "vibrate",
+    "meaning": "to move rapidly back and forth",
+    "example": "We learned how to vibrate.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.3
+  },
+  {
+    "id": 419,
+    "word": "absorb",
+    "meaning": "to take in liquid or information",
+    "example": "We learned how to absorb.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.4
+  },
+  {
+    "id": 420,
+    "word": "digest",
+    "meaning": "to break down food",
+    "example": "We learned how to digest.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.4
+  },
+  {
+    "id": 421,
+    "word": "executive",
+    "meaning": "a high-level manager",
+    "example": "We learned about executive in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.4
+  },
+  {
+    "id": 422,
+    "word": "fragile",
+    "meaning": "easily broken or damaged",
+    "example": "The fragile glassware was carefully packed into boxes.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.4
+  },
+  {
+    "id": 423,
+    "word": "federal",
+    "meaning": "related to a national government",
+    "example": "The story described something federal.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.5
+  },
+  {
+    "id": 424,
+    "word": "shock",
+    "meaning": "a sudden strong surprise",
+    "example": "We learned about shock in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.7
+  },
+  {
+    "id": 425,
+    "word": "temple",
+    "meaning": "a building for worship",
+    "example": "We learned about temple in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.7
+  },
+  {
+    "id": 426,
+    "word": "greed",
+    "meaning": "an excessive desire for more",
+    "example": "We learned about greed in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.8
+  },
+  {
+    "id": 427,
+    "word": "immigrant",
+    "meaning": "a person who moves to another country",
+    "example": "We learned about immigrant in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.8
+  },
+  {
+    "id": 428,
+    "word": "mature",
+    "meaning": "fully grown or developed",
+    "example": "The story described something mature.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.8
+  },
+  {
+    "id": 429,
+    "word": "ancestor",
+    "meaning": "a family member from long ago",
+    "example": "We learned about ancestor in class.",
+    "section": "U",
+    "grade": 6,
+    "time": 42.9
+  },
+  {
+    "id": 430,
+    "word": "freedom",
+    "meaning": "the power to act without unfair control",
+    "example": "In most countries, people have the freedom to vote.",
+    "section": "U",
+    "grade": 6,
+    "time": 43.0
+  },
+  {
+    "id": 431,
+    "word": "align",
+    "meaning": "to arrange in a straight line",
+    "example": "We learned about align in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 48.3
+  },
+  {
+    "id": 432,
+    "word": "budget",
+    "meaning": "a plan for spending money",
+    "example": "We learned about budget in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 48.3
+  },
+  {
+    "id": 433,
+    "word": "camouflage",
+    "meaning": "a disguise that blends with surroundings",
+    "example": "We learned about camouflage in class.",
+    "section": "Review",
+    "grade": 6,
+    "time": 48.3
+  },
+  {
+    "id": 434,
+    "word": "candidate",
+    "meaning": "a person seeking a position",
+    "example": "We learned about candidate in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 48.3
+  },
+  {
+    "id": 435,
+    "word": "capital",
+    "meaning": "a main city or money for business",
+    "example": "We learned about capital in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 49.8
+  },
+  {
+    "id": 436,
+    "word": "border",
+    "meaning": "the edge between areas",
+    "example": "We learned about border in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 51.2
+  },
+  {
+    "id": 437,
+    "word": "bury",
+    "meaning": "to place under the ground",
+    "example": "We learned how to bury.",
+    "section": "Review",
+    "grade": 4,
+    "time": 51.3
+  },
+  {
+    "id": 438,
+    "word": "discard",
+    "meaning": "to throw away",
+    "example": "We learned how to discard.",
+    "section": "Review",
+    "grade": 5,
+    "time": 51.7
+  },
+  {
+    "id": 439,
+    "word": "empire",
+    "meaning": "lands ruled by one authority",
+    "example": "We learned about empire in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 51.8
+  },
+  {
+    "id": 440,
+    "word": "famous",
+    "meaning": "known by many people",
+    "example": "We saw a famous cathedral in Italy.",
+    "section": "Review",
+    "grade": 5,
+    "time": 51.9
+  },
+  {
+    "id": 441,
+    "word": "flatter",
+    "meaning": "to praise too much",
+    "example": "We learned how to flatter.",
+    "section": "Review",
+    "grade": 5,
+    "time": 51.9
+  },
+  {
+    "id": 442,
+    "word": "expense",
+    "meaning": "money spent on something",
+    "example": "We learned about expense in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 52.1
+  },
+  {
+    "id": 443,
+    "word": "gear",
+    "meaning": "equipment needed for an activity",
+    "example": "We learned about gear in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 52.4
+  },
+  {
+    "id": 444,
+    "word": "glucose",
+    "meaning": "a simple sugar used for energy",
+    "example": "We learned about glucose in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 52.6
+  },
+  {
+    "id": 445,
+    "word": "independence",
+    "meaning": "freedom from outside control",
+    "example": "We learned about independence in class.",
+    "section": "Review",
+    "grade": 6,
+    "time": 52.7
+  },
+  {
+    "id": 446,
+    "word": "humble",
+    "meaning": "not proud or boastful",
+    "example": "The story described something humble.",
+    "section": "Review",
+    "grade": 5,
+    "time": 52.9
+  },
+  {
+    "id": 447,
+    "word": "justice",
+    "meaning": "fair and lawful treatment",
+    "example": "We learned about justice in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 53.1
+  },
+  {
+    "id": 448,
+    "word": "iron",
+    "meaning": "a strong metallic element",
+    "example": "We learned about iron in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 53.2
+  },
+  {
+    "id": 449,
+    "word": "incredible",
+    "meaning": "very hard to believe",
+    "example": "The story described something incredible.",
+    "section": "Review",
+    "grade": 6,
+    "time": 53.3
+  },
+  {
+    "id": 450,
+    "word": "idiom",
+    "meaning": "a phrase with a special meaning",
+    "example": "We learned about idiom in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 53.5
+  },
+  {
+    "id": 451,
+    "word": "bare",
+    "meaning": "uncovered or empty",
+    "example": "The story described something bare.",
+    "section": "Review",
+    "grade": 4,
+    "time": 53.7
+  },
+  {
+    "id": 452,
+    "word": "collaborate",
+    "meaning": "to work together",
+    "example": "We learned how to collaborate.",
+    "section": "Review",
+    "grade": 6,
+    "time": 53.7
+  },
+  {
+    "id": 453,
+    "word": "compatible",
+    "meaning": "able to work well together",
+    "example": "The story described something compatible.",
+    "section": "Review",
+    "grade": 6,
+    "time": 54.0
+  },
+  {
+    "id": 454,
+    "word": "competitor",
+    "meaning": "a person trying to win",
+    "example": "We learned about competitor in class.",
+    "section": "Review",
+    "grade": 6,
+    "time": 54.3
+  },
+  {
+    "id": 455,
+    "word": "literature",
+    "meaning": "written works with artistic value",
+    "example": "We learned about literature in class.",
+    "section": "Review",
+    "grade": 6,
+    "time": 54.5
+  },
+  {
+    "id": 456,
+    "word": "moist",
+    "meaning": "slightly wet",
+    "example": "The story described something moist.",
+    "section": "Review",
+    "grade": 4,
+    "time": 54.5
+  },
+  {
+    "id": 457,
+    "word": "limb",
+    "meaning": "an arm, leg, or large branch",
+    "example": "We learned about limb in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 54.6
+  },
+  {
+    "id": 458,
+    "word": "ranch",
+    "meaning": "a large farm for livestock",
+    "example": "We learned about ranch in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 54.7
+  },
+  {
+    "id": 459,
+    "word": "platform",
+    "meaning": "a raised surface or public system",
+    "example": "We learned about platform in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 54.9
+  },
+  {
+    "id": 460,
+    "word": "parade",
+    "meaning": "a public procession",
+    "example": "We learned about parade in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 55.0
+  },
+  {
+    "id": 461,
+    "word": "proportion",
+    "meaning": "a part compared with the whole",
+    "example": "We learned about proportion in class.",
+    "section": "Review",
+    "grade": 6,
+    "time": 55.0
+  },
+  {
+    "id": 462,
+    "word": "proper",
+    "meaning": "correct or suitable",
+    "example": "The story described something proper.",
+    "section": "Review",
+    "grade": 5,
+    "time": 55.1
+  },
+  {
+    "id": 463,
+    "word": "reflect",
+    "meaning": "to send back light or think deeply",
+    "example": "We learned how to reflect.",
+    "section": "Review",
+    "grade": 5,
+    "time": 55.3
+  },
+  {
+    "id": 464,
+    "word": "represent",
+    "meaning": "to stand for or act for",
+    "example": "We learned how to represent.",
+    "section": "Review",
+    "grade": 5,
+    "time": 55.4
+  },
+  {
+    "id": 465,
+    "word": "shelter",
+    "meaning": "a place that protects from danger",
+    "example": "We learned about shelter in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 55.5
+  },
+  {
+    "id": 466,
+    "word": "stadium",
+    "meaning": "a large sports arena",
+    "example": "We learned about stadium in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 55.5
+  },
+  {
+    "id": 467,
+    "word": "shift",
+    "meaning": "to move or change position",
+    "example": "We learned how to shift.",
+    "section": "Review",
+    "grade": 4,
+    "time": 55.6
+  },
+  {
+    "id": 468,
+    "word": "stain",
+    "meaning": "a dirty or colored mark",
+    "example": "We learned about stain in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 55.6
+  },
+  {
+    "id": 469,
+    "word": "substitute",
+    "meaning": "a replacement for something",
+    "example": "We learned about substitute in class.",
+    "section": "Review",
+    "grade": 6,
+    "time": 55.6
+  },
+  {
+    "id": 470,
+    "word": "sign",
+    "meaning": "a mark that gives information",
+    "example": "We learned about sign in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 55.7
+  },
+  {
+    "id": 471,
+    "word": "slate",
+    "meaning": "a fine-grained gray rock",
+    "example": "We learned about slate in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 55.8
+  },
+  {
+    "id": 472,
+    "word": "tame",
+    "meaning": "not wild; trained to obey",
+    "example": "We learned how to tame.",
+    "section": "Review",
+    "grade": 4,
+    "time": 55.8
+  },
+  {
+    "id": 473,
+    "word": "ray",
+    "meaning": "a narrow beam of light",
+    "example": "We learned about ray in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 55.9
+  },
+  {
+    "id": 474,
+    "word": "religion",
+    "meaning": "a system of spiritual beliefs",
+    "example": "We learned about religion in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.1
+  },
+  {
+    "id": 475,
+    "word": "strain",
+    "meaning": "pressure, effort, or an injury",
+    "example": "We learned about strain in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.1
+  },
+  {
+    "id": 476,
+    "word": "tablet",
+    "meaning": "a flat computer or medicine dose",
+    "example": "We learned about tablet in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.1
+  },
+  {
+    "id": 477,
+    "word": "saint",
+    "meaning": "a person honored for holiness",
+    "example": "We learned about saint in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 56.2
+  },
+  {
+    "id": 478,
+    "word": "superstition",
+    "meaning": "a belief not based on reason",
+    "example": "We learned about superstition in class.",
+    "section": "Review",
+    "grade": 6,
+    "time": 56.2
+  },
+  {
+    "id": 479,
+    "word": "thump",
+    "meaning": "to hit with a dull sound",
+    "example": "We learned how to thump.",
+    "section": "Review",
+    "grade": 4,
+    "time": 56.2
+  },
+  {
+    "id": 480,
+    "word": "trade",
+    "meaning": "to exchange goods or services",
+    "example": "We learned about trade in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 56.2
+  },
+  {
+    "id": 481,
+    "word": "cargo",
+    "meaning": "goods carried by a vehicle",
+    "example": "Cargo ships are used for the transport of manufactured goods.",
+    "section": "Review",
+    "grade": 4,
+    "time": 56.3
+  },
+  {
+    "id": 482,
+    "word": "cemetery",
+    "meaning": "a place where people are buried",
+    "example": "We learned about cemetery in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.3
+  },
+  {
+    "id": 483,
+    "word": "company",
+    "meaning": "a business organization",
+    "example": "We learned about company in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.3
+  },
+  {
+    "id": 484,
+    "word": "burial",
+    "meaning": "the act of placing a body in a grave",
+    "example": "We learned about burial in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.4
+  },
+  {
+    "id": 485,
+    "word": "fate",
+    "meaning": "events believed to be unavoidable",
+    "example": "We learned about fate in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 56.4
+  },
+  {
+    "id": 486,
+    "word": "earthquake",
+    "meaning": "sudden shaking of the ground",
+    "example": "We learned about earthquake in class.",
+    "section": "Review",
+    "grade": 6,
+    "time": 56.5
+  },
+  {
+    "id": 487,
+    "word": "conflict",
+    "meaning": "a serious disagreement or fight",
+    "example": "We learned about conflict in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.6
+  },
+  {
+    "id": 488,
+    "word": "content",
+    "meaning": "information inside something",
+    "example": "We learned about content in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.7
+  },
+  {
+    "id": 489,
+    "word": "ditch",
+    "meaning": "a narrow channel in the ground",
+    "example": "We learned about ditch in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 56.7
+  },
+  {
+    "id": 490,
+    "word": "fit",
+    "meaning": "to be the right size or shape",
+    "example": "We learned about fit in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 56.7
+  },
+  {
+    "id": 491,
+    "word": "formal",
+    "meaning": "official and following rules",
+    "example": "The story described something formal.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.7
+  },
+  {
+    "id": 492,
+    "word": "magical",
+    "meaning": "having or seeming to have magic",
+    "example": "The story described something magical.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.8
+  },
+  {
+    "id": 493,
+    "word": "musician",
+    "meaning": "a person who plays music",
+    "example": "We learned about musician in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.8
+  },
+  {
+    "id": 494,
+    "word": "panic",
+    "meaning": "sudden uncontrollable fear",
+    "example": "We learned about panic in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 56.8
+  },
+  {
+    "id": 495,
+    "word": "porridge",
+    "meaning": "a hot cereal dish",
+    "example": "We learned about porridge in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.8
+  },
+  {
+    "id": 496,
+    "word": "landscape",
+    "meaning": "the visible features of land",
+    "example": "We learned about landscape in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.9
+  },
+  {
+    "id": 497,
+    "word": "mist",
+    "meaning": "a thin cloud near the ground",
+    "example": "We learned about mist in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 56.9
+  },
+  {
+    "id": 498,
+    "word": "prejudice",
+    "meaning": "an unfair opinion formed beforehand",
+    "example": "We learned about prejudice in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 56.9
+  },
+  {
+    "id": 499,
+    "word": "instrument",
+    "meaning": "a tool or musical device",
+    "example": "We learned about instrument in class.",
+    "section": "Review",
+    "grade": 6,
+    "time": 57.0
+  },
+  {
+    "id": 500,
+    "word": "inventor",
+    "meaning": "a person who creates something new",
+    "example": "We learned about inventor in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 57.0
+  },
+  {
+    "id": 501,
+    "word": "law",
+    "meaning": "an official rule",
+    "example": "Each politician spoke about how they would change the law.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.0
+  },
+  {
+    "id": 502,
+    "word": "odor",
+    "meaning": "a smell",
+    "example": "We learned about odor in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.0
+  },
+  {
+    "id": 503,
+    "word": "horn",
+    "meaning": "a hard pointed growth or sound device",
+    "example": "We learned about horn in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.1
+  },
+  {
+    "id": 504,
+    "word": "pollute",
+    "meaning": "to make the environment dirty",
+    "example": "We learned how to pollute.",
+    "section": "Review",
+    "grade": 5,
+    "time": 57.1
+  },
+  {
+    "id": 505,
+    "word": "jewelry",
+    "meaning": "decorative items worn on the body",
+    "example": "We learned about jewelry in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 57.2
+  },
+  {
+    "id": 506,
+    "word": "honest",
+    "meaning": "truthful and fair",
+    "example": "The story described something honest.",
+    "section": "Review",
+    "grade": 5,
+    "time": 57.3
+  },
+  {
+    "id": 507,
+    "word": "spirit",
+    "meaning": "a person's inner character or soul",
+    "example": "We learned about spirit in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 57.3
+  },
+  {
+    "id": 508,
+    "word": "suspicion",
+    "meaning": "a feeling that something may be wrong",
+    "example": "We learned about suspicion in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 57.3
+  },
+  {
+    "id": 509,
+    "word": "stage",
+    "meaning": "a platform for performances",
+    "example": "In order to illuminate the stage, the crew turned on the spotlight.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.4
+  },
+  {
+    "id": 510,
+    "word": "suit",
+    "meaning": "a matching set of formal clothes",
+    "example": "We learned about suit in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.4
+  },
+  {
+    "id": 511,
+    "word": "swift",
+    "meaning": "moving very fast",
+    "example": "The story described something swift.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.4
+  },
+  {
+    "id": 512,
+    "word": "symptom",
+    "meaning": "a sign of illness",
+    "example": "We learned about symptom in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 57.4
+  },
+  {
+    "id": 513,
+    "word": "uniform",
+    "meaning": "special matching clothes for a group",
+    "example": "The story described something uniform.",
+    "section": "Review",
+    "grade": 5,
+    "time": 57.5
+  },
+  {
+    "id": 514,
+    "word": "vanish",
+    "meaning": "to disappear suddenly",
+    "example": "We learned how to vanish.",
+    "section": "Review",
+    "grade": 5,
+    "time": 57.5
+  },
+  {
+    "id": 515,
+    "word": "vast",
+    "meaning": "extremely large",
+    "example": "The story described something vast.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.5
+  },
+  {
+    "id": 516,
+    "word": "consequence",
+    "meaning": "a result of an action",
+    "example": "We learned about consequence in class.",
+    "section": "Review",
+    "grade": 6,
+    "time": 57.6
+  },
+  {
+    "id": 517,
+    "word": "tomb",
+    "meaning": "a place where a dead person is buried",
+    "example": "We discovered a mysterious tomb built of stone.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.6
+  },
+  {
+    "id": 518,
+    "word": "type",
+    "meaning": "a kind or category",
+    "example": "We learned about type in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.6
+  },
+  {
+    "id": 519,
+    "word": "vegetarian",
+    "meaning": "a person who does not eat meat",
+    "example": "The story described something vegetarian.",
+    "section": "Review",
+    "grade": 6,
+    "time": 57.6
+  },
+  {
+    "id": 520,
+    "word": "ecosystem",
+    "meaning": "living things and their environment",
+    "example": "We learned about ecosystem in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 57.7
+  },
+  {
+    "id": 521,
+    "word": "examine",
+    "meaning": "to inspect carefully",
+    "example": "We learned how to examine.",
+    "section": "Review",
+    "grade": 5,
+    "time": 57.7
+  },
+  {
+    "id": 522,
+    "word": "decay",
+    "meaning": "to rot or break down",
+    "example": "We learned how to decay.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.8
+  },
+  {
+    "id": 523,
+    "word": "breed",
+    "meaning": "to produce young animals or plants",
+    "example": "We learned how to breed.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.9
+  },
+  {
+    "id": 524,
+    "word": "cycle",
+    "meaning": "a repeating series of events",
+    "example": "We learned about cycle in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 57.9
+  },
+  {
+    "id": 525,
+    "word": "congregate",
+    "meaning": "to gather in a group",
+    "example": "We learned how to congregate.",
+    "section": "Review",
+    "grade": 6,
+    "time": 58.0
+  },
+  {
+    "id": 526,
+    "word": "feat",
+    "meaning": "an impressive achievement",
+    "example": "We learned about feat in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 58.0
+  },
+  {
+    "id": 527,
+    "word": "grace",
+    "meaning": "smooth movement or generous kindness",
+    "example": "We learned about grace in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 58.1
+  },
+  {
+    "id": 528,
+    "word": "host",
+    "meaning": "a person who receives guests",
+    "example": "We learned about host in class.",
+    "section": "Review",
+    "grade": 4,
+    "time": 58.1
+  },
+  {
+    "id": 529,
+    "word": "fail",
+    "meaning": "to not succeed",
+    "example": "We learned how to fail.",
+    "section": "Review",
+    "grade": 4,
+    "time": 58.2
+  },
+  {
+    "id": 530,
+    "word": "harvest",
+    "meaning": "to gather ripe crops",
+    "example": "We learned how to harvest.",
+    "section": "Review",
+    "grade": 5,
+    "time": 58.2
+  },
+  {
+    "id": 531,
+    "word": "kettle",
+    "meaning": "a container for boiling water",
+    "example": "We learned about kettle in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 58.2
+  },
+  {
+    "id": 532,
+    "word": "knit",
+    "meaning": "to make fabric with loops of yarn",
+    "example": "We learned how to knit.",
+    "section": "Review",
+    "grade": 4,
+    "time": 58.2
+  },
+  {
+    "id": 533,
+    "word": "exist",
+    "meaning": "to be real or alive",
+    "example": "We learned how to exist.",
+    "section": "Review",
+    "grade": 4,
+    "time": 58.3
+  },
+  {
+    "id": 534,
+    "word": "national",
+    "meaning": "related to a whole country",
+    "example": "The senator had served ten years in the national legislature.",
+    "section": "Review",
+    "grade": 5,
+    "time": 58.3
+  },
+  {
+    "id": 535,
+    "word": "extract",
+    "meaning": "to remove or take out",
+    "example": "We learned how to extract.",
+    "section": "Review",
+    "grade": 5,
+    "time": 58.4
+  },
+  {
+    "id": 536,
+    "word": "miracle",
+    "meaning": "an extraordinary unexplained event",
+    "example": "We learned about miracle in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 58.4
+  },
+  {
+    "id": 537,
+    "word": "parallel",
+    "meaning": "always the same distance apart",
+    "example": "The story described something parallel.",
+    "section": "Review",
+    "grade": 5,
+    "time": 58.4
+  },
+  {
+    "id": 538,
+    "word": "ponder",
+    "meaning": "to think about carefully",
+    "example": "We learned how to ponder.",
+    "section": "Review",
+    "grade": 5,
+    "time": 58.4
+  },
+  {
+    "id": 539,
+    "word": "neighbor",
+    "meaning": "a person living nearby",
+    "example": "We learned about neighbor in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 58.5
+  },
+  {
+    "id": 540,
+    "word": "pair",
+    "meaning": "two matching or related things",
+    "example": "The man gave his wife a pair of magnificent diamond earrings.",
+    "section": "Review",
+    "grade": 4,
+    "time": 58.5
+  },
+  {
+    "id": 541,
+    "word": "pinch",
+    "meaning": "to squeeze between fingers",
+    "example": "We learned how to pinch.",
+    "section": "Review",
+    "grade": 4,
+    "time": 58.5
+  },
+  {
+    "id": 542,
+    "word": "priest",
+    "meaning": "a religious leader",
+    "example": "We learned about priest in class.",
+    "section": "Review",
+    "grade": 5,
+    "time": 58.5
+  },
+  {
+    "id": 543,
+    "word": "agriculture",
+    "meaning": "the science and work of farming",
+    "example": "We learned about agriculture in class.",
+    "section": "Review",
+    "grade": 6,
+    "time": 58.6
+  },
+  {
+    "id": 544,
+    "word": "advocate",
+    "meaning": "to publicly support",
+    "example": "We learned how to advocate.",
+    "section": "Review",
+    "grade": 5,
+    "time": 58.7
+  },
+  {
+    "id": 545,
+    "word": "aggressive",
+    "meaning": "forceful and ready to attack",
+    "example": "The story described something aggressive.",
+    "section": "Review",
+    "grade": 6,
+    "time": 58.7
+  }
+]
