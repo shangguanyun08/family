@@ -148,7 +148,7 @@
   .table, .table tbody, .table tr, .table td { display: block; width: 100%; }
   .table tr { position: relative; padding: 15px 15px 13px 58px; border-bottom: 1px solid #e7ecef; }
   .table td { min-width: 0; padding: 3px 0; border: 0; background: transparent !important; }
-  .table td::before { display: block; margin-bottom: 2px; color: #8a95a4; content: attr(data-label); font-size: .54rem; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
+  .table td[data-label]::before { display: block; margin-bottom: 2px; color: #8a95a4; content: attr(data-label); font-size: .54rem; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
   .checkColumn { position: absolute; left: 15px; top: 17px; text-align: left !important; }
   .checkColumn::before, .numberColumn::before { display: none !important; }
   .numberColumn { position: absolute; left: 19px; top: 52px; }

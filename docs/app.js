@@ -53,8 +53,8 @@ function render() {
       <td class="check-column" data-label="Known"><label class="checkbox"><input type="checkbox" data-id="${item.id}" ${checked ? "checked" : ""} aria-label="Mark ${escapeHtml(item.word)} as known"><span aria-hidden="true">✓</span></label></td>
       <td class="number-column" data-label="#">${item.id}</td>
       <td class="word-cell" data-label="Word"><strong>${escapeHtml(item.word)}</strong></td>
-      <td class="meaning-cell" data-label="Short meaning">${escapeHtml(item.meaning)}</td>
-      <td class="example-cell" data-label="Simple example">${escapeHtml(item.example)}</td>
+      <td class="meaning-cell">${escapeHtml(item.meaning)}</td>
+      <td class="example-cell">${escapeHtml(item.example)}</td>
       <td class="list-column" data-label="Source"><span class="pill source-${item.source}">${labels[item.source]}</span></td>
       <td class="grade-column" data-label="Grade level"><span class="pill grade-${item.grade}">Grade ${item.grade}</span></td>
     </tr>`;

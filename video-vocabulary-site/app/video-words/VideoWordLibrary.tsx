@@ -242,8 +242,8 @@ export default function VideoWordLibrary() {
                       </td>
                       <td className={styles.numberColumn} data-label="#">{item.id}</td>
                       <td className={styles.wordCell} data-label="Word"><strong>{item.word}</strong></td>
-                      <td className={styles.meaningCell} data-label="Short meaning">{item.meaning}</td>
-                      <td className={styles.exampleCell} data-label="Simple example">{item.example}</td>
+                      <td className={styles.meaningCell}>{item.meaning}</td>
+                      <td className={styles.exampleCell}>{item.example}</td>
                       <td className={styles.listColumn} data-label="List"><span className={`${styles.sectionPill} ${styles[`section${item.section}`]}`}>{sectionLabels[item.section]}</span></td>
                       <td className={styles.gradeColumn} data-label="Grade level"><span className={`${styles.gradePill} ${styles[`grade${item.grade}`]}`}>Grade {item.grade}</span></td>
                     </tr>
