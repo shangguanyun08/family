@@ -2,6 +2,7 @@ const storageKey = "harry-combined-vocabulary-known-v2";
 const labels = { Harry: "Harry list", Video: "Video list", Both: "Both lists" };
 const state = { words: [], known: new Set(), query: "", source: "all", grade: "all", status: "all", sort: "easy" };
 const el = (id) => document.getElementById(id);
+let onlineSync = null;
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
@@ -12,7 +13,11 @@ function loadKnown() {
   catch { state.known = new Set(); }
 }
 
-function saveKnown() { localStorage.setItem(storageKey, JSON.stringify([...state.known])); }
+function saveKnown() {
+  const known = [...state.known];
+  localStorage.setItem(storageKey, JSON.stringify(known));
+  onlineSync?.push(known);
+}
 
 function visibleWords() {
   const query = state.query.trim().toLowerCase();
@@ -87,6 +92,26 @@ el("show-learn").addEventListener("click", () => {
 el("copy").addEventListener("click", async () => { try { await navigator.clipboard.writeText(exportText()); notice("Words to learn copied."); } catch { notice("Copy was blocked. Use Download instead."); } });
 el("download").addEventListener("click", () => { const url = URL.createObjectURL(new Blob([exportText()], { type: "text/plain;charset=utf-8" })); const a = document.createElement("a"); a.href = url; a.download = "harry-combined-vocabulary-words-to-learn.txt"; a.click(); URL.revokeObjectURL(url); notice("Words to learn saved."); });
 el("print").addEventListener("click", () => window.print());
-el("reset").addEventListener("click", () => { if (!confirm("Clear every checkmark and start again?")) return; state.known.clear(); state.status = "all"; saveKnown(); document.querySelectorAll(".filter-tabs button").forEach((item) => item.classList.toggle("active", item.dataset.status === "all")); render(); notice("All checkmarks were cleared."); });
+el("reset").addEventListener("click", () => { if (!confirm("Clear every checkmark on every device and start again?")) return; state.known.clear(); state.status = "all"; saveKnown(); document.querySelectorAll(".filter-tabs button").forEach((item) => item.classList.toggle("active", item.dataset.status === "all")); render(); notice("All checkmarks were cleared."); });
 
-fetch("./words.json?v=1500").then((response) => { if (!response.ok) throw new Error("Could not load words"); return response.json(); }).then((words) => { state.words = words; loadKnown(); state.known = new Set([...state.known].filter((id) => words.some((word) => word.id === id))); render(); }).catch(() => { el("rows").innerHTML = '<tr><td colspan="7" class="loading">The word list could not be loaded. Please refresh.</td></tr>'; });
+fetch("./words.json?v=1500").then((response) => { if (!response.ok) throw new Error("Could not load words"); return response.json(); }).then((words) => {
+  state.words = words;
+  loadKnown();
+  const validIds = new Set(words.map((word) => word.id));
+  state.known = new Set([...state.known].filter((id) => validIds.has(id)));
+  render();
+  onlineSync = window.MarcoOnlineSync?.create({
+    appId: "harry-vocabulary-1500",
+    studentName: "Harry",
+    validate: (value) => Array.isArray(value),
+    score: (value) => value.length,
+    onRemote: (value) => {
+      state.known = new Set(value.filter((id) => validIds.has(id)));
+      localStorage.setItem(storageKey, JSON.stringify([...state.known]));
+      render();
+      notice("Progress updated from another device.");
+    },
+  }) || null;
+  onlineSync?.start([...state.known]);
+}).catch(() => { el("rows").innerHTML = '<tr><td colspan="7" class="loading">The word list could not be loaded. Please refresh.</td></tr>'; });
+
