@@ -94,7 +94,7 @@ el("download").addEventListener("click", () => { const url = URL.createObjectURL
 el("print").addEventListener("click", () => window.print());
 el("reset").addEventListener("click", () => { if (!confirm("Clear every checkmark on every device and start again?")) return; state.known.clear(); state.status = "all"; saveKnown(); document.querySelectorAll(".filter-tabs button").forEach((item) => item.classList.toggle("active", item.dataset.status === "all")); render(); notice("All checkmarks were cleared."); });
 
-fetch("./words.json?v=1500").then((response) => { if (!response.ok) throw new Error("Could not load words"); return response.json(); }).then((words) => {
+fetch("./words.json?v=1501").then((response) => { if (!response.ok) throw new Error("Could not load words"); return response.json(); }).then((words) => {
   state.words = words;
   loadKnown();
   const validIds = new Set(words.map((word) => word.id));
