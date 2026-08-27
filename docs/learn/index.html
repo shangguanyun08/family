@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Review and master the first 25 words in Harry's Vocabulary list.">
+  <title>Harry's Vocabulary — Learn the First 25</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #17253f;
+      background: #f4f7f8;
+      --ink: #17253f;
+      --muted: #657287;
+      --green: #176e65;
+      --green-dark: #123e42;
+      --gold: #e7ad42;
+      --line: #dbe5e4;
+      --paper: #fffdf8;
+      --success: #167356;
+      --danger: #a13d3d;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(circle at 4% 7%, rgba(81, 166, 145, .15), transparent 27rem),
+        radial-gradient(circle at 96% 13%, rgba(237, 179, 77, .16), transparent 25rem),
+        #f4f7f8;
+    }
+
+    button, a { font: inherit; }
+    button { cursor: pointer; }
+    button:focus-visible, a:focus-visible { outline: 3px solid #f0bd59; outline-offset: 3px; }
+
+    .topbar {
+      color: #fffaf0;
+      background:
+        radial-gradient(circle at 84% 20%, rgba(228, 182, 85, .18) 0 2px, transparent 3px) 0 0 / 28px 28px,
+        linear-gradient(128deg, #0d3035, #17454a 68%, #1d5155);
+    }
+
+    .topbar-inner {
+      width: min(960px, calc(100% - 32px));
+      margin: auto;
+      padding: 28px 0 56px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .back-link { color: rgba(255, 255, 255, .78); font-size: .82rem; font-weight: 750; text-decoration: none; }
+    .back-link:hover { color: white; }
+    .save-note { color: rgba(255, 255, 255, .58); font-size: .72rem; }
+    .eyebrow { margin: 42px 0 12px; color: #efbd5d; font-size: .72rem; font-weight: 850; letter-spacing: .15em; text-transform: uppercase; }
+    h1 { max-width: 720px; margin: 0; font: 500 clamp(2.65rem, 7vw, 5.2rem) / .98 Georgia, "Times New Roman", serif; letter-spacing: -.055em; }
+    h1 em { color: #f3c96e; font-weight: 500; }
+    .intro { max-width: 650px; margin: 18px 0 0; color: rgba(255, 255, 255, .72); font-size: .92rem; line-height: 1.65; }
+
+    .shell { width: min(960px, calc(100% - 32px)); margin: -28px auto 56px; }
+    .status-card {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 17px 20px;
+      border: 1px solid #d5e3df;
+      border-radius: 17px;
+      background: rgba(255, 255, 255, .97);
+      box-shadow: 0 18px 50px rgba(20, 53, 56, .14);
+    }
+
+    .progress-copy { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-bottom: 9px; }
+    .progress-copy span { color: var(--muted); font-size: .73rem; font-weight: 750; }
+    .progress-copy strong { color: #173f54; font: 1.18rem Georgia, serif; }
+    .progress-track { height: 9px; overflow: hidden; border-radius: 99px; background: #e5ecec; }
+    .progress-track span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #207b72, #65bea9); transition: width .3s ease; }
+
+    .quiet-button {
+      min-height: 40px;
+      padding: 8px 13px;
+      border: 1px solid #d7e0e1;
+      border-radius: 10px;
+      background: white;
+      color: #46566c;
+      font-size: .75rem;
+      font-weight: 800;
+    }
+    .quiet-button:hover { border-color: #adc8c4; background: #f5faf9; }
+
+    .rounds { display: flex; align-items: center; gap: 8px; margin: 26px 4px 14px; overflow-x: auto; }
+    .step {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 34px;
+      padding: 0 11px;
+      border: 1px solid #d6e0e0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .72);
+      color: #718096;
+      font-size: .72rem;
+      font-weight: 850;
+    }
+    .step.done { border-color: #a8d3c9; background: #e9f6f2; color: var(--success); }
+    .step.active { border-color: var(--green-dark); background: var(--green-dark); color: white; }
+
+    .card {
+      min-height: 480px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--paper);
+      box-shadow: 0 24px 64px rgba(35, 58, 73, .11);
+    }
+
+    .card-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, .7); }
+    .card-head p { margin: 0; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+    .counter { color: var(--green); font: 1rem Georgia, serif; }
+
+    .review-body { display: grid; align-content: center; min-height: 350px; padding: 42px clamp(24px, 7vw, 74px); }
+    .word-line { display: flex; align-items: center; gap: 14px; }
+    .word-line h2 { margin: 0; color: var(--green-dark); font: 500 clamp(3rem, 9vw, 5.8rem) / 1 Georgia, serif; letter-spacing: -.045em; }
+    .speak-button {
+      display: inline-grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid #bfd6d1;
+      border-radius: 50%;
+      background: #edf7f4;
+      color: var(--green);
+      font-size: 1.25rem;
+    }
+    .speak-button:hover { transform: translateY(-1px); background: #e1f2ed; }
+    .meaning { margin: 26px 0 0; color: #4d5d70; font-size: clamp(1rem, 2.4vw, 1.25rem); line-height: 1.55; }
+    .meaning strong { color: var(--ink); }
+    .example { margin: 18px 0 0; padding: 18px 20px; border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0; background: #fff8e9; color: #4a5260; font: 1.15rem/1.55 Georgia, serif; }
+
+    .card-actions { display: flex; justify-content: space-between; gap: 12px; padding: 18px 22px; border-top: 1px solid var(--line); background: white; }
+    .button {
+      min-height: 48px;
+      padding: 11px 20px;
+      border: 0;
+      border-radius: 12px;
+      background: #173f54;
+      color: white;
+      font-weight: 850;
+      box-shadow: 0 8px 20px rgba(23, 63, 84, .18);
+    }
+    .button:hover { background: #0f3346; transform: translateY(-1px); }
+    .button.secondary { border: 1px solid #d5dfe2; background: white; color: #506074; box-shadow: none; }
+    .button.secondary:hover { background: #f7faf9; }
+    .button:disabled { cursor: not-allowed; opacity: .42; transform: none; }
+
+    .test-body { min-height: 382px; padding: 30px clamp(22px, 6vw, 58px) 34px; }
+    .prompt-label { margin: 0 0 8px; color: var(--green); font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .test-meaning { margin: 0; color: #4d5d70; font-size: .96rem; line-height: 1.5; }
+    .sentence { margin: 24px 0; color: var(--ink); font: 500 clamp(1.6rem, 4.5vw, 2.55rem)/1.35 Georgia, serif; letter-spacing: -.025em; }
+    .blank { color: var(--green); white-space: nowrap; }
+    .choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
+    .choice {
+      min-height: 56px;
+      padding: 12px 15px;
+      border: 1px solid #d7e0e1;
+      border-radius: 12px;
+      background: white;
+      color: #263850;
+      text-align: left;
+      font-weight: 800;
+      transition: border-color .15s, background .15s, transform .15s;
+    }
+    .choice small { margin-right: 9px; color: #91a0ad; }
+    .choice:hover:not(:disabled) { border-color: #88b9af; background: #f1f8f6; transform: translateY(-1px); }
+    .choice.correct { border-color: #79bba7; background: #e8f6f0; color: #12654c; }
+    .choice.wrong { border-color: #dda0a0; background: #fff0ef; color: #943535; }
+    .choice:disabled { cursor: default; opacity: 1; }
+    .feedback { min-height: 48px; margin: 18px 0 0; padding: 13px 15px; border-radius: 11px; font-size: .85rem; font-weight: 750; line-height: 1.45; }
+    .feedback:empty { min-height: 0; margin: 0; padding: 0; }
+    .feedback.good { background: #e8f6f0; color: #12654c; }
+    .feedback.try { background: #fff0ef; color: #943535; }
+
+    .center-body { display: grid; place-items: center; min-height: 380px; padding: 44px 24px; text-align: center; }
+    .center-body > div { max-width: 560px; }
+    .seal { display: grid; place-items: center; width: 82px; height: 82px; margin: 0 auto 22px; border-radius: 50%; background: #e8f6f0; color: var(--success); font-size: 2rem; }
+    .center-body h2 { margin: 0; color: var(--green-dark); font: 500 clamp(2.1rem, 6vw, 3.5rem)/1.05 Georgia, serif; letter-spacing: -.04em; }
+    .center-body p { margin: 17px auto 26px; color: var(--muted); line-height: 1.65; }
+    .score-row { display: flex; justify-content: center; gap: 9px; flex-wrap: wrap; margin: 22px 0; }
+    .score-row span { padding: 8px 12px; border: 1px solid #d7e3e0; border-radius: 999px; background: white; color: #526276; font-size: .76rem; font-weight: 800; }
+
+    .word-map { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; margin: 22px 0 0; }
+    .word-dot { height: 7px; overflow: hidden; border-radius: 99px; background: #dfe7e7; text-indent: -999px; }
+    .word-dot.seen { background: #78bbaa; }
+    .word-dot.current { background: var(--gold); }
+
+    .toast { position: fixed; right: 18px; bottom: 18px; z-index: 10; max-width: 320px; padding: 12px 15px; border-radius: 11px; background: #173f54; color: white; font-size: .8rem; font-weight: 750; box-shadow: 0 13px 34px rgba(23, 63, 84, .3); }
+    [hidden] { display: none !important; }
+
+    @media (max-width: 640px) {
+      .topbar-inner { padding-top: 22px; }
+      .save-note { display: none; }
+      .eyebrow { margin-top: 34px; }
+      .status-card { grid-template-columns: 1fr; }
+      .quiet-button { justify-self: end; }
+      .card { min-height: 0; }
+      .review-body { min-height: 330px; }
+      .card-actions { padding: 14px; }
+      .button { flex: 1; padding-inline: 12px; }
+      .choices { grid-template-columns: 1fr; }
+      .test-body { min-height: 470px; padding-inline: 18px; }
+      .word-line { align-items: flex-start; }
+      .speak-button { flex: 0 0 auto; width: 44px; height: 44px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <nav class="nav" aria-label="Vocabulary navigation">
+        <a class="back-link" href="../">← Full 1,500-word list</a>
+        <span class="save-note">Progress saves on this device</span>
+      </nav>
+      <p class="eyebrow">Harry's vocabulary · Set 1</p>
+      <h1>Learn the first <em>25 words.</em></h1>
+      <p class="intro">Review each word, hear it aloud, then answer sentence questions. Missed words return in a new round until every word is mastered.</p>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="status-card" aria-label="Learning progress">
+      <div>
+        <div class="progress-copy"><span id="progress-label">Reviewing the set</span><strong id="progress-number">0 / 25 mastered</strong></div>
+        <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+      </div>
+      <button class="quiet-button" id="reset" type="button">Start over</button>
+    </section>
+
+    <div class="rounds" id="rounds" aria-label="Learning steps"></div>
+    <section class="card" id="card" aria-live="polite"></section>
+  </main>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script>
+    const WORDS = [
+      { word: "ban", meaning: "to officially forbid", example: "The city may ban cars from this street." },
+      { word: "curious", meaning: "eager to know or learn", example: "The curious child opened every drawer." },
+      { word: "approach", meaning: "to move closer to", example: "A deer began to approach the stream." },
+      { word: "boundary", meaning: "a line marking an edge", example: "The fence marks the boundary of our yard." },
+      { word: "convince", meaning: "to make someone believe or agree", example: "I tried to convince Dad to adopt the puppy." },
+      { word: "decrease", meaning: "to become or make smaller", example: "Turning off lights can decrease energy use." },
+      { word: "distract", meaning: "to pull attention away", example: "Loud music can distract me from homework." },
+      { word: "enormous", meaning: "extremely large", example: "An enormous whale swam beside the boat." },
+      { word: "flexible", meaning: "able to bend or change easily", example: "This flexible wire bends without breaking." },
+      { word: "hesitate", meaning: "to pause because you are unsure", example: "Do not hesitate to ask for help." },
+      { word: "identify", meaning: "to name or recognize", example: "Can you identify the bird in this picture?" },
+      { word: "language", meaning: "words and rules people use to communicate", example: "Spanish is the main language of Mexico." },
+      { word: "material", meaning: "what something is made from", example: "The bag is made from waterproof material." },
+      { word: "organize", meaning: "to arrange in a clear order", example: "Please organize the books by subject." },
+      { word: "persuade", form: "persuaded", meaning: "to talk someone into doing or believing something", example: "She persuaded me to join the chess club." },
+      { word: "analyze", meaning: "to study something carefully", example: "The scientist will analyze the blood sample." },
+      { word: "attract", meaning: "to draw something closer or gain attention", example: "Bright flowers attract bees and butterflies." },
+      { word: "complex", meaning: "made of many connected parts", example: "The machine has many complex parts." },
+      { word: "confirm", meaning: "to show that something is true", example: "Please confirm your appointment by Friday." },
+      { word: "culture", meaning: "the ideas and customs of a group", example: "Food is an important part of every culture." },
+      { word: "exclude", form: "excludes", meaning: "to leave out or keep out", example: "The price excludes tax and delivery." },
+      { word: "explore", meaning: "to travel and learn about a place", example: "He wants to explore the world and see new things." },
+      { word: "express", meaning: "to show or communicate a thought or feeling", example: "Painting helps her express her feelings." },
+      { word: "comb", meaning: "a tool for arranging hair", example: "I use a comb to tidy my hair." },
+      { word: "feature", meaning: "an important part or quality", example: "A large screen is the phone's best feature." }
+    ];
+
+    const STORAGE_KEY = "harry-vocabulary-first-25-v1";
+    const state = {
+      phase: "review",
+      reviewIndex: 0,
+      round: 1,
+      mastered: new Set(),
+      questions: [],
+      questionIndex: 0,
+      answer: null,
+      roundStartCount: 0
+    };
+
+    const card = document.querySelector("#card");
+    const roundsEl = document.querySelector("#rounds");
+    const progressBar = document.querySelector("#progress-bar");
+    const progressLabel = document.querySelector("#progress-label");
+    const progressNumber = document.querySelector("#progress-number");
+    const toast = document.querySelector("#toast");
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>'"]/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
+    }
+
+    function shuffle(items) {
+      const copy = [...items];
+      for (let i = copy.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function save() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        mastered: [...state.mastered],
+        round: state.round,
+        phase: state.phase === "complete" ? "complete" : "review"
+      }));
+    }
+
+    function restore() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        if (!saved) return;
+        state.mastered = new Set((saved.mastered || []).filter(index => Number.isInteger(index) && index >= 0 && index < WORDS.length));
+        state.round = Math.max(1, Number(saved.round) || 1);
+        if (saved.phase === "complete" && state.mastered.size === WORDS.length) state.phase = "complete";
+      } catch (_) {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+
+    function updateChrome() {
+      const mastered = state.mastered.size;
+      progressBar.style.width = `${(mastered / WORDS.length) * 100}%`;
+      progressNumber.textContent = `${mastered} / ${WORDS.length} mastered`;
+      progressLabel.textContent = state.phase === "review" ? "Reviewing the set" : state.phase === "complete" ? "Set complete" : `Testing · Round ${state.round}`;
+
+      const steps = [{ label: "Review", status: state.phase === "review" ? "active" : "done" }];
+      const visibleRounds = Math.max(state.round, state.phase === "review" ? 1 : 0);
+      for (let number = 1; number <= visibleRounds; number += 1) {
+        let status = "";
+        if (state.phase === "complete" || number < state.round) status = "done";
+        if ((state.phase === "test" || state.phase === "round-summary") && number === state.round) status = "active";
+        steps.push({ label: `Round ${number}`, status });
+      }
+      roundsEl.innerHTML = steps.map(step => `<span class="step ${step.status}">${step.label}</span>`).join("");
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.hidden = false;
+      window.clearTimeout(showToast.timer);
+      showToast.timer = window.setTimeout(() => { toast.hidden = true; }, 2600);
+    }
+
+    function speak(word) {
+      if (!("speechSynthesis" in window)) {
+        showToast("Pronunciation is not available in this browser.");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = "en-US";
+      utterance.rate = .82;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function wordDots(index) {
+      return `<div class="word-map" aria-label="Review progress">${WORDS.map((_, itemIndex) => `<span class="word-dot ${itemIndex < index ? "seen" : ""} ${itemIndex === index ? "current" : ""}">${itemIndex + 1}</span>`).join("")}</div>`;
+    }
+
+    function renderReview() {
+      const item = WORDS[state.reviewIndex];
+      card.innerHTML = `
+        <div class="card-head"><p>Review every word before the test</p><span class="counter">${state.reviewIndex + 1} of ${WORDS.length}</span></div>
+        <div class="review-body">
+          <div class="word-line">
+            <h2>${escapeHtml(item.word)}</h2>
+            <button class="speak-button" id="speak" type="button" aria-label="Hear ${escapeHtml(item.word)} pronounced" title="Hear pronunciation">🔊</button>
+          </div>
+          <p class="meaning"><strong>Meaning:</strong> ${escapeHtml(item.meaning)}</p>
+          <p class="example">“${escapeHtml(item.example)}”</p>
+          ${wordDots(state.reviewIndex)}
+        </div>
+        <div class="card-actions">
+          <button class="button secondary" id="previous" type="button" ${state.reviewIndex === 0 ? "disabled" : ""}>Previous</button>
+          <button class="button" id="next" type="button">${state.reviewIndex === WORDS.length - 1 ? "Start round 1" : "Next word"}</button>
+        </div>`;
+
+      document.querySelector("#speak").addEventListener("click", () => speak(item.word));
+      document.querySelector("#previous").addEventListener("click", () => {
+        state.reviewIndex = Math.max(0, state.reviewIndex - 1);
+        render();
+      });
+      document.querySelector("#next").addEventListener("click", () => {
+        if (state.reviewIndex < WORDS.length - 1) {
+          state.reviewIndex += 1;
+          render();
+        } else {
+          state.round = Math.max(1, state.round);
+          beginRound();
+        }
+      });
+    }
+
+    function makeQuestion(wordIndex) {
+      const distractors = shuffle(WORDS.map((_, index) => index).filter(index => index !== wordIndex)).slice(0, 3);
+      return { wordIndex, options: shuffle([wordIndex, ...distractors]) };
+    }
+
+    function beginRound() {
+      const remaining = WORDS.map((_, index) => index).filter(index => !state.mastered.has(index));
+      if (!remaining.length) {
+        state.phase = "complete";
+        save();
+        render();
+        return;
+      }
+      state.phase = "test";
+      state.questions = shuffle(remaining).map(makeQuestion);
+      state.questionIndex = 0;
+      state.answer = null;
+      state.roundStartCount = state.mastered.size;
+      save();
+      render();
+    }
+
+    function blankSentence(item) {
+      const target = item.form || item.word;
+      const pattern = new RegExp(`\\b${target.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}\\b`, "i");
+      return escapeHtml(item.example).replace(pattern, '<span class="blank">_____</span>');
+    }
+
+    function choose(optionIndex) {
+      if (state.answer !== null) return;
+      const question = state.questions[state.questionIndex];
+      const correct = optionIndex === question.wordIndex;
+      state.answer = optionIndex;
+      if (correct) state.mastered.add(question.wordIndex);
+      save();
+      render();
+    }
+
+    function nextQuestion() {
+      if (state.answer === null) return;
+      if (state.questionIndex < state.questions.length - 1) {
+        state.questionIndex += 1;
+        state.answer = null;
+        render();
+      } else {
+        state.phase = state.mastered.size === WORDS.length ? "complete" : "round-summary";
+        save();
+        render();
+      }
+    }
+
+    function renderTest() {
+      const question = state.questions[state.questionIndex];
+      const item = WORDS[question.wordIndex];
+      const answered = state.answer !== null;
+      const correct = state.answer === question.wordIndex;
+      card.innerHTML = `
+        <div class="card-head"><p>Choose the word that completes the sentence</p><span class="counter">${state.questionIndex + 1} of ${state.questions.length}</span></div>
+        <div class="test-body">
+          <p class="prompt-label">Simple meaning</p>
+          <p class="test-meaning">${escapeHtml(item.meaning)}</p>
+          <p class="sentence">${blankSentence(item)}</p>
+          <div class="choices">${question.options.map((optionIndex, index) => {
+            const isCorrect = answered && optionIndex === question.wordIndex;
+            const isWrong = answered && optionIndex === state.answer && !correct;
+            return `<button class="choice ${isCorrect ? "correct" : ""} ${isWrong ? "wrong" : ""}" data-option="${optionIndex}" type="button" ${answered ? "disabled" : ""}><small>${index + 1}</small>${escapeHtml(WORDS[optionIndex].word)}</button>`;
+          }).join("")}</div>
+          <div class="feedback ${answered ? (correct ? "good" : "try") : ""}" id="feedback" role="status">${answered ? (correct ? `✓ Correct — <strong>${escapeHtml(item.word)}</strong> is mastered.` : `Not yet. The answer is <strong>${escapeHtml(item.word)}</strong>. It will return next round.`) : ""}</div>
+        </div>
+        <div class="card-actions">
+          <button class="button secondary" id="review-again" type="button">Review words</button>
+          <button class="button" id="next-question" type="button" ${answered ? "" : "disabled"}>${state.questionIndex === state.questions.length - 1 ? "Finish round" : "Next question"}</button>
+        </div>`;
+
+      document.querySelectorAll("[data-option]").forEach(button => button.addEventListener("click", () => choose(Number(button.dataset.option))));
+      document.querySelector("#review-again").addEventListener("click", () => { state.phase = "review"; state.reviewIndex = 0; render(); });
+      document.querySelector("#next-question").addEventListener("click", nextQuestion);
+    }
+
+    function renderRoundSummary() {
+      const newlyMastered = state.mastered.size - state.roundStartCount;
+      const remaining = WORDS.length - state.mastered.size;
+      card.innerHTML = `
+        <div class="center-body"><div>
+          <div class="seal" aria-hidden="true">${state.round}</div>
+          <h2>Round ${state.round} complete.</h2>
+          <div class="score-row"><span>${newlyMastered} learned this round</span><span>${state.mastered.size} of ${WORDS.length} mastered</span></div>
+          <p>${remaining} ${remaining === 1 ? "word needs" : "words need"} another try. The next round includes only those words.</p>
+          <button class="button" id="next-round" type="button">Start round ${state.round + 1}</button>
+        </div></div>`;
+      document.querySelector("#next-round").addEventListener("click", () => { state.round += 1; beginRound(); });
+    }
+
+    function renderComplete() {
+      card.innerHTML = `
+        <div class="center-body"><div>
+          <div class="seal" aria-hidden="true">✓</div>
+          <h2>All 25 mastered!</h2>
+          <p>You reviewed every word and answered each one correctly. This set is complete.</p>
+          <button class="button" id="practice-again" type="button">Practice the set again</button>
+        </div></div>`;
+      document.querySelector("#practice-again").addEventListener("click", resetProgress);
+    }
+
+    function resetProgress() {
+      localStorage.removeItem(STORAGE_KEY);
+      state.phase = "review";
+      state.reviewIndex = 0;
+      state.round = 1;
+      state.mastered = new Set();
+      state.questions = [];
+      state.questionIndex = 0;
+      state.answer = null;
+      render();
+    }
+
+    function render() {
+      updateChrome();
+      if (state.phase === "review") renderReview();
+      else if (state.phase === "test") renderTest();
+      else if (state.phase === "round-summary") renderRoundSummary();
+      else renderComplete();
+    }
+
+    document.querySelector("#reset").addEventListener("click", () => {
+      if (window.confirm("Start over and clear mastery progress for these 25 words?")) resetProgress();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (state.phase !== "test" || state.answer !== null) return;
+      const number = Number(event.key);
+      if (number >= 1 && number <= 4) {
+        const question = state.questions[state.questionIndex];
+        choose(question.options[number - 1]);
+      }
+    });
+
+    restore();
+    render();
+  </script>
+</body>
+</html>
