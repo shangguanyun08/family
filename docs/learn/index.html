@@ -85,7 +85,7 @@
     .progress-copy strong { color: #173f54; font: 1.18rem Georgia, serif; }
     .progress-track { height: 9px; overflow: hidden; border-radius: 99px; background: #e5ecec; }
     .progress-track span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #207b72, #65bea9); transition: width .3s ease; }
-    .status-actions { display: flex; align-items: center; gap: 9px; }
+    .status-actions { display: flex; align-items: center; justify-content: flex-end; }
     .test-now {
       min-height: 42px;
       padding: 9px 15px;
@@ -98,18 +98,6 @@
       box-shadow: 0 7px 17px rgba(23, 63, 84, .18);
     }
     .test-now:hover { background: #0f3346; transform: translateY(-1px); }
-
-    .quiet-button {
-      min-height: 40px;
-      padding: 8px 13px;
-      border: 1px solid #d7e0e1;
-      border-radius: 10px;
-      background: white;
-      color: #46566c;
-      font-size: .75rem;
-      font-weight: 800;
-    }
-    .quiet-button:hover { border-color: #adc8c4; background: #f5faf9; }
 
     .rounds { display: flex; align-items: center; gap: 8px; margin: 26px 4px 14px; overflow-x: auto; }
     .sessions { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 7px; margin: 26px 0 14px; }
@@ -249,6 +237,42 @@
     .word-dot.seen { background: #78bbaa; }
     .word-dot.current { background: var(--gold); }
 
+    .record-card {
+      margin-top: 24px;
+      padding: clamp(20px, 4vw, 30px);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, .9);
+      box-shadow: 0 18px 44px rgba(35, 58, 73, .08);
+    }
+    .record-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+    .record-head h2 { margin: 0; color: var(--green-dark); font: 500 clamp(1.65rem, 4vw, 2.35rem)/1.1 Georgia, serif; letter-spacing: -.035em; }
+    .record-head p { max-width: 530px; margin: 8px 0 0; color: var(--muted); font-size: .83rem; line-height: 1.55; }
+    .record-badge { flex: 0 0 auto; padding: 7px 10px; border-radius: 999px; background: #e9f6f2; color: var(--success); font-size: .69rem; font-weight: 850; }
+    .record-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin-top: 20px; }
+    .record-stat { min-width: 0; padding: 14px; border: 1px solid #dce6e5; border-radius: 13px; background: #fbfdfc; }
+    .record-stat span { display: block; color: #788598; font-size: .67rem; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
+    .record-stat strong { display: block; margin-top: 6px; color: #20364d; font: 1.25rem/1.2 Georgia, serif; overflow-wrap: anywhere; }
+    .record-stat time { font-size: .88rem; }
+    .record-section { margin-top: 24px; }
+    .record-section h3 { margin: 0 0 11px; color: #33475d; font-size: .76rem; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
+    .session-records { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .session-record { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; padding: 11px 12px; border: 1px solid #dce6e5; border-radius: 12px; background: white; }
+    .session-record > strong { display: grid; place-items: center; width: 29px; height: 29px; border-radius: 50%; background: #edf5f3; color: var(--green); font-size: .75rem; }
+    .session-record p { min-width: 0; margin: 0; color: #506074; font-size: .76rem; font-weight: 800; }
+    .session-record small { display: block; margin-top: 3px; color: #8a96a5; font-size: .64rem; font-weight: 650; line-height: 1.35; }
+    .session-record .session-score { color: #27445a; font-size: .72rem; font-weight: 900; white-space: nowrap; }
+    .miss-list { display: grid; gap: 8px; }
+    .miss-row { display: grid; grid-template-columns: minmax(110px, .55fr) minmax(0, 1.35fr) auto; gap: 14px; align-items: center; padding: 12px 13px; border: 1px solid #ead7d3; border-radius: 12px; background: #fffaf8; }
+    .miss-word strong { display: block; color: #7f3838; font: 1.05rem Georgia, serif; }
+    .miss-word span { display: block; margin-top: 3px; color: #a06b68; font-size: .64rem; font-weight: 850; }
+    .miss-detail { min-width: 0; color: #596778; font-size: .73rem; line-height: 1.45; }
+    .miss-detail strong { color: #34475c; }
+    .miss-meta { text-align: right; }
+    .miss-meta span { display: inline-block; padding: 5px 8px; border-radius: 999px; background: #f9e7e3; color: #923e3e; font-size: .64rem; font-weight: 900; }
+    .miss-meta small { display: block; margin-top: 5px; color: #8b97a5; font-size: .62rem; }
+    .empty-record { margin: 0; padding: 16px; border: 1px dashed #cbdcd8; border-radius: 12px; background: #f8fcfb; color: #687689; font-size: .78rem; line-height: 1.5; }
+
     .toast { position: fixed; right: 18px; bottom: 18px; z-index: 10; max-width: 320px; padding: 12px 15px; border-radius: 11px; background: #173f54; color: white; font-size: .8rem; font-weight: 750; box-shadow: 0 13px 34px rgba(23, 63, 84, .3); }
     [hidden] { display: none !important; }
 
@@ -270,6 +294,12 @@
       .test-body { min-height: 470px; padding-inline: 18px; }
       .word-line { align-items: flex-start; }
       .speak-button { flex: 0 0 auto; width: 44px; height: 44px; }
+      .record-head { display: block; }
+      .record-badge { display: inline-block; margin-top: 12px; }
+      .record-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .session-records { grid-template-columns: 1fr; }
+      .miss-row { grid-template-columns: 1fr auto; }
+      .miss-detail { grid-column: 1 / -1; grid-row: 2; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -282,7 +312,7 @@
     <div class="topbar-inner">
       <nav class="nav" aria-label="Vocabulary navigation">
         <a class="back-link" href="../">← Full 1,500-word list</a>
-        <span class="save-note">Progress saves on this device</span>
+        <span class="save-note">Progress and answer history save on this device</span>
       </nav>
       <p class="eyebrow">Harry's vocabulary · To-learn list</p>
       <h1>Master 200 <em>unknown words.</em></h1>
@@ -298,13 +328,19 @@
       </div>
       <div class="status-actions">
         <button class="test-now" id="start-test" type="button">Start round 1 test</button>
-        <button class="quiet-button" id="reset" type="button">Start over</button>
       </div>
     </section>
 
     <div class="sessions" id="sessions" aria-label="Choose a 25-word session"></div>
     <div class="rounds" id="rounds" aria-label="Learning steps"></div>
     <section class="card" id="card" aria-live="polite"><div class="center-body"><div><div class="seal" aria-hidden="true">…</div><h2>Loading to-learn words</h2></div></div></section>
+    <section class="record-card" id="record-card" aria-labelledby="record-title">
+      <div class="record-head">
+        <div><h2 id="record-title">Progress record</h2><p>Every test answer is kept with its session, round, date, and time. Missed words stay in the record even after they are mastered.</p></div>
+        <span class="record-badge">Saved automatically</span>
+      </div>
+      <div id="record-content"><p class="empty-record">Your dated learning record will appear here after the first test answer.</p></div>
+    </section>
   </main>
 
   <div class="toast" id="toast" role="status" hidden></div>
@@ -334,7 +370,7 @@
       questionIndex: 0,
       answer: null,
       roundStartCount: 0,
-      progress: { version: 2, activeSession: 1, sessions: {} }
+      progress: { version: 3, activeSession: 1, sessions: {}, activity: [] }
     };
 
     const card = document.querySelector("#card");
@@ -344,6 +380,7 @@
     const progressLabel = document.querySelector("#progress-label");
     const progressNumber = document.querySelector("#progress-number");
     const startTest = document.querySelector("#start-test");
+    const recordContent = document.querySelector("#record-content");
     const toast = document.querySelector("#toast");
 
     function escapeHtml(value) {
@@ -421,11 +458,19 @@
 
     function save() {
       if (!WORDS.length) return;
+      const savedAt = new Date().toISOString();
+      const sessionKey = String(state.session);
+      const previous = state.progress.sessions[sessionKey] || {};
+      const completed = state.mastered.size === currentWords().length;
+      state.progress.version = 3;
       state.progress.activeSession = state.session;
-      state.progress.sessions[String(state.session)] = {
+      state.progress.sessions[sessionKey] = {
         mastered: Array.from(state.mastered),
         round: state.round,
-        completed: state.mastered.size === currentWords().length
+        completed: completed,
+        startedAt: previous.startedAt || savedAt,
+        lastStudiedAt: savedAt,
+        completedAt: completed ? (previous.completedAt || savedAt) : null
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
     }
@@ -446,12 +491,16 @@
     function restore() {
       try {
         const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-        if (saved && saved.version === 2 && saved.sessions && typeof saved.sessions === "object") {
-          state.progress = saved;
+        if (saved && (saved.version === 2 || saved.version === 3) && saved.sessions && typeof saved.sessions === "object") {
+          state.progress = {
+            version: 3,
+            activeSession: saved.activeSession || 1,
+            sessions: saved.sessions,
+            activity: Array.isArray(saved.activity) ? saved.activity : []
+          };
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
         }
-      } catch (_) {
-        localStorage.removeItem(STORAGE_KEY);
-      }
+      } catch (_) {}
       loadSession(state.progress.activeSession || 1);
     }
 
@@ -465,6 +514,104 @@
       let total = 0;
       for (let number = 1; number <= SESSION_COUNT; number += 1) total += sessionMasteredCount(number);
       return total;
+    }
+
+    function formatDateTime(value) {
+      if (!value) return "No dated answers yet";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return "Date unavailable";
+      return new Intl.DateTimeFormat(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit"
+      }).format(date);
+    }
+
+    function wordIsMastered(wordId) {
+      const index = WORDS.findIndex(function(item) { return item.id === wordId; });
+      if (index < 0) return false;
+      const sessionNumber = Math.floor(index / SESSION_SIZE) + 1;
+      if (sessionNumber === state.session) return state.mastered.has(wordId);
+      const stored = state.progress.sessions[String(sessionNumber)] || {};
+      return validMastered(sessionNumber, stored.mastered).includes(wordId);
+    }
+
+    function renderHistory() {
+      const activity = Array.isArray(state.progress.activity) ? state.progress.activity : [];
+      const correctCount = activity.filter(function(entry) { return entry.correct; }).length;
+      const missedCount = activity.length - correctCount;
+      const lastEntry = activity.length ? activity[activity.length - 1] : null;
+
+      const stats =
+        '<div class="record-stats">' +
+        '<div class="record-stat"><span>Total answers</span><strong>' + activity.length + '</strong></div>' +
+        '<div class="record-stat"><span>Correct</span><strong>' + correctCount + '</strong></div>' +
+        '<div class="record-stat"><span>Missed</span><strong>' + missedCount + '</strong></div>' +
+        '<div class="record-stat"><span>Last answer</span><strong><time>' +
+        escapeHtml(lastEntry ? formatDateTime(lastEntry.answeredAt) : "Not started") +
+        '</time></strong></div></div>';
+
+      const sessionRows = [];
+      for (let number = 1; number <= SESSION_COUNT; number += 1) {
+        const stored = state.progress.sessions[String(number)] || {};
+        const mastered = sessionMasteredCount(number);
+        const sessionAnswers = activity.filter(function(entry) { return entry.session === number; });
+        const latestAnswer = sessionAnswers.length ? sessionAnswers[sessionAnswers.length - 1].answeredAt : null;
+        const datedStatus = mastered === SESSION_SIZE && stored.completedAt
+          ? "Completed " + formatDateTime(stored.completedAt)
+          : latestAnswer
+            ? "Last answer " + formatDateTime(latestAnswer)
+            : "No test answers yet";
+        sessionRows.push(
+          '<div class="session-record"><strong>' + number + '</strong><p>Session ' + number +
+          '<small>' + escapeHtml(datedStatus) + '</small></p><span class="session-score">' +
+          mastered + ' / ' + SESSION_SIZE + '</span></div>'
+        );
+      }
+
+      const missedByWord = new Map();
+      activity.forEach(function(entry) {
+        if (entry.correct) return;
+        const existing = missedByWord.get(entry.wordId) || {
+          wordId: entry.wordId,
+          word: entry.word,
+          count: 0,
+          lastSelectedWord: entry.selectedWord,
+          lastAt: entry.answeredAt,
+          session: entry.session,
+          round: entry.round
+        };
+        existing.count += 1;
+        existing.word = entry.word || existing.word;
+        existing.lastSelectedWord = entry.selectedWord || existing.lastSelectedWord;
+        existing.lastAt = entry.answeredAt || existing.lastAt;
+        existing.session = entry.session || existing.session;
+        existing.round = entry.round || existing.round;
+        missedByWord.set(entry.wordId, existing);
+      });
+
+      const missedRows = Array.from(missedByWord.values()).sort(function(a, b) {
+        return new Date(b.lastAt).getTime() - new Date(a.lastAt).getTime();
+      }).map(function(entry) {
+        const item = WORD_BY_ID.get(entry.wordId);
+        const meaning = item ? item.meaning : "Saved missed word";
+        return '<div class="miss-row"><div class="miss-word"><strong>' + escapeHtml(entry.word) +
+          '</strong><span>' + escapeHtml(meaning) + '</span></div><div class="miss-detail">Last chose <strong>' +
+          escapeHtml(entry.lastSelectedWord || "another word") + '</strong><br>Session ' + entry.session +
+          ' · Round ' + entry.round + ' · <time datetime="' + escapeHtml(entry.lastAt || "") + '">' +
+          escapeHtml(formatDateTime(entry.lastAt)) + '</time></div><div class="miss-meta"><span>' +
+          entry.count + (entry.count === 1 ? " miss" : " misses") + '</span><small>' +
+          (wordIsMastered(entry.wordId) ? "Mastered later" : "Still learning") + '</small></div></div>';
+      }).join("");
+
+      recordContent.innerHTML = stats +
+        '<div class="record-section"><h3>Session progress and dates</h3><div class="session-records">' +
+        sessionRows.join("") + '</div></div>' +
+        '<div class="record-section"><h3>Words missed</h3><div class="miss-list">' +
+        (missedRows || '<p class="empty-record">No missed words yet. Any future misses will stay listed here with the chosen answer, session, round, date, and time.</p>') +
+        '</div></div>';
     }
 
     function renderSessionTabs() {
@@ -488,7 +635,7 @@
       progressBar.style.width = ((mastered / total) * 100) + "%";
       progressNumber.textContent = mastered + " / " + total + " mastered";
       progressLabel.textContent = "Session " + state.session + " progress";
-      startTest.hidden = state.phase !== "review";
+      startTest.hidden = state.phase !== "review" || mastered === total;
       startTest.textContent = mastered ? "Continue round " + state.round + " test" : "Start round 1 test";
 
       const steps = [{ label: "Review", status: state.phase === "review" ? "active" : "done" }];
@@ -608,8 +755,24 @@
     function choose(optionId) {
       if (state.answer !== null) return;
       const question = state.questions[state.questionIndex];
+      const answerWord = WORD_BY_ID.get(question.wordId);
+      const selectedWord = WORD_BY_ID.get(optionId);
+      const correct = optionId === question.wordId;
       state.answer = optionId;
-      if (optionId === question.wordId) state.mastered.add(question.wordId);
+      state.progress.activity.push({
+        id: window.crypto && typeof window.crypto.randomUUID === "function"
+          ? window.crypto.randomUUID()
+          : Date.now() + "-" + Math.random().toString(16).slice(2),
+        session: state.session,
+        round: state.round,
+        wordId: question.wordId,
+        word: answerWord.word,
+        selectedWordId: optionId,
+        selectedWord: selectedWord.word,
+        correct: correct,
+        answeredAt: new Date().toISOString()
+      });
+      if (correct) state.mastered.add(question.wordId);
       save();
       render();
     }
@@ -695,19 +858,16 @@
         '<p>You answered every word in this 25-word session correctly. ' +
         (allDone ? "The complete 200-word set is finished." : "Choose another session or continue to the next one.") +
         '</p><div class="card-actions" style="border:0;justify-content:center;padding:0;">' +
-        '<button class="button secondary" id="practice-again" type="button">Practice again</button>' +
+        '<button class="button secondary" id="review-session" type="button">Review session</button>' +
         nextButton + '</div></div></div>';
 
-      document.querySelector("#practice-again").addEventListener("click", resetCurrentSession);
+      document.querySelector("#review-session").addEventListener("click", function() {
+        state.phase = "review";
+        state.reviewIndex = 0;
+        render();
+      });
       const next = document.querySelector("#next-session");
       if (next) next.addEventListener("click", function() { changeSession(state.session + 1); });
-    }
-
-    function resetCurrentSession() {
-      delete state.progress.sessions[String(state.session)];
-      loadSession(state.session);
-      save();
-      render();
     }
 
     function changeSession(number) {
@@ -721,17 +881,12 @@
     function render() {
       if (!WORDS.length) return;
       updateChrome();
+      renderHistory();
       if (state.phase === "review") renderReview();
       else if (state.phase === "test") renderTest();
       else if (state.phase === "round-summary") renderRoundSummary();
       else renderComplete();
     }
-
-    document.querySelector("#reset").addEventListener("click", function() {
-      if (window.confirm("Clear mastery progress for Session " + state.session + " and start it again?")) {
-        resetCurrentSession();
-      }
-    });
 
     startTest.addEventListener("click", beginRound);
 
