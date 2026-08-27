@@ -3,7 +3,7 @@
 A focused study list built from Harry's original list and the extracted video vocabulary.
 
 - **Live website:** https://shangguanyun08.github.io/harry-vocabulary-1500/
-- **Learn the first 25:** https://shangguanyun08.github.io/harry-vocabulary-1500/learn/
+- **Practice the first 200 to-learn words:** https://shangguanyun08.github.io/harry-vocabulary-1500/learn/
 - Exactly 1,500 unique study entries
 - 481 familiar Grade 2–3 words removed across the full list
 - Sorted from easiest to hardest

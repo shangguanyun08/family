@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Review and master the first 25 words in Harry's Vocabulary list.">
-  <title>Harry's Vocabulary — Learn the First 25</title>
+  <meta name="description" content="Review and master the first 200 words still marked To learn in Harry's Vocabulary list.">
+  <title>Harry's Vocabulary — First 200 To-Learn Words</title>
   <style>
     :root {
       color-scheme: light;
@@ -112,6 +112,23 @@
     .quiet-button:hover { border-color: #adc8c4; background: #f5faf9; }
 
     .rounds { display: flex; align-items: center; gap: 8px; margin: 26px 4px 14px; overflow-x: auto; }
+    .sessions { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 7px; margin: 26px 0 14px; }
+    .session-button {
+      min-width: 0;
+      padding: 10px 6px;
+      border: 1px solid #d6e0e0;
+      border-radius: 11px;
+      background: rgba(255, 255, 255, .78);
+      color: #637287;
+      font-size: .72rem;
+      font-weight: 850;
+    }
+    .session-button span, .session-button small { display: block; }
+    .session-button small { margin-top: 3px; color: #93a0ae; font-size: .62rem; }
+    .session-button:hover { border-color: #9fc2bb; background: #f3faf8; }
+    .session-button.complete { border-color: #a8d3c9; background: #e9f6f2; color: var(--success); }
+    .session-button.active { border-color: var(--green-dark); background: var(--green-dark); color: white; box-shadow: 0 7px 16px rgba(18, 62, 66, .18); }
+    .session-button.active small { color: rgba(255, 255, 255, .68); }
     .step {
       flex: 0 0 auto;
       display: inline-flex;
@@ -242,6 +259,7 @@
       .status-card { grid-template-columns: 1fr; }
       .status-actions { width: 100%; }
       .status-actions button { flex: 1; }
+      .sessions { grid-template-columns: repeat(4, minmax(0, 1fr)); }
       .card { min-height: 0; }
       .review-body { min-height: 330px; }
       .review-layout { grid-template-columns: 1fr; }
@@ -266,16 +284,16 @@
         <a class="back-link" href="../">← Full 1,500-word list</a>
         <span class="save-note">Progress saves on this device</span>
       </nav>
-      <p class="eyebrow">Harry's vocabulary · Set 1</p>
-      <h1>Learn the first <em>25 words.</em></h1>
-      <p class="intro">Review each word, hear it aloud, then answer sentence questions. Missed words return in a new round until every word is mastered.</p>
+      <p class="eyebrow">Harry's vocabulary · To-learn list</p>
+      <h1>Master 200 <em>unknown words.</em></h1>
+      <p class="intro">These are the first 200 words still marked “To learn,” split into eight 25-word sessions. Review, hear each word, then test until every missed word is mastered.</p>
     </div>
   </header>
 
   <main class="shell">
     <section class="status-card" aria-label="Learning progress">
       <div>
-        <div class="progress-copy"><span id="progress-label">Reviewing the set</span><strong id="progress-number">0 / 25 mastered</strong></div>
+        <div class="progress-copy"><span id="progress-label">Loading Session 1</span><strong id="progress-number">0 / 25 mastered</strong></div>
         <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
       </div>
       <div class="status-actions">
@@ -284,54 +302,43 @@
       </div>
     </section>
 
+    <div class="sessions" id="sessions" aria-label="Choose a 25-word session"></div>
     <div class="rounds" id="rounds" aria-label="Learning steps"></div>
-    <section class="card" id="card" aria-live="polite"></section>
+    <section class="card" id="card" aria-live="polite"><div class="center-body"><div><div class="seal" aria-hidden="true">…</div><h2>Loading to-learn words</h2></div></div></section>
   </main>
 
   <div class="toast" id="toast" role="status" hidden></div>
 
   <script>
-    const WORDS = [
-      { word: "ban", art: "🚫 🚗", scene: "Cars are forbidden here.", meaning: "to officially forbid", example: "The city may ban cars from this street." },
-      { word: "curious", art: "🧒 🔍 ❓", scene: "A child wants to discover more.", meaning: "eager to know or learn", example: "The curious child opened every drawer." },
-      { word: "approach", art: "🦌 ➡️ 💧", scene: "A deer moves closer to the water.", meaning: "to move closer to", example: "A deer began to approach the stream." },
-      { word: "boundary", art: "🏡 🚧 🌳", scene: "A fence marks where the yard ends.", meaning: "a line marking an edge", example: "The fence marks the boundary of our yard." },
-      { word: "convince", art: "🗣️ 🤝", scene: "Talking helps someone agree.", meaning: "to make someone believe or agree", example: "I tried to convince Dad to adopt the puppy." },
-      { word: "decrease", art: "📊 ⬇️", scene: "The amount becomes smaller.", meaning: "to become or make smaller", example: "Turning off lights can decrease energy use." },
-      { word: "distract", art: "📚 👀 🎵", scene: "Music pulls attention away from a book.", meaning: "to pull attention away", example: "Loud music can distract me from homework." },
-      { word: "enormous", art: "⛵ 🐋", scene: "The whale is extremely large.", meaning: "extremely large", example: "An enormous whale swam beside the boat." },
-      { word: "flexible", art: "🪢 ↪️", scene: "The rope bends without breaking.", meaning: "able to bend or change easily", example: "This flexible wire bends without breaking." },
-      { word: "hesitate", art: "🚶 ⏸️", scene: "A person pauses before moving.", meaning: "to pause because you are unsure", example: "Do not hesitate to ask for help." },
-      { word: "identify", art: "🔎 🐦 ✅", scene: "The bird is recognized correctly.", meaning: "to name or recognize", example: "Can you identify the bird in this picture?" },
-      { word: "language", art: "💬 🌎 💬", scene: "People use words to communicate.", meaning: "words and rules people use to communicate", example: "Spanish is the main language of Mexico." },
-      { word: "material", art: "🎒 🧵", scene: "Fabric is what the bag is made from.", meaning: "what something is made from", example: "The bag is made from waterproof material." },
-      { word: "organize", art: "📚 1️⃣ 2️⃣ 3️⃣", scene: "Books are arranged in order.", meaning: "to arrange in a clear order", example: "Please organize the books by subject." },
-      { word: "persuade", form: "persuaded", art: "🗣️ ➡️ ♟️", scene: "Talking gets someone to join chess.", meaning: "to talk someone into doing or believing something", example: "She persuaded me to join the chess club." },
-      { word: "analyze", art: "🔬 🩸 📋", scene: "A scientist studies a sample carefully.", meaning: "to study something carefully", example: "The scientist will analyze the blood sample." },
-      { word: "attract", art: "🌻 🐝", scene: "A bright flower draws a bee closer.", meaning: "to draw something closer or gain attention", example: "Bright flowers attract bees and butterflies." },
-      { word: "complex", art: "⚙️ ⚙️ 🧩", scene: "Many connected parts work together.", meaning: "made of many connected parts", example: "The machine has many complex parts." },
-      { word: "confirm", art: "📅 ✅", scene: "A check shows the appointment is certain.", meaning: "to show that something is true", example: "Please confirm your appointment by Friday." },
-      { word: "culture", art: "🍲 🎉 🏛️", scene: "Food and celebrations are group customs.", meaning: "the ideas and customs of a group", example: "Food is an important part of every culture." },
-      { word: "exclude", form: "excludes", art: "🧾 🚫 🚚", scene: "Delivery is left out of the price.", meaning: "to leave out or keep out", example: "The price excludes tax and delivery." },
-      { word: "explore", art: "🧭 🌍", scene: "A compass helps someone discover the world.", meaning: "to travel and learn about a place", example: "He wants to explore the world and see new things." },
-      { word: "express", art: "🎨 ❤️", scene: "Art shows a feeling.", meaning: "to show or communicate a thought or feeling", example: "Painting helps her express her feelings." },
-      { word: "comb", art: "🪮 💇", scene: "A comb arranges hair.", meaning: "a tool for arranging hair", example: "I use a comb to tidy my hair." },
-      { word: "feature", art: "📱 ⭐", scene: "The best phone part is highlighted.", meaning: "an important part or quality", example: "A large screen is the phone's best feature." }
-    ];
+    const MAIN_KNOWN_KEY = "harry-combined-vocabulary-known-v2";
+    const SESSION_SIZE = 25;
+    const SESSION_COUNT = 8;
+    const STORAGE_KEY = "harry-vocabulary-to-learn-200-v2";
+    const BLANK_FORMS = {
+      97: "modified",
+      413: "called for a nurse",
+      414: "got the date wrong",
+      427: "in case of fire"
+    };
 
-    const STORAGE_KEY = "harry-vocabulary-first-25-v1";
+    let WORDS = [];
+    let WORD_BY_ID = new Map();
+
     const state = {
-      phase: "review",
+      phase: "loading",
+      session: 1,
       reviewIndex: 0,
       round: 1,
       mastered: new Set(),
       questions: [],
       questionIndex: 0,
       answer: null,
-      roundStartCount: 0
+      roundStartCount: 0,
+      progress: { version: 2, activeSession: 1, sessions: {} }
     };
 
     const card = document.querySelector("#card");
+    const sessionsEl = document.querySelector("#sessions");
     const roundsEl = document.querySelector("#rounds");
     const progressBar = document.querySelector("#progress-bar");
     const progressLabel = document.querySelector("#progress-label");
@@ -340,45 +347,149 @@
     const toast = document.querySelector("#toast");
 
     function escapeHtml(value) {
-      return String(value).replace(/[&<>'"]/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
+      return String(value).replace(/[&<>'"]/g, function(character) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[character];
+      });
+    }
+
+    function escapeRegExp(value) {
+      return String(value).replace(/[.*+?^$()|[\]\\{}]/g, "\\$&");
+    }
+
+    function illustrationFor(item) {
+      const text = (item.word + " " + item.meaning + " " + item.example).toLowerCase();
+      const themes = [
+        [/sea|ocean|water|rain|river|shore|diving|drought/, "🌊 💧"],
+        [/animal|dog|bird|cattle|cow|whale|primate|chimpanzee/, "🐾 🌿"],
+        [/doctor|medicine|health|pain|hospital|aspirin|earache/, "🩺 💊"],
+        [/food|eat|meal|soup|lettuce|spinach|cabbage|sandwich/, "🍽️ 🥗"],
+        [/write|book|essay|article|report|source|language/, "📚 ✍️"],
+        [/money|bank|cost|price|fund/, "💵 🏦"],
+        [/travel|train|flight|airport|road|bicycle|cyclist|bus/, "🧭 🚲"],
+        [/build|construct|bridge|machine|engine|assemble|parts/, "⚙️ 🛠️"],
+        [/weather|storm|cloud|climate|wind|snow/, "🌦️ ☁️"],
+        [/home|room|house|wardrobe|heater|kettle/, "🏠 ✨"],
+        [/music|song|film|scene|painting|art/, "🎨 🎬"],
+        [/law|judge|court|authority|rule|permit/, "⚖️ ✅"],
+        [/school|student|teacher|study|scholar|learn/, "🎓 📖"],
+        [/work together|team|shared|mutual|cooperate|society/, "🤝 👥"],
+        [/surprise|amazed|astonish|stunned/, "😲 ✨"],
+        [/danger|urgent|crisis|refuge|retreat|soldier/, "🚨 🛡️"],
+        [/time|briefly|temporary|annually|lengthy/, "⏱️ 📅"],
+        [/plant|forest|tree|flower|prairie|field/, "🌿 🌳"],
+        [/clothes|fabric|textile|knit|sew|jacket/, "🧵 👕"],
+        [/idea|think|reason|concept|notion|logical|consider/, "💡 🧠"],
+        [/clear|exact|verify|precise|evident|specify/, "🔍 ✅"],
+        [/change|modify|alter|revise|alternate/, "🔄 ✏️"],
+        [/large|immense|abundant|dense/, "📈 🌟"],
+        [/remove|exclude|eliminate|resist|prevent/, "🚫 ✋"],
+        [/festival|celebration|carnival|humor|amusing/, "🎉 😄"],
+        [/religious|priest|chapel|church|tomb/, "⛪ 🕯️"],
+        [/mail|letter|parcel|postman|enquiry|inform/, "✉️ 📬"],
+        [/circle|diameter|line|align|adjacent/, "📐 ⭕"],
+        [/fire|flame|lighter|heat/, "🔥 ♨️"],
+        [/investigate|probe|detective|mystery/, "🔎 🕵️"]
+      ];
+      const match = themes.find(function(theme) { return theme[0].test(text); });
+      return match ? match[1] : "🧠 ✨";
     }
 
     function shuffle(items) {
-      const copy = [...items];
+      const copy = items.slice();
       for (let i = copy.length - 1; i > 0; i -= 1) {
         const j = Math.floor(Math.random() * (i + 1));
-        [copy[i], copy[j]] = [copy[j], copy[i]];
+        const temporary = copy[i];
+        copy[i] = copy[j];
+        copy[j] = temporary;
       }
       return copy;
     }
 
+    function wordsForSession(number) {
+      const start = (number - 1) * SESSION_SIZE;
+      return WORDS.slice(start, start + SESSION_SIZE);
+    }
+
+    function currentWords() {
+      return wordsForSession(state.session);
+    }
+
+    function validMastered(number, ids) {
+      const valid = new Set(wordsForSession(number).map(function(item) { return item.id; }));
+      return (ids || []).filter(function(id) { return valid.has(id); });
+    }
+
     function save() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        mastered: [...state.mastered],
+      if (!WORDS.length) return;
+      state.progress.activeSession = state.session;
+      state.progress.sessions[String(state.session)] = {
+        mastered: Array.from(state.mastered),
         round: state.round,
-        phase: state.phase === "complete" ? "complete" : "review"
-      }));
+        completed: state.mastered.size === currentWords().length
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
+    }
+
+    function loadSession(number) {
+      state.session = Math.min(SESSION_COUNT, Math.max(1, Number(number) || 1));
+      const stored = state.progress.sessions[String(state.session)] || {};
+      state.mastered = new Set(validMastered(state.session, stored.mastered));
+      state.round = Math.max(1, Number(stored.round) || 1);
+      state.phase = state.mastered.size === currentWords().length ? "complete" : "review";
+      state.reviewIndex = 0;
+      state.questions = [];
+      state.questionIndex = 0;
+      state.answer = null;
+      state.roundStartCount = state.mastered.size;
     }
 
     function restore() {
       try {
-        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-        if (!saved) return;
-        state.mastered = new Set((saved.mastered || []).filter(index => Number.isInteger(index) && index >= 0 && index < WORDS.length));
-        state.round = Math.max(1, Number(saved.round) || 1);
-        if (saved.phase === "complete" && state.mastered.size === WORDS.length) state.phase = "complete";
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+        if (saved && saved.version === 2 && saved.sessions && typeof saved.sessions === "object") {
+          state.progress = saved;
+        }
       } catch (_) {
         localStorage.removeItem(STORAGE_KEY);
       }
+      loadSession(state.progress.activeSession || 1);
+    }
+
+    function sessionMasteredCount(number) {
+      if (number === state.session) return state.mastered.size;
+      const stored = state.progress.sessions[String(number)] || {};
+      return validMastered(number, stored.mastered).length;
+    }
+
+    function totalMasteredCount() {
+      let total = 0;
+      for (let number = 1; number <= SESSION_COUNT; number += 1) total += sessionMasteredCount(number);
+      return total;
+    }
+
+    function renderSessionTabs() {
+      const buttons = [];
+      for (let number = 1; number <= SESSION_COUNT; number += 1) {
+        const count = sessionMasteredCount(number);
+        const classes = ["session-button"];
+        if (count === SESSION_SIZE) classes.push("complete");
+        if (number === state.session) classes.push("active");
+        buttons.push(
+          '<button class="' + classes.join(" ") + '" data-session="' + number + '" type="button">' +
+          '<span>Session ' + number + '</span><small>' + count + ' / 25</small></button>'
+        );
+      }
+      sessionsEl.innerHTML = buttons.join("");
     }
 
     function updateChrome() {
       const mastered = state.mastered.size;
-      progressBar.style.width = `${(mastered / WORDS.length) * 100}%`;
-      progressNumber.textContent = `${mastered} / ${WORDS.length} mastered`;
-      progressLabel.textContent = state.phase === "review" ? "Reviewing the set" : state.phase === "complete" ? "Set complete" : `Testing · Round ${state.round}`;
+      const total = currentWords().length || SESSION_SIZE;
+      progressBar.style.width = ((mastered / total) * 100) + "%";
+      progressNumber.textContent = mastered + " / " + total + " mastered";
+      progressLabel.textContent = "Session " + state.session + " progress";
       startTest.hidden = state.phase !== "review";
-      startTest.textContent = state.mastered.size ? `Continue round ${state.round} test` : "Start round 1 test";
+      startTest.textContent = mastered ? "Continue round " + state.round + " test" : "Start round 1 test";
 
       const steps = [{ label: "Review", status: state.phase === "review" ? "active" : "done" }];
       const visibleRounds = Math.max(state.round, state.phase === "review" ? 1 : 0);
@@ -386,16 +497,19 @@
         let status = "";
         if (state.phase === "complete" || number < state.round) status = "done";
         if ((state.phase === "test" || state.phase === "round-summary") && number === state.round) status = "active";
-        steps.push({ label: `Round ${number}`, status });
+        steps.push({ label: "Round " + number, status: status });
       }
-      roundsEl.innerHTML = steps.map(step => `<span class="step ${step.status}">${step.label}</span>`).join("");
+      roundsEl.innerHTML = steps.map(function(step) {
+        return '<span class="step ' + step.status + '">' + step.label + '</span>';
+      }).join("");
+      renderSessionTabs();
     }
 
     function showToast(message) {
       toast.textContent = message;
       toast.hidden = false;
       window.clearTimeout(showToast.timer);
-      showToast.timer = window.setTimeout(() => { toast.hidden = true; }, 2600);
+      showToast.timer = window.setTimeout(function() { toast.hidden = true; }, 2600);
     }
 
     function speak(word) {
@@ -411,42 +525,43 @@
     }
 
     function wordDots(index) {
-      return `<div class="word-map" aria-label="Review progress">${WORDS.map((_, itemIndex) => `<span class="word-dot ${itemIndex < index ? "seen" : ""} ${itemIndex === index ? "current" : ""}">${itemIndex + 1}</span>`).join("")}</div>`;
+      return '<div class="word-map" aria-label="Review progress">' +
+        currentWords().map(function(_, itemIndex) {
+          const classes = ["word-dot"];
+          if (itemIndex < index) classes.push("seen");
+          if (itemIndex === index) classes.push("current");
+          return '<span class="' + classes.join(" ") + '">' + (itemIndex + 1) + '</span>';
+        }).join("") + '</div>';
     }
 
     function renderReview() {
-      const item = WORDS[state.reviewIndex];
-      card.innerHTML = `
-        <div class="card-head"><p>Review every word before the test</p><span class="counter">${state.reviewIndex + 1} of ${WORDS.length}</span></div>
-        <div class="review-body">
-          <div class="review-layout">
-            <div class="review-copy">
-              <div class="word-line">
-                <h2>${escapeHtml(item.word)}</h2>
-                <button class="speak-button" id="speak" type="button" aria-label="Hear ${escapeHtml(item.word)} pronounced" title="Hear pronunciation">🔊</button>
-              </div>
-              <p class="meaning"><strong>Meaning:</strong> ${escapeHtml(item.meaning)}</p>
-              <p class="example">“${escapeHtml(item.example)}”</p>
-            </div>
-            <div class="picture" role="img" aria-label="${escapeHtml(item.scene)}">
-              <span class="picture-art" aria-hidden="true">${escapeHtml(item.art)}</span>
-              <p>${escapeHtml(item.scene)}</p>
-            </div>
-          </div>
-          ${wordDots(state.reviewIndex)}
-        </div>
-        <div class="card-actions">
-          <button class="button secondary" id="previous" type="button" ${state.reviewIndex === 0 ? "disabled" : ""}>Previous</button>
-          <button class="button" id="next" type="button">${state.reviewIndex === WORDS.length - 1 ? "Start round 1" : "Next word"}</button>
-        </div>`;
+      const items = currentWords();
+      const item = items[state.reviewIndex];
+      card.innerHTML =
+        '<div class="card-head"><p>Session ' + state.session + ' · review before the test</p><span class="counter">' +
+        (state.reviewIndex + 1) + ' of ' + items.length + '</span></div>' +
+        '<div class="review-body"><div class="review-layout"><div class="review-copy">' +
+        '<div class="word-line"><h2>' + escapeHtml(item.word) + '</h2>' +
+        '<button class="speak-button" id="speak" type="button" aria-label="Hear ' + escapeHtml(item.word) +
+        ' pronounced" title="Hear pronunciation">🔊</button></div>' +
+        '<p class="meaning"><strong>Meaning:</strong> ' + escapeHtml(item.meaning) + '</p>' +
+        '<p class="example">“' + escapeHtml(item.example) + '”</p></div>' +
+        '<div class="picture" role="img" aria-label="Picture clue for ' + escapeHtml(item.word) + '">' +
+        '<span class="picture-art" aria-hidden="true">' + escapeHtml(item.art) + '</span>' +
+        '<p>' + escapeHtml(item.meaning) + '</p></div></div>' +
+        wordDots(state.reviewIndex) + '</div>' +
+        '<div class="card-actions"><button class="button secondary" id="previous" type="button"' +
+        (state.reviewIndex === 0 ? " disabled" : "") + '>Previous</button>' +
+        '<button class="button" id="next" type="button">' +
+        (state.reviewIndex === items.length - 1 ? "Start round 1" : "Next word") + '</button></div>';
 
-      document.querySelector("#speak").addEventListener("click", () => speak(item.word));
-      document.querySelector("#previous").addEventListener("click", () => {
+      document.querySelector("#speak").addEventListener("click", function() { speak(item.word); });
+      document.querySelector("#previous").addEventListener("click", function() {
         state.reviewIndex = Math.max(0, state.reviewIndex - 1);
         render();
       });
-      document.querySelector("#next").addEventListener("click", () => {
-        if (state.reviewIndex < WORDS.length - 1) {
+      document.querySelector("#next").addEventListener("click", function() {
+        if (state.reviewIndex < items.length - 1) {
           state.reviewIndex += 1;
           render();
         } else {
@@ -456,19 +571,25 @@
       });
     }
 
-    function makeQuestion(wordIndex) {
-      const distractors = shuffle(WORDS.map((_, index) => index).filter(index => index !== wordIndex)).slice(0, 3);
-      return { wordIndex, options: shuffle([wordIndex, ...distractors]) };
+    function makeQuestion(wordId) {
+      const distractors = shuffle(currentWords().map(function(item) { return item.id; }).filter(function(id) {
+        return id !== wordId;
+      })).slice(0, 3);
+      return { wordId: wordId, options: shuffle([wordId].concat(distractors)) };
     }
 
     function beginRound() {
-      const remaining = WORDS.map((_, index) => index).filter(index => !state.mastered.has(index));
+      const remaining = currentWords().filter(function(item) {
+        return !state.mastered.has(item.id);
+      }).map(function(item) { return item.id; });
+
       if (!remaining.length) {
         state.phase = "complete";
         save();
         render();
         return;
       }
+
       state.phase = "test";
       state.questions = shuffle(remaining).map(makeQuestion);
       state.questionIndex = 0;
@@ -479,17 +600,16 @@
     }
 
     function blankSentence(item) {
-      const target = item.form || item.word;
-      const pattern = new RegExp(`\\b${target.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}\\b`, "i");
+      const target = BLANK_FORMS[item.id] || item.word;
+      const pattern = new RegExp("\\b" + escapeRegExp(target) + "\\b", "i");
       return escapeHtml(item.example).replace(pattern, '<span class="blank">_____</span>');
     }
 
-    function choose(optionIndex) {
+    function choose(optionId) {
       if (state.answer !== null) return;
       const question = state.questions[state.questionIndex];
-      const correct = optionIndex === question.wordIndex;
-      state.answer = optionIndex;
-      if (correct) state.mastered.add(question.wordIndex);
+      state.answer = optionId;
+      if (optionId === question.wordId) state.mastered.add(question.wordId);
       save();
       render();
     }
@@ -501,7 +621,7 @@
         state.answer = null;
         render();
       } else {
-        state.phase = state.mastered.size === WORDS.length ? "complete" : "round-summary";
+        state.phase = state.mastered.size === currentWords().length ? "complete" : "round-summary";
         save();
         render();
       }
@@ -509,70 +629,97 @@
 
     function renderTest() {
       const question = state.questions[state.questionIndex];
-      const item = WORDS[question.wordIndex];
+      const item = WORD_BY_ID.get(question.wordId);
       const answered = state.answer !== null;
-      const correct = state.answer === question.wordIndex;
-      card.innerHTML = `
-        <div class="card-head"><p>Choose the word that completes the sentence</p><span class="counter">${state.questionIndex + 1} of ${state.questions.length}</span></div>
-        <div class="test-body">
-          <p class="prompt-label">Simple meaning</p>
-          <p class="test-meaning">${escapeHtml(item.meaning)}</p>
-          <p class="sentence">${blankSentence(item)}</p>
-          <div class="choices">${question.options.map((optionIndex, index) => {
-            const isCorrect = answered && optionIndex === question.wordIndex;
-            const isWrong = answered && optionIndex === state.answer && !correct;
-            return `<button class="choice ${isCorrect ? "correct" : ""} ${isWrong ? "wrong" : ""}" data-option="${optionIndex}" type="button" ${answered ? "disabled" : ""}><small>${index + 1}</small>${escapeHtml(WORDS[optionIndex].word)}</button>`;
-          }).join("")}</div>
-          <div class="feedback ${answered ? (correct ? "good" : "try") : ""}" id="feedback" role="status">${answered ? (correct ? `✓ Correct — <strong>${escapeHtml(item.word)}</strong> is mastered.` : `Not yet. The answer is <strong>${escapeHtml(item.word)}</strong>. It will return next round.`) : ""}</div>
-        </div>
-        <div class="card-actions">
-          <button class="button secondary" id="review-again" type="button">Review words</button>
-          <button class="button" id="next-question" type="button" ${answered ? "" : "disabled"}>${state.questionIndex === state.questions.length - 1 ? "Finish round" : "Next question"}</button>
-        </div>`;
+      const correct = state.answer === question.wordId;
+      const choices = question.options.map(function(optionId, index) {
+        const option = WORD_BY_ID.get(optionId);
+        const isCorrect = answered && optionId === question.wordId;
+        const isWrong = answered && optionId === state.answer && !correct;
+        return '<button class="choice ' + (isCorrect ? "correct" : "") + ' ' + (isWrong ? "wrong" : "") +
+          '" data-option="' + optionId + '" type="button"' + (answered ? " disabled" : "") + '>' +
+          '<small>' + (index + 1) + '</small>' + escapeHtml(option.word) + '</button>';
+      }).join("");
 
-      document.querySelectorAll("[data-option]").forEach(button => button.addEventListener("click", () => choose(Number(button.dataset.option))));
-      document.querySelector("#review-again").addEventListener("click", () => { state.phase = "review"; state.reviewIndex = 0; render(); });
+      card.innerHTML =
+        '<div class="card-head"><p>Session ' + state.session + ' · choose the missing word</p><span class="counter">' +
+        (state.questionIndex + 1) + ' of ' + state.questions.length + '</span></div>' +
+        '<div class="test-body"><p class="prompt-label">Simple meaning</p>' +
+        '<p class="test-meaning">' + escapeHtml(item.meaning) + '</p>' +
+        '<p class="sentence">' + blankSentence(item) + '</p><div class="choices">' + choices + '</div>' +
+        '<div class="feedback ' + (answered ? (correct ? "good" : "try") : "") + '" id="feedback" role="status">' +
+        (answered ? (correct ? '✓ Correct — <strong>' + escapeHtml(item.word) + '</strong> is mastered.' :
+          'Not yet. The answer is <strong>' + escapeHtml(item.word) + '</strong>. It will return next round.') : "") +
+        '</div></div><div class="card-actions">' +
+        '<button class="button secondary" id="review-again" type="button">Review words</button>' +
+        '<button class="button" id="next-question" type="button"' + (answered ? "" : " disabled") + '>' +
+        (state.questionIndex === state.questions.length - 1 ? "Finish round" : "Next question") + '</button></div>';
+
+      document.querySelectorAll("[data-option]").forEach(function(button) {
+        button.addEventListener("click", function() { choose(Number(button.dataset.option)); });
+      });
+      document.querySelector("#review-again").addEventListener("click", function() {
+        state.phase = "review";
+        state.reviewIndex = 0;
+        render();
+      });
       document.querySelector("#next-question").addEventListener("click", nextQuestion);
     }
 
     function renderRoundSummary() {
       const newlyMastered = state.mastered.size - state.roundStartCount;
-      const remaining = WORDS.length - state.mastered.size;
-      card.innerHTML = `
-        <div class="center-body"><div>
-          <div class="seal" aria-hidden="true">${state.round}</div>
-          <h2>Round ${state.round} complete.</h2>
-          <div class="score-row"><span>${newlyMastered} learned this round</span><span>${state.mastered.size} of ${WORDS.length} mastered</span></div>
-          <p>${remaining} ${remaining === 1 ? "word needs" : "words need"} another try. The next round includes only those words.</p>
-          <button class="button" id="next-round" type="button">Start round ${state.round + 1}</button>
-        </div></div>`;
-      document.querySelector("#next-round").addEventListener("click", () => { state.round += 1; beginRound(); });
+      const remaining = currentWords().length - state.mastered.size;
+      card.innerHTML =
+        '<div class="center-body"><div><div class="seal" aria-hidden="true">' + state.round + '</div>' +
+        '<h2>Round ' + state.round + ' complete.</h2>' +
+        '<div class="score-row"><span>' + newlyMastered + ' learned this round</span><span>' +
+        state.mastered.size + ' of 25 mastered</span></div>' +
+        '<p>' + remaining + (remaining === 1 ? " word needs" : " words need") +
+        ' another try. The next round includes only those words.</p>' +
+        '<button class="button" id="next-round" type="button">Start round ' + (state.round + 1) +
+        '</button></div></div>';
+      document.querySelector("#next-round").addEventListener("click", function() {
+        state.round += 1;
+        beginRound();
+      });
     }
 
     function renderComplete() {
-      card.innerHTML = `
-        <div class="center-body"><div>
-          <div class="seal" aria-hidden="true">✓</div>
-          <h2>All 25 mastered!</h2>
-          <p>You reviewed every word and answered each one correctly. This set is complete.</p>
-          <button class="button" id="practice-again" type="button">Practice the set again</button>
-        </div></div>`;
-      document.querySelector("#practice-again").addEventListener("click", resetProgress);
+      const allDone = totalMasteredCount() === WORDS.length;
+      const nextButton = state.session < SESSION_COUNT
+        ? '<button class="button" id="next-session" type="button">Go to session ' + (state.session + 1) + '</button>'
+        : "";
+      card.innerHTML =
+        '<div class="center-body"><div><div class="seal" aria-hidden="true">✓</div>' +
+        '<h2>' + (allDone ? "All 200 mastered!" : "Session " + state.session + " mastered!") + '</h2>' +
+        '<p>You answered every word in this 25-word session correctly. ' +
+        (allDone ? "The complete 200-word set is finished." : "Choose another session or continue to the next one.") +
+        '</p><div class="card-actions" style="border:0;justify-content:center;padding:0;">' +
+        '<button class="button secondary" id="practice-again" type="button">Practice again</button>' +
+        nextButton + '</div></div></div>';
+
+      document.querySelector("#practice-again").addEventListener("click", resetCurrentSession);
+      const next = document.querySelector("#next-session");
+      if (next) next.addEventListener("click", function() { changeSession(state.session + 1); });
     }
 
-    function resetProgress() {
-      localStorage.removeItem(STORAGE_KEY);
-      state.phase = "review";
-      state.reviewIndex = 0;
-      state.round = 1;
-      state.mastered = new Set();
-      state.questions = [];
-      state.questionIndex = 0;
-      state.answer = null;
+    function resetCurrentSession() {
+      delete state.progress.sessions[String(state.session)];
+      loadSession(state.session);
+      save();
       render();
     }
 
+    function changeSession(number) {
+      save();
+      loadSession(number);
+      save();
+      render();
+      window.scrollTo({ top: document.querySelector("#sessions").offsetTop - 16, behavior: "smooth" });
+    }
+
     function render() {
+      if (!WORDS.length) return;
       updateChrome();
       if (state.phase === "review") renderReview();
       else if (state.phase === "test") renderTest();
@@ -580,12 +727,20 @@
       else renderComplete();
     }
 
-    document.querySelector("#reset").addEventListener("click", () => {
-      if (window.confirm("Start over and clear mastery progress for these 25 words?")) resetProgress();
+    document.querySelector("#reset").addEventListener("click", function() {
+      if (window.confirm("Clear mastery progress for Session " + state.session + " and start it again?")) {
+        resetCurrentSession();
+      }
     });
+
     startTest.addEventListener("click", beginRound);
 
-    document.addEventListener("keydown", event => {
+    sessionsEl.addEventListener("click", function(event) {
+      const button = event.target.closest("[data-session]");
+      if (button) changeSession(Number(button.dataset.session));
+    });
+
+    document.addEventListener("keydown", function(event) {
       if (state.phase !== "test" || state.answer !== null) return;
       const number = Number(event.key);
       if (number >= 1 && number <= 4) {
@@ -594,8 +749,43 @@
       }
     });
 
-    restore();
-    render();
+    async function initialize() {
+      const response = await fetch("../words.json?v=1501");
+      if (!response.ok) throw new Error("The word list could not be loaded.");
+      const allWords = await response.json();
+      const savedKnown = localStorage.getItem(MAIN_KNOWN_KEY);
+      if (!savedKnown) throw new Error("Open the full list first so its Known checkmarks can load.");
+      const knownIds = JSON.parse(savedKnown);
+      if (!Array.isArray(knownIds)) throw new Error("The saved Known checkmarks are invalid.");
+      const known = new Set(knownIds);
+      const remaining = allWords.filter(function(item) { return !known.has(item.id); });
+      if (remaining.length < 200) throw new Error("Fewer than 200 words remain to learn.");
+      WORDS = remaining.slice(0, 200).map(function(sourceWord) {
+        return Object.assign({}, sourceWord, {
+          art: illustrationFor(sourceWord),
+          scene: sourceWord.example
+        });
+      });
+      WORD_BY_ID = new Map(WORDS.map(function(item) { return [item.id, item]; }));
+      document.querySelector(".intro").textContent = "Using only the " + remaining.length +
+        " words still marked To learn. The first 200 are split into eight 25-word sessions.";
+      restore();
+      render();
+    }
+
+    initialize().catch(function(error) {
+      console.error(error);
+      startTest.hidden = true;
+      sessionsEl.hidden = true;
+      roundsEl.hidden = true;
+      const missingKnown = String(error.message || "").includes("full list first");
+      card.innerHTML = '<div class="center-body"><div><div class="seal" aria-hidden="true">!</div>' +
+        '<h2>' + (missingKnown ? "Load the To-learn list first" : "Words could not load") + '</h2><p>' +
+        (missingKnown ? 'Open the full 1,500-word list on this device, wait for “Live · saved online,” then return here.' :
+        'Please refresh the page and try again.') + '</p>' +
+        (missingKnown ? '<a class="button" href="../" style="display:inline-flex;align-items:center;text-decoration:none;">Open full list</a>' : '') +
+        '</div></div>';
+    });
   </script>
 </body>
 </html>
