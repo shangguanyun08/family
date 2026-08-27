@@ -85,6 +85,19 @@
     .progress-copy strong { color: #173f54; font: 1.18rem Georgia, serif; }
     .progress-track { height: 9px; overflow: hidden; border-radius: 99px; background: #e5ecec; }
     .progress-track span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #207b72, #65bea9); transition: width .3s ease; }
+    .status-actions { display: flex; align-items: center; gap: 9px; }
+    .test-now {
+      min-height: 42px;
+      padding: 9px 15px;
+      border: 0;
+      border-radius: 10px;
+      background: #173f54;
+      color: white;
+      font-size: .78rem;
+      font-weight: 850;
+      box-shadow: 0 7px 17px rgba(23, 63, 84, .18);
+    }
+    .test-now:hover { background: #0f3346; transform: translateY(-1px); }
 
     .quiet-button {
       min-height: 40px;
@@ -130,7 +143,8 @@
     .card-head p { margin: 0; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
     .counter { color: var(--green); font: 1rem Georgia, serif; }
 
-    .review-body { display: grid; align-content: center; min-height: 350px; padding: 42px clamp(24px, 7vw, 74px); }
+    .review-body { display: grid; align-content: center; min-height: 390px; padding: 36px clamp(24px, 6vw, 64px); }
+    .review-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(220px, .85fr); gap: clamp(24px, 5vw, 52px); align-items: center; }
     .word-line { display: flex; align-items: center; gap: 14px; }
     .word-line h2 { margin: 0; color: var(--green-dark); font: 500 clamp(3rem, 9vw, 5.8rem) / 1 Georgia, serif; letter-spacing: -.045em; }
     .speak-button {
@@ -148,6 +162,19 @@
     .meaning { margin: 26px 0 0; color: #4d5d70; font-size: clamp(1rem, 2.4vw, 1.25rem); line-height: 1.55; }
     .meaning strong { color: var(--ink); }
     .example { margin: 18px 0 0; padding: 18px 20px; border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0; background: #fff8e9; color: #4a5260; font: 1.15rem/1.55 Georgia, serif; }
+    .picture {
+      display: grid;
+      place-items: center;
+      min-height: 230px;
+      padding: 26px 20px 20px;
+      border: 1px solid #d7e5e2;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #eef8f5, #fff8e7);
+      box-shadow: inset 0 1px rgba(255, 255, 255, .8);
+      text-align: center;
+    }
+    .picture-art { display: block; font-size: clamp(3.2rem, 8vw, 5.2rem); line-height: 1.2; letter-spacing: .04em; filter: drop-shadow(0 8px 9px rgba(25, 74, 68, .1)); }
+    .picture p { margin: 18px 0 0; color: #53677a; font-size: .82rem; font-weight: 750; line-height: 1.45; }
 
     .card-actions { display: flex; justify-content: space-between; gap: 12px; padding: 18px 22px; border-top: 1px solid var(--line); background: white; }
     .button {
@@ -213,9 +240,12 @@
       .save-note { display: none; }
       .eyebrow { margin-top: 34px; }
       .status-card { grid-template-columns: 1fr; }
-      .quiet-button { justify-self: end; }
+      .status-actions { width: 100%; }
+      .status-actions button { flex: 1; }
       .card { min-height: 0; }
       .review-body { min-height: 330px; }
+      .review-layout { grid-template-columns: 1fr; }
+      .picture { min-height: 180px; }
       .card-actions { padding: 14px; }
       .button { flex: 1; padding-inline: 12px; }
       .choices { grid-template-columns: 1fr; }
@@ -248,7 +278,10 @@
         <div class="progress-copy"><span id="progress-label">Reviewing the set</span><strong id="progress-number">0 / 25 mastered</strong></div>
         <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
       </div>
-      <button class="quiet-button" id="reset" type="button">Start over</button>
+      <div class="status-actions">
+        <button class="test-now" id="start-test" type="button">Start round 1 test</button>
+        <button class="quiet-button" id="reset" type="button">Start over</button>
+      </div>
     </section>
 
     <div class="rounds" id="rounds" aria-label="Learning steps"></div>
@@ -259,31 +292,31 @@
 
   <script>
     const WORDS = [
-      { word: "ban", meaning: "to officially forbid", example: "The city may ban cars from this street." },
-      { word: "curious", meaning: "eager to know or learn", example: "The curious child opened every drawer." },
-      { word: "approach", meaning: "to move closer to", example: "A deer began to approach the stream." },
-      { word: "boundary", meaning: "a line marking an edge", example: "The fence marks the boundary of our yard." },
-      { word: "convince", meaning: "to make someone believe or agree", example: "I tried to convince Dad to adopt the puppy." },
-      { word: "decrease", meaning: "to become or make smaller", example: "Turning off lights can decrease energy use." },
-      { word: "distract", meaning: "to pull attention away", example: "Loud music can distract me from homework." },
-      { word: "enormous", meaning: "extremely large", example: "An enormous whale swam beside the boat." },
-      { word: "flexible", meaning: "able to bend or change easily", example: "This flexible wire bends without breaking." },
-      { word: "hesitate", meaning: "to pause because you are unsure", example: "Do not hesitate to ask for help." },
-      { word: "identify", meaning: "to name or recognize", example: "Can you identify the bird in this picture?" },
-      { word: "language", meaning: "words and rules people use to communicate", example: "Spanish is the main language of Mexico." },
-      { word: "material", meaning: "what something is made from", example: "The bag is made from waterproof material." },
-      { word: "organize", meaning: "to arrange in a clear order", example: "Please organize the books by subject." },
-      { word: "persuade", form: "persuaded", meaning: "to talk someone into doing or believing something", example: "She persuaded me to join the chess club." },
-      { word: "analyze", meaning: "to study something carefully", example: "The scientist will analyze the blood sample." },
-      { word: "attract", meaning: "to draw something closer or gain attention", example: "Bright flowers attract bees and butterflies." },
-      { word: "complex", meaning: "made of many connected parts", example: "The machine has many complex parts." },
-      { word: "confirm", meaning: "to show that something is true", example: "Please confirm your appointment by Friday." },
-      { word: "culture", meaning: "the ideas and customs of a group", example: "Food is an important part of every culture." },
-      { word: "exclude", form: "excludes", meaning: "to leave out or keep out", example: "The price excludes tax and delivery." },
-      { word: "explore", meaning: "to travel and learn about a place", example: "He wants to explore the world and see new things." },
-      { word: "express", meaning: "to show or communicate a thought or feeling", example: "Painting helps her express her feelings." },
-      { word: "comb", meaning: "a tool for arranging hair", example: "I use a comb to tidy my hair." },
-      { word: "feature", meaning: "an important part or quality", example: "A large screen is the phone's best feature." }
+      { word: "ban", art: "🚫 🚗", scene: "Cars are forbidden here.", meaning: "to officially forbid", example: "The city may ban cars from this street." },
+      { word: "curious", art: "🧒 🔍 ❓", scene: "A child wants to discover more.", meaning: "eager to know or learn", example: "The curious child opened every drawer." },
+      { word: "approach", art: "🦌 ➡️ 💧", scene: "A deer moves closer to the water.", meaning: "to move closer to", example: "A deer began to approach the stream." },
+      { word: "boundary", art: "🏡 🚧 🌳", scene: "A fence marks where the yard ends.", meaning: "a line marking an edge", example: "The fence marks the boundary of our yard." },
+      { word: "convince", art: "🗣️ 🤝", scene: "Talking helps someone agree.", meaning: "to make someone believe or agree", example: "I tried to convince Dad to adopt the puppy." },
+      { word: "decrease", art: "📊 ⬇️", scene: "The amount becomes smaller.", meaning: "to become or make smaller", example: "Turning off lights can decrease energy use." },
+      { word: "distract", art: "📚 👀 🎵", scene: "Music pulls attention away from a book.", meaning: "to pull attention away", example: "Loud music can distract me from homework." },
+      { word: "enormous", art: "⛵ 🐋", scene: "The whale is extremely large.", meaning: "extremely large", example: "An enormous whale swam beside the boat." },
+      { word: "flexible", art: "🪢 ↪️", scene: "The rope bends without breaking.", meaning: "able to bend or change easily", example: "This flexible wire bends without breaking." },
+      { word: "hesitate", art: "🚶 ⏸️", scene: "A person pauses before moving.", meaning: "to pause because you are unsure", example: "Do not hesitate to ask for help." },
+      { word: "identify", art: "🔎 🐦 ✅", scene: "The bird is recognized correctly.", meaning: "to name or recognize", example: "Can you identify the bird in this picture?" },
+      { word: "language", art: "💬 🌎 💬", scene: "People use words to communicate.", meaning: "words and rules people use to communicate", example: "Spanish is the main language of Mexico." },
+      { word: "material", art: "🎒 🧵", scene: "Fabric is what the bag is made from.", meaning: "what something is made from", example: "The bag is made from waterproof material." },
+      { word: "organize", art: "📚 1️⃣ 2️⃣ 3️⃣", scene: "Books are arranged in order.", meaning: "to arrange in a clear order", example: "Please organize the books by subject." },
+      { word: "persuade", form: "persuaded", art: "🗣️ ➡️ ♟️", scene: "Talking gets someone to join chess.", meaning: "to talk someone into doing or believing something", example: "She persuaded me to join the chess club." },
+      { word: "analyze", art: "🔬 🩸 📋", scene: "A scientist studies a sample carefully.", meaning: "to study something carefully", example: "The scientist will analyze the blood sample." },
+      { word: "attract", art: "🌻 🐝", scene: "A bright flower draws a bee closer.", meaning: "to draw something closer or gain attention", example: "Bright flowers attract bees and butterflies." },
+      { word: "complex", art: "⚙️ ⚙️ 🧩", scene: "Many connected parts work together.", meaning: "made of many connected parts", example: "The machine has many complex parts." },
+      { word: "confirm", art: "📅 ✅", scene: "A check shows the appointment is certain.", meaning: "to show that something is true", example: "Please confirm your appointment by Friday." },
+      { word: "culture", art: "🍲 🎉 🏛️", scene: "Food and celebrations are group customs.", meaning: "the ideas and customs of a group", example: "Food is an important part of every culture." },
+      { word: "exclude", form: "excludes", art: "🧾 🚫 🚚", scene: "Delivery is left out of the price.", meaning: "to leave out or keep out", example: "The price excludes tax and delivery." },
+      { word: "explore", art: "🧭 🌍", scene: "A compass helps someone discover the world.", meaning: "to travel and learn about a place", example: "He wants to explore the world and see new things." },
+      { word: "express", art: "🎨 ❤️", scene: "Art shows a feeling.", meaning: "to show or communicate a thought or feeling", example: "Painting helps her express her feelings." },
+      { word: "comb", art: "🪮 💇", scene: "A comb arranges hair.", meaning: "a tool for arranging hair", example: "I use a comb to tidy my hair." },
+      { word: "feature", art: "📱 ⭐", scene: "The best phone part is highlighted.", meaning: "an important part or quality", example: "A large screen is the phone's best feature." }
     ];
 
     const STORAGE_KEY = "harry-vocabulary-first-25-v1";
@@ -303,6 +336,7 @@
     const progressBar = document.querySelector("#progress-bar");
     const progressLabel = document.querySelector("#progress-label");
     const progressNumber = document.querySelector("#progress-number");
+    const startTest = document.querySelector("#start-test");
     const toast = document.querySelector("#toast");
 
     function escapeHtml(value) {
@@ -343,6 +377,8 @@
       progressBar.style.width = `${(mastered / WORDS.length) * 100}%`;
       progressNumber.textContent = `${mastered} / ${WORDS.length} mastered`;
       progressLabel.textContent = state.phase === "review" ? "Reviewing the set" : state.phase === "complete" ? "Set complete" : `Testing · Round ${state.round}`;
+      startTest.hidden = state.phase !== "review";
+      startTest.textContent = state.mastered.size ? `Continue round ${state.round} test` : "Start round 1 test";
 
       const steps = [{ label: "Review", status: state.phase === "review" ? "active" : "done" }];
       const visibleRounds = Math.max(state.round, state.phase === "review" ? 1 : 0);
@@ -383,12 +419,20 @@
       card.innerHTML = `
         <div class="card-head"><p>Review every word before the test</p><span class="counter">${state.reviewIndex + 1} of ${WORDS.length}</span></div>
         <div class="review-body">
-          <div class="word-line">
-            <h2>${escapeHtml(item.word)}</h2>
-            <button class="speak-button" id="speak" type="button" aria-label="Hear ${escapeHtml(item.word)} pronounced" title="Hear pronunciation">🔊</button>
+          <div class="review-layout">
+            <div class="review-copy">
+              <div class="word-line">
+                <h2>${escapeHtml(item.word)}</h2>
+                <button class="speak-button" id="speak" type="button" aria-label="Hear ${escapeHtml(item.word)} pronounced" title="Hear pronunciation">🔊</button>
+              </div>
+              <p class="meaning"><strong>Meaning:</strong> ${escapeHtml(item.meaning)}</p>
+              <p class="example">“${escapeHtml(item.example)}”</p>
+            </div>
+            <div class="picture" role="img" aria-label="${escapeHtml(item.scene)}">
+              <span class="picture-art" aria-hidden="true">${escapeHtml(item.art)}</span>
+              <p>${escapeHtml(item.scene)}</p>
+            </div>
           </div>
-          <p class="meaning"><strong>Meaning:</strong> ${escapeHtml(item.meaning)}</p>
-          <p class="example">“${escapeHtml(item.example)}”</p>
           ${wordDots(state.reviewIndex)}
         </div>
         <div class="card-actions">
@@ -539,6 +583,7 @@
     document.querySelector("#reset").addEventListener("click", () => {
       if (window.confirm("Start over and clear mastery progress for these 25 words?")) resetProgress();
     });
+    startTest.addEventListener("click", beginRound);
 
     document.addEventListener("keydown", event => {
       if (state.phase !== "test" || state.answer !== null) return;
