@@ -171,15 +171,26 @@
       display: grid;
       place-items: center;
       min-height: 230px;
-      padding: 26px 20px 20px;
+      padding: 10px 10px 17px;
       border: 1px solid #d7e5e2;
       border-radius: 22px;
       background: linear-gradient(145deg, #eef8f5, #fff8e7);
       box-shadow: inset 0 1px rgba(255, 255, 255, .8);
       text-align: center;
     }
-    .picture-art { display: block; font-size: clamp(3.2rem, 8vw, 5.2rem); line-height: 1.2; letter-spacing: .04em; filter: drop-shadow(0 8px 9px rgba(25, 74, 68, .1)); }
-    .picture p { margin: 18px 0 0; color: #53677a; font-size: .82rem; font-weight: 750; line-height: 1.45; }
+    .picture-art {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: 15px;
+      background-image: var(--picture-sheet);
+      background-repeat: no-repeat;
+      background-position: var(--picture-x) var(--picture-y);
+      background-size: 500% 500%;
+      box-shadow: 0 8px 20px rgba(25, 74, 68, .16);
+    }
+    .picture p { margin: 13px 8px 0; color: #53677a; font-size: .82rem; font-weight: 750; line-height: 1.45; }
 
     .card-actions { display: flex; justify-content: space-between; gap: 12px; padding: 18px 22px; border-top: 1px solid var(--line); background: white; }
     .button {
@@ -350,6 +361,22 @@
     const SESSION_SIZE = 25;
     const SESSION_COUNT = 8;
     const STORAGE_KEY = "harry-vocabulary-to-learn-200-v2";
+    const ILLUSTRATION_IDS = [
+      [34, 39, 42, 43, 44, 49, 54, 55, 60, 62, 65, 75, 80, 85, 92, 95, 96, 97, 101, 104, 106, 108, 112, 120, 121],
+      [140, 147, 150, 152, 155, 156, 161, 166, 170, 171, 172, 173, 174, 186, 189, 190, 192, 198, 199, 201, 202, 203, 206, 208, 211],
+      [212, 213, 215, 218, 223, 224, 225, 229, 231, 232, 233, 234, 236, 237, 238, 241, 243, 247, 251, 252, 257, 259, 260, 261, 262],
+      [265, 268, 269, 274, 275, 276, 277, 281, 283, 288, 291, 292, 293, 294, 295, 296, 297, 298, 299, 301, 305, 306, 308, 309, 311],
+      [312, 313, 321, 322, 326, 331, 340, 341, 342, 344, 348, 351, 352, 354, 361, 362, 363, 368, 369, 370, 371, 372, 373, 375, 387],
+      [389, 391, 393, 394, 396, 397, 398, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 413, 414, 416, 418, 419, 425, 426, 427],
+      [429, 434, 435, 436, 437, 438, 440, 441, 449, 450, 451, 452, 453, 454, 457, 458, 459, 460, 461, 463, 464, 465, 466, 470, 474],
+      [476, 477, 478, 479, 481, 487, 488, 489, 491, 492, 493, 496, 498, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511]
+    ];
+    const ILLUSTRATION_LOOKUP = new Map();
+    ILLUSTRATION_IDS.forEach(function(ids, sheetIndex) {
+      ids.forEach(function(id, imageIndex) {
+        ILLUSTRATION_LOOKUP.set(id, { sheet: sheetIndex + 1, index: imageIndex });
+      });
+    });
     const BLANK_FORMS = {
       97: "modified",
       413: "called for a nurse",
@@ -394,41 +421,19 @@
     }
 
     function illustrationFor(item) {
-      const text = (item.word + " " + item.meaning + " " + item.example).toLowerCase();
-      const themes = [
-        [/sea|ocean|water|rain|river|shore|diving|drought/, "🌊 💧"],
-        [/animal|dog|bird|cattle|cow|whale|primate|chimpanzee/, "🐾 🌿"],
-        [/doctor|medicine|health|pain|hospital|aspirin|earache/, "🩺 💊"],
-        [/food|eat|meal|soup|lettuce|spinach|cabbage|sandwich/, "🍽️ 🥗"],
-        [/write|book|essay|article|report|source|language/, "📚 ✍️"],
-        [/money|bank|cost|price|fund/, "💵 🏦"],
-        [/travel|train|flight|airport|road|bicycle|cyclist|bus/, "🧭 🚲"],
-        [/build|construct|bridge|machine|engine|assemble|parts/, "⚙️ 🛠️"],
-        [/weather|storm|cloud|climate|wind|snow/, "🌦️ ☁️"],
-        [/home|room|house|wardrobe|heater|kettle/, "🏠 ✨"],
-        [/music|song|film|scene|painting|art/, "🎨 🎬"],
-        [/law|judge|court|authority|rule|permit/, "⚖️ ✅"],
-        [/school|student|teacher|study|scholar|learn/, "🎓 📖"],
-        [/work together|team|shared|mutual|cooperate|society/, "🤝 👥"],
-        [/surprise|amazed|astonish|stunned/, "😲 ✨"],
-        [/danger|urgent|crisis|refuge|retreat|soldier/, "🚨 🛡️"],
-        [/time|briefly|temporary|annually|lengthy/, "⏱️ 📅"],
-        [/plant|forest|tree|flower|prairie|field/, "🌿 🌳"],
-        [/clothes|fabric|textile|knit|sew|jacket/, "🧵 👕"],
-        [/idea|think|reason|concept|notion|logical|consider/, "💡 🧠"],
-        [/clear|exact|verify|precise|evident|specify/, "🔍 ✅"],
-        [/change|modify|alter|revise|alternate/, "🔄 ✏️"],
-        [/large|immense|abundant|dense/, "📈 🌟"],
-        [/remove|exclude|eliminate|resist|prevent/, "🚫 ✋"],
-        [/festival|celebration|carnival|humor|amusing/, "🎉 😄"],
-        [/religious|priest|chapel|church|tomb/, "⛪ 🕯️"],
-        [/mail|letter|parcel|postman|enquiry|inform/, "✉️ 📬"],
-        [/circle|diameter|line|align|adjacent/, "📐 ⭕"],
-        [/fire|flame|lighter|heat/, "🔥 ♨️"],
-        [/investigate|probe|detective|mystery/, "🔎 🕵️"]
-      ];
-      const match = themes.find(function(theme) { return theme[0].test(text); });
-      return match ? match[1] : "🧠 ✨";
+      const location = ILLUSTRATION_LOOKUP.get(item.id);
+      if (!location) return null;
+      return {
+        sheet: location.sheet,
+        x: (location.index % 5) * 25,
+        y: Math.floor(location.index / 5) * 25
+      };
+    }
+
+    function illustrationStyle(art) {
+      if (!art) return "";
+      return "--picture-sheet:url('./illustrations/session-" + art.sheet +
+        ".webp?v=1');--picture-x:" + art.x + "%;--picture-y:" + art.y + "%";
     }
 
     function shuffle(items) {
@@ -694,7 +699,7 @@
         '<p class="meaning"><strong>Meaning:</strong> ' + escapeHtml(item.meaning) + '</p>' +
         '<p class="example">“' + escapeHtml(item.example) + '”</p></div>' +
         '<div class="picture" role="img" aria-label="Picture clue for ' + escapeHtml(item.word) + '">' +
-        '<span class="picture-art" aria-hidden="true">' + escapeHtml(item.art) + '</span>' +
+        '<span class="picture-art" aria-hidden="true" style="' + illustrationStyle(item.art) + '"></span>' +
         '<p>' + escapeHtml(item.meaning) + '</p></div></div>' +
         wordDots(state.reviewIndex) + '</div>' +
         '<div class="card-actions"><button class="button secondary" id="previous" type="button"' +
@@ -908,22 +913,20 @@
       const response = await fetch("../words.json?v=1501");
       if (!response.ok) throw new Error("The word list could not be loaded.");
       const allWords = await response.json();
-      const savedKnown = localStorage.getItem(MAIN_KNOWN_KEY);
-      if (!savedKnown) throw new Error("Open the full list first so its Known checkmarks can load.");
-      const knownIds = JSON.parse(savedKnown);
-      if (!Array.isArray(knownIds)) throw new Error("The saved Known checkmarks are invalid.");
-      const known = new Set(knownIds);
-      const remaining = allWords.filter(function(item) { return !known.has(item.id); });
-      if (remaining.length < 200) throw new Error("Fewer than 200 words remain to learn.");
-      WORDS = remaining.slice(0, 200).map(function(sourceWord) {
+      const wordsById = new Map(allWords.map(function(item) { return [item.id, item]; }));
+      const selectedIds = ILLUSTRATION_IDS.flat();
+      WORDS = selectedIds.map(function(id) { return wordsById.get(id); }).filter(Boolean).map(function(sourceWord) {
         return Object.assign({}, sourceWord, {
           art: illustrationFor(sourceWord),
           scene: sourceWord.example
         });
       });
+      if (WORDS.length !== 200 || WORDS.some(function(item) { return !item.art; })) {
+        throw new Error("The illustrated word set is incomplete.");
+      }
       WORD_BY_ID = new Map(WORDS.map(function(item) { return [item.id, item]; }));
-      document.querySelector(".intro").textContent = "Using only the " + remaining.length +
-        " words still marked To learn. The first 200 are split into eight 25-word sessions.";
+      document.querySelector(".intro").textContent =
+        "Harry's selected 200 To-learn words are split into eight 25-word sessions, each with its own picture clue.";
       restore();
       render();
     }
@@ -933,12 +936,8 @@
       startTest.hidden = true;
       sessionsEl.hidden = true;
       roundsEl.hidden = true;
-      const missingKnown = String(error.message || "").includes("full list first");
       card.innerHTML = '<div class="center-body"><div><div class="seal" aria-hidden="true">!</div>' +
-        '<h2>' + (missingKnown ? "Load the To-learn list first" : "Words could not load") + '</h2><p>' +
-        (missingKnown ? 'Open the full 1,500-word list on this device, wait for “Live · saved online,” then return here.' :
-        'Please refresh the page and try again.') + '</p>' +
-        (missingKnown ? '<a class="button" href="../" style="display:inline-flex;align-items:center;text-decoration:none;">Open full list</a>' : '') +
+        '<h2>Words could not load</h2><p>Please refresh the page and try again.</p>' +
         '</div></div>';
     });
   </script>
