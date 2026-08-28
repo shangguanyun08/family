@@ -187,7 +187,7 @@
       background-image: var(--picture-sheet);
       background-repeat: no-repeat;
       background-position: var(--picture-x) var(--picture-y);
-      background-size: 500% 500%;
+      background-size: var(--picture-size, 500% 500%);
       box-shadow: 0 8px 20px rgba(25, 74, 68, .16);
     }
     .picture p { margin: 13px 8px 0; color: #53677a; font-size: .82rem; font-weight: 750; line-height: 1.45; }
@@ -364,8 +364,8 @@
     const ILLUSTRATION_IDS = [
       [34, 39, 42, 43, 44, 49, 54, 55, 60, 62, 65, 75, 80, 85, 92, 95, 96, 97, 101, 104, 106, 108, 112, 120, 121],
       [140, 147, 150, 152, 155, 156, 161, 166, 170, 171, 172, 173, 174, 186, 189, 190, 192, 198, 199, 201, 202, 203, 206, 208, 211],
-      [212, 213, 215, 218, 223, 224, 225, 229, 231, 232, 233, 234, 236, 237, 238, 241, 243, 247, 251, 252, 257, 259, 260, 261, 262],
-      [265, 268, 269, 274, 275, 276, 277, 281, 283, 288, 291, 292, 293, 294, 295, 296, 297, 298, 299, 301, 305, 306, 308, 309, 311],
+      [212, 213, 215, 218, 223, 224, 225, 229, 231, 232, 233, 234, 236, 237, 238, 241, 243, 247, 512, 252, 257, 259, 260, 261, 262],
+      [265, 513, 269, 274, 275, 276, 277, 281, 283, 288, 291, 292, 293, 294, 295, 296, 297, 298, 299, 301, 305, 306, 308, 309, 311],
       [312, 313, 321, 322, 326, 331, 340, 341, 342, 344, 348, 351, 352, 354, 361, 362, 363, 368, 369, 370, 371, 372, 373, 375, 387],
       [389, 391, 393, 394, 396, 397, 398, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 413, 414, 416, 418, 419, 425, 426, 427],
       [429, 434, 435, 436, 437, 438, 440, 441, 449, 450, 451, 452, 453, 454, 457, 458, 459, 460, 461, 463, 464, 465, 466, 470, 474],
@@ -377,11 +377,30 @@
         ILLUSTRATION_LOOKUP.set(id, { sheet: sheetIndex + 1, index: imageIndex });
       });
     });
+    const STANDALONE_ILLUSTRATIONS = new Map([
+      [512, "arthritis"],
+      [513, "astronaut"]
+    ]);
     const BLANK_FORMS = {
+      75: "gained",
+      96: "mended",
       97: "modified",
+      106: "poured",
+      161: "consists of",
+      170: "is situated in",
+      172: "switched on",
+      269: "behaves",
+      292: "crossed",
+      298: "digging",
+      321: "forming",
+      326: "guesses",
+      371: "stilled",
       413: "called for a nurse",
       414: "got the date wrong",
-      427: "in case of fire"
+      418: "sounded as if",
+      427: "in case of fire",
+      437: "are welcome to",
+      449: "laid the table"
     };
 
     let WORDS = [];
@@ -423,6 +442,8 @@
     function illustrationFor(item) {
       const location = ILLUSTRATION_LOOKUP.get(item.id);
       if (!location) return null;
+      const standalone = STANDALONE_ILLUSTRATIONS.get(item.id);
+      if (standalone) return { file: standalone };
       return {
         sheet: location.sheet,
         x: (location.index % 5) * 25,
@@ -432,6 +453,10 @@
 
     function illustrationStyle(art) {
       if (!art) return "";
+      if (art.file) {
+        return "--picture-sheet:url('./illustrations/" + art.file +
+          ".webp?v=1');--picture-x:50%;--picture-y:50%;--picture-size:cover;";
+      }
       return "--picture-sheet:url('./illustrations/session-" + art.sheet +
         ".webp?v=1');--picture-x:" + art.x + "%;--picture-y:" + art.y + "%";
     }

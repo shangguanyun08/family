@@ -345,9 +345,9 @@
   },
   {
     "id": 44,
-    "word": "blanks",
-    "meaning": "without writing, printing, or other marks",
-    "example": "Fill in the blanks with the missing words.",
+    "word": "blank",
+    "meaning": "an empty space to be filled in",
+    "example": "Write the missing word in each blank.",
     "source": "Harry",
     "grade": 4
   },
@@ -593,8 +593,8 @@
   },
   {
     "id": 75,
-    "word": "gained",
-    "meaning": "to move towards or achieve a goal",
+    "word": "gain",
+    "meaning": "to obtain or develop something",
     "example": "She gained confidence through daily practice.",
     "source": "Harry",
     "grade": 4
@@ -761,8 +761,8 @@
   },
   {
     "id": 96,
-    "word": "mended",
-    "meaning": "to repair a hole or break in something by sewing it back together",
+    "word": "mend",
+    "meaning": "to repair a hole or break in something",
     "example": "Dad mended the tear in my jacket.",
     "source": "Harry",
     "grade": 4
@@ -841,8 +841,8 @@
   },
   {
     "id": 106,
-    "word": "poured",
-    "meaning": "to make a liquid or other substance flow by holding a container at an angle",
+    "word": "pour",
+    "meaning": "to make a liquid flow from a container",
     "example": "She poured milk into the glass.",
     "source": "Harry",
     "grade": 4
@@ -1281,7 +1281,7 @@
   },
   {
     "id": 161,
-    "word": "consists of",
+    "word": "consist of",
     "meaning": "to be made up of particular elements or parts",
     "example": "The team consists of twelve players.",
     "source": "Harry",
@@ -1353,8 +1353,8 @@
   },
   {
     "id": 170,
-    "word": "situated in",
-    "meaning": "the location or position of something, specifying its relationship to surrounding areas or",
+    "word": "be situated in",
+    "meaning": "to be located in a particular place",
     "example": "The hotel is situated in the city center.",
     "source": "Harry",
     "grade": 4
@@ -1369,24 +1369,24 @@
   },
   {
     "id": 172,
-    "word": "switched on",
-    "meaning": "the act of turning on a light or electrical device",
+    "word": "switch on",
+    "meaning": "to turn on a light or electrical device",
     "example": "He switched on the lamp beside his bed.",
     "source": "Harry",
     "grade": 4
   },
   {
     "id": 173,
-    "word": "the passive",
-    "meaning": "form of a verb in which the subject is acted upon rather than performing",
-    "example": "In the passive, the subject receives the action.",
+    "word": "passive voice",
+    "meaning": "a verb form in which the subject receives the action",
+    "example": "In the passive voice, the subject receives the action.",
     "source": "Harry",
     "grade": 4
   },
   {
     "id": 174,
-    "word": "the seaside",
-    "meaning": "the part of a place that is next to or near the sea",
+    "word": "seaside",
+    "meaning": "the area next to or near the sea",
     "example": "We collected shells at the seaside.",
     "source": "Harry",
     "grade": 4
@@ -1857,9 +1857,9 @@
   },
   {
     "id": 233,
-    "word": "film-makers",
+    "word": "filmmaker",
     "meaning": "a person who makes films",
-    "example": "The film-makers shot the final scene at sunset.",
+    "example": "The filmmaker shot the final scene at sunset.",
     "source": "Harry",
     "grade": 4
   },
@@ -2001,7 +2001,7 @@
   },
   {
     "id": 251,
-    "word": "advises",
+    "word": "advise",
     "meaning": "to recommend a particular course of action to someone",
     "example": "The doctor advises him to rest.",
     "source": "Harry",
@@ -2137,7 +2137,7 @@
   },
   {
     "id": 268,
-    "word": "behaved",
+    "word": "behave",
     "meaning": "to conduct oneself in a certain manner",
     "example": "The children behaved well at dinner.",
     "source": "Harry",
@@ -2145,7 +2145,7 @@
   },
   {
     "id": 269,
-    "word": "behaves",
+    "word": "behave",
     "meaning": "to conduct oneself in a certain manner",
     "example": "Our dog behaves calmly around visitors.",
     "source": "Harry",
@@ -2201,7 +2201,7 @@
   },
   {
     "id": 276,
-    "word": "Cabbage",
+    "word": "cabbage",
     "meaning": "a short-stemmed plant with dense-leaved heads",
     "example": "We chopped the cabbage for the soup.",
     "source": "Harry",
@@ -2321,16 +2321,16 @@
   },
   {
     "id": 291,
-    "word": "crashes",
+    "word": "crash",
     "meaning": "a sudden loud noise made by a violent impact or collision",
-    "example": "We heard crashes from the construction site.",
+    "example": "We heard a crash from the construction site.",
     "source": "Harry",
     "grade": 4
   },
   {
     "id": 292,
-    "word": "crossed",
-    "meaning": "to go or move across or to the other side of an area or line",
+    "word": "cross",
+    "meaning": "to go to the other side of an area or line",
     "example": "The ducks crossed the road safely.",
     "source": "Harry",
     "grade": 4
@@ -2377,8 +2377,8 @@
   },
   {
     "id": 298,
-    "word": "digging",
-    "meaning": "to excavate or remove earth using a tool such as a shovel or spade",
+    "word": "dig",
+    "meaning": "to remove earth using a tool or one's paws",
     "example": "The dog is digging a hole by the fence.",
     "source": "Harry",
     "grade": 4
@@ -2561,16 +2561,16 @@
   },
   {
     "id": 321,
-    "word": "forming",
-    "meaning": "to create or construct something by shaping material or arranging parts",
+    "word": "form",
+    "meaning": "to create, develop, or take shape",
     "example": "Dark clouds were forming above the hills.",
     "source": "Harry",
     "grade": 4
   },
   {
     "id": 322,
-    "word": "inuit",
-    "meaning": "an Indigenous Arctic people",
+    "word": "Inuit",
+    "meaning": "a member of the Indigenous peoples of the Arctic",
     "example": "Many Inuit communities live in the Arctic.",
     "source": "Video",
     "grade": 4
@@ -2601,8 +2601,8 @@
   },
   {
     "id": 326,
-    "word": "guesses",
-    "meaning": "to give an answer based on probability rather than on evidence or certain knowledge",
+    "word": "guess",
+    "meaning": "to give an answer without being certain",
     "example": "Mila guesses the answer when she is unsure.",
     "source": "Harry",
     "grade": 4
@@ -2641,9 +2641,9 @@
   },
   {
     "id": 331,
-    "word": "hostels",
-    "meaning": "a house where travelers can pay to sleep",
-    "example": "Backpackers often stay in inexpensive hostels.",
+    "word": "hostel",
+    "meaning": "an inexpensive place where travelers can stay",
+    "example": "The backpacker stayed in an inexpensive hostel.",
     "source": "Harry",
     "grade": 4
   },
@@ -2961,8 +2961,8 @@
   },
   {
     "id": 371,
-    "word": "stilled",
-    "meaning": "became calm or quiet",
+    "word": "still",
+    "meaning": "to become calm or quiet",
     "example": "The wind stilled as evening approached.",
     "source": "Harry",
     "grade": 4
@@ -3297,15 +3297,15 @@
   },
   {
     "id": 413,
-    "word": "called for sb",
-    "meaning": "that someone is needed or required",
+    "word": "call for someone",
+    "meaning": "to say that someone is needed",
     "example": "The doctor called for a nurse.",
     "source": "Harry",
     "grade": 4
   },
   {
     "id": 414,
-    "word": "got sth wrong",
+    "word": "get something wrong",
     "meaning": "to understand or do something incorrectly",
     "example": "I got the date wrong and arrived a day early.",
     "source": "Harry",
@@ -3337,8 +3337,8 @@
   },
   {
     "id": 418,
-    "word": "sounded as if",
-    "meaning": "something gives the impression or sensation of being a particular way",
+    "word": "sound as if",
+    "meaning": "to give the impression that something is true",
     "example": "The noise sounded as if it came from upstairs.",
     "source": "Harry",
     "grade": 4
@@ -3409,8 +3409,8 @@
   },
   {
     "id": 427,
-    "word": "in case of sth",
-    "meaning": "used to express preparedness for an eventuality or contingency, indicating a precautionary measure taken",
+    "word": "in case of something",
+    "meaning": "used to show preparation for a possible event",
     "example": "Use the stairs in case of fire.",
     "source": "Harry",
     "grade": 4
@@ -3465,9 +3465,9 @@
   },
   {
     "id": 434,
-    "word": "a lengthy time",
-    "meaning": "express the subjective feeling that time seemed to drag on",
-    "example": "Restoring the old house took a lengthy time.",
+    "word": "lengthy",
+    "meaning": "lasting a long time",
+    "example": "Restoring the old house was a lengthy process.",
     "source": "Harry",
     "grade": 4
   },
@@ -3489,8 +3489,8 @@
   },
   {
     "id": 437,
-    "word": "are welcome to",
-    "meaning": "you are free to do something",
+    "word": "be welcome to",
+    "meaning": "to be freely allowed or invited to do something",
     "example": "You are welcome to borrow my notes.",
     "source": "Harry",
     "grade": 4
@@ -3585,8 +3585,8 @@
   },
   {
     "id": 449,
-    "word": "laid the table",
-    "meaning": "describing the act of placing tableware and dishes on a table in preparation for",
+    "word": "lay the table",
+    "meaning": "to put plates and utensils on a table before a meal",
     "example": "Dad laid the table while I cooked dinner.",
     "source": "Harry",
     "grade": 4
