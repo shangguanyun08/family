@@ -386,7 +386,7 @@
   {
     "id": 49,
     "word": "cattle",
-    "meaning": "is a collective noun that signifies a group of bovine animals such as cows",
+    "meaning": "a group of cows or similar farm animals",
     "example": "The cattle grazed in the green field.",
     "source": "Harry",
     "grade": 4
@@ -1114,7 +1114,7 @@
   {
     "id": 140,
     "word": "tiring",
-    "meaning": "something that causes fatigue or exhaustion",
+    "meaning": "making you feel tired",
     "example": "Carrying the heavy boxes was tiring.",
     "source": "Harry",
     "grade": 4
@@ -1362,7 +1362,7 @@
   {
     "id": 171,
     "word": "suffer from",
-    "meaning": "endurance of pain, hardship, or disadvantageous circumstances",
+    "meaning": "to experience an illness, pain, or problem",
     "example": "Many people suffer from seasonal allergies.",
     "source": "Harry",
     "grade": 4
@@ -1587,7 +1587,7 @@
     "id": 199,
     "word": "contrast",
     "meaning": "a strong difference between things",
-    "example": "The white walls contrast with the dark floor.",
+    "example": "There is a strong contrast between the white walls and dark floor.",
     "source": "Harry",
     "grade": 4
   },
@@ -2194,7 +2194,7 @@
   {
     "id": 275,
     "word": "butcher",
-    "meaning": "someone whose job is to kill animals for food, cut up and prepare animal bodies",
+    "meaning": "a person who prepares and sells meat",
     "example": "The butcher cut the meat into thin slices.",
     "source": "Harry",
     "grade": 4
@@ -2346,7 +2346,7 @@
   {
     "id": 294,
     "word": "cushion",
-    "meaning": "a bag of cloth filled with soft material or a soft flat pad, used",
+    "meaning": "a soft pad used for comfort or support",
     "example": "She put a cushion behind her back.",
     "source": "Harry",
     "grade": 4
@@ -2722,7 +2722,7 @@
   {
     "id": 341,
     "word": "lettuce",
-    "meaning": "a plant of the genus Lactuca, grown for its edible leaves, which are typically eaten",
+    "meaning": "a leafy green vegetable often eaten in salads",
     "example": "Add lettuce and tomato to the sandwich.",
     "source": "Harry",
     "grade": 4
@@ -2730,7 +2730,7 @@
   {
     "id": 342,
     "word": "lighter",
-    "meaning": "a small metal device that produces a flame or spark when struck or scraped, used",
+    "meaning": "a small device used to make a flame",
     "example": "He used a lighter to start the campfire.",
     "source": "Harry",
     "grade": 4
@@ -2994,7 +2994,7 @@
   {
     "id": 375,
     "word": "stunned",
-    "meaning": "the speaker was shocked by the unexpected ending",
+    "meaning": "very shocked or surprised",
     "example": "The unexpected news left everyone stunned.",
     "source": "Harry",
     "grade": 4
@@ -3923,7 +3923,7 @@
     "id": 491,
     "word": "captive",
     "meaning": "a person or animal held prisoner",
-    "example": "The injured bird remained captive until it healed.",
+    "example": "The rescuers safely freed the captive.",
     "source": "Video",
     "grade": 4
   },
@@ -3995,7 +3995,7 @@
     "id": 500,
     "word": "textile",
     "meaning": "cloth or woven material",
-    "example": "This factory turns cotton into textile products.",
+    "example": "The museum displayed a colorful woven textile.",
     "source": "Video",
     "grade": 4
   },

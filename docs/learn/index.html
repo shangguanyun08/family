@@ -371,6 +371,22 @@
       [429, 434, 435, 436, 437, 438, 440, 441, 449, 450, 451, 452, 453, 454, 457, 458, 459, 460, 461, 463, 464, 465, 466, 470, 474],
       [476, 477, 478, 479, 481, 487, 488, 489, 491, 492, 493, 496, 498, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511]
     ];
+    const POS_IDS = {
+      noun: [34, 39, 42, 44, 49, 62, 65, 85, 95, 101, 108, 112, 120, 155, 173, 174, 199, 202, 223, 233, 238, 512, 257, 259, 265, 513, 275, 276, 277, 281, 283, 291, 293, 294, 295, 305, 306, 308, 309, 312, 322, 331, 340, 341, 342, 344, 351, 352, 354, 362, 363, 368, 369, 370, 372, 373, 387, 393, 402, 425, 426, 435, 450, 476, 477, 479, 487, 488, 491, 492, 498, 500, 502, 503, 504, 505, 506, 508, 510, 511],
+      verb: [54, 55, 60, 75, 80, 96, 97, 104, 106, 152, 156, 189, 198, 201, 203, 206, 215, 224, 225, 229, 231, 237, 241, 260, 261, 262, 269, 292, 296, 297, 298, 313, 321, 326, 348, 371, 389, 391, 397, 398, 404, 405, 406, 407, 408, 410, 429, 438, 440, 441, 453, 459, 460, 464, 466, 470, 478, 481, 489, 493, 496, 501, 509],
+      adjective: [43, 92, 121, 140, 147, 150, 186, 190, 192, 208, 211, 212, 213, 218, 232, 234, 236, 243, 247, 252, 288, 299, 301, 311, 361, 375, 394, 396, 403, 409, 411, 416, 419, 434, 436, 451, 454, 457, 458, 463, 465, 474, 507],
+      adverb: [166, 274, 461],
+      "verb phrase": [170, 414, 418, 437, 449],
+      "phrasal verb": [161, 171, 172, 413],
+      "noun phrase": [452],
+      "prepositional phrase": [427]
+    };
+    const POS_BY_ID = new Map();
+    Object.keys(POS_IDS).forEach(function(partOfSpeech) {
+      POS_IDS[partOfSpeech].forEach(function(id) {
+        POS_BY_ID.set(id, partOfSpeech);
+      });
+    });
     const ILLUSTRATION_LOOKUP = new Map();
     ILLUSTRATION_IDS.forEach(function(ids, sheetIndex) {
       ids.forEach(function(id, imageIndex) {
@@ -721,7 +737,7 @@
         '<div class="word-line"><h2>' + escapeHtml(item.word) + '</h2>' +
         '<button class="speak-button" id="speak" type="button" aria-label="Hear ' + escapeHtml(item.word) +
         ' pronounced" title="Hear pronunciation">🔊</button></div>' +
-        '<p class="meaning"><strong>Meaning:</strong> ' + escapeHtml(item.meaning) + '</p>' +
+        '<p class="meaning"><strong>Meaning (' + escapeHtml(item.partOfSpeech) + '):</strong> ' + escapeHtml(item.meaning) + '</p>' +
         '<p class="example">“' + escapeHtml(item.example) + '”</p></div>' +
         '<div class="picture" role="img" aria-label="Picture clue for ' + escapeHtml(item.word) + '">' +
         '<span class="picture-art" aria-hidden="true" style="' + illustrationStyle(item.art) + '"></span>' +
@@ -935,7 +951,7 @@
     });
 
     async function initialize() {
-      const response = await fetch("../words.json?v=1501");
+      const response = await fetch("../words.json?v=1502");
       if (!response.ok) throw new Error("The word list could not be loaded.");
       const allWords = await response.json();
       const wordsById = new Map(allWords.map(function(item) { return [item.id, item]; }));
@@ -943,10 +959,11 @@
       WORDS = selectedIds.map(function(id) { return wordsById.get(id); }).filter(Boolean).map(function(sourceWord) {
         return Object.assign({}, sourceWord, {
           art: illustrationFor(sourceWord),
+          partOfSpeech: POS_BY_ID.get(sourceWord.id),
           scene: sourceWord.example
         });
       });
-      if (WORDS.length !== 200 || WORDS.some(function(item) { return !item.art; })) {
+      if (WORDS.length !== 200 || WORDS.some(function(item) { return !item.art || !item.partOfSpeech; })) {
         throw new Error("The illustrated word set is incomplete.");
       }
       WORD_BY_ID = new Map(WORDS.map(function(item) { return [item.id, item]; }));
