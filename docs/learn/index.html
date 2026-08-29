@@ -209,6 +209,9 @@
     .button:disabled { cursor: not-allowed; opacity: .42; transform: none; }
 
     .test-body { min-height: 382px; padding: 30px clamp(22px, 6vw, 58px) 34px; }
+    .test-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(220px, .85fr); gap: clamp(24px, 5vw, 52px); align-items: center; }
+    .test-copy { min-width: 0; }
+    .test-picture { min-height: 230px; }
     .prompt-label { margin: 0 0 8px; color: var(--green); font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
     .test-meaning { margin: 0; color: #4d5d70; font-size: .96rem; line-height: 1.5; }
     .sentence { margin: 24px 0; color: var(--ink); font: 500 clamp(1.6rem, 4.5vw, 2.55rem)/1.35 Georgia, serif; letter-spacing: -.025em; }
@@ -303,6 +306,8 @@
       .button { flex: 1; padding-inline: 12px; }
       .choices { grid-template-columns: 1fr; }
       .test-body { min-height: 470px; padding-inline: 18px; }
+      .test-layout { grid-template-columns: 1fr; }
+      .test-picture { min-height: 180px; }
       .word-line { align-items: flex-start; }
       .speak-button { flex: 0 0 auto; width: 44px; height: 44px; }
       .record-head { display: block; }
@@ -851,15 +856,17 @@
       }).join("");
 
       card.innerHTML =
-        '<div class="card-head"><p>Session ' + state.session + ' · choose the missing word</p><span class="counter">' +
+        '<div class="card-head"><p>Session ' + state.session + ' · round ' + state.round + ' · choose the missing word</p><span class="counter">' +
         (state.questionIndex + 1) + ' of ' + state.questions.length + '</span></div>' +
-        '<div class="test-body"><p class="prompt-label">Simple meaning</p>' +
+        '<div class="test-body"><div class="test-layout"><div class="test-copy"><p class="prompt-label">Simple meaning</p>' +
         '<p class="test-meaning">' + escapeHtml(item.meaning) + '</p>' +
         '<p class="sentence">' + blankSentence(item) + '</p><div class="choices">' + choices + '</div>' +
         '<div class="feedback ' + (answered ? (correct ? "good" : "try") : "") + '" id="feedback" role="status">' +
         (answered ? (correct ? '✓ Correct — <strong>' + escapeHtml(item.word) + '</strong> is mastered.' :
           'Not yet. The answer is <strong>' + escapeHtml(item.word) + '</strong>. It will return next round.') : "") +
-        '</div></div><div class="card-actions">' +
+        '</div></div><div class="picture test-picture" role="img" aria-label="Picture clue for the missing word">' +
+        '<span class="picture-art" aria-hidden="true" style="' + illustrationStyle(item.art) + '"></span>' +
+        '<p>' + escapeHtml(item.meaning) + '</p></div></div></div><div class="card-actions">' +
         '<button class="button secondary" id="review-again" type="button">Review words</button>' +
         '<button class="button" id="next-question" type="button"' + (answered ? "" : " disabled") + '>' +
         (state.questionIndex === state.questions.length - 1 ? "Finish round" : "Next question") + '</button></div>';
