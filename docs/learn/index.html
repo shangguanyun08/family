@@ -237,6 +237,16 @@
     .feedback:empty { min-height: 0; margin: 0; padding: 0; }
     .feedback.good { background: #e8f6f0; color: #12654c; }
     .feedback.try { background: #fff0ef; color: #943535; }
+    .test-all-body { padding: 18px; background: #f7faf8; }
+    .test-list { display: grid; gap: 14px; }
+    .test-question { padding: clamp(18px, 4vw, 28px); border: 1px solid #d9e4e1; border-radius: 17px; background: white; box-shadow: 0 8px 24px rgba(35, 58, 73, .06); }
+    .test-question.answered { border-color: #bbd8d0; }
+    .test-question-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+    .test-question-head .prompt-label { margin-bottom: 6px; }
+    .test-question-number { flex: 0 0 auto; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #edf6f3; color: var(--green); font-size: .75rem; font-weight: 900; }
+    .test-question .sentence { margin: 18px 0; font-size: clamp(1.35rem, 3.4vw, 2rem); }
+    .test-question .feedback { margin-bottom: 0; }
+    .test-all-actions { position: sticky; bottom: 0; z-index: 3; box-shadow: 0 -10px 28px rgba(35, 58, 73, .07); }
 
     .center-body { display: grid; place-items: center; min-height: 380px; padding: 44px 24px; text-align: center; }
     .center-body > div { max-width: 560px; }
@@ -305,9 +315,8 @@
       .card-actions { padding: 14px; }
       .button { flex: 1; padding-inline: 12px; }
       .choices { grid-template-columns: 1fr; }
-      .test-body { min-height: 470px; padding-inline: 18px; }
-      .test-layout { grid-template-columns: 1fr; }
-      .test-picture { min-height: 180px; }
+      .test-all-body { padding: 10px; }
+      .test-question { padding: 17px 14px; }
       .word-line { align-items: flex-start; }
       .speak-button { flex: 0 0 auto; width: 44px; height: 44px; }
       .record-head { display: block; }
@@ -328,7 +337,7 @@
     <div class="topbar-inner">
       <nav class="nav" aria-label="Vocabulary navigation">
         <a class="back-link" href="../">← Full 1,500-word list</a>
-        <span class="save-note">Progress and answer history save on this device</span>
+        <span class="save-note">Progress and answer history sync automatically</span>
       </nav>
       <p class="eyebrow">Harry's vocabulary · To-learn list</p>
       <h1>Master 200 <em>unknown words.</em></h1>
@@ -361,6 +370,7 @@
 
   <div class="toast" id="toast" role="status" hidden></div>
 
+  <script src="https://shangguanyun08.github.io/marco-learning-hub/shared-online-sync.js?v=1"></script>
   <script>
     const MAIN_KNOWN_KEY = "harry-combined-vocabulary-known-v2";
     const SESSION_SIZE = 25;
@@ -426,6 +436,7 @@
 
     let WORDS = [];
     let WORD_BY_ID = new Map();
+    let onlineSync = null;
 
     const state = {
       phase: "loading",
@@ -435,7 +446,7 @@
       mastered: new Set(),
       questions: [],
       questionIndex: 0,
-      answer: null,
+      answer: {},
       roundStartCount: 0,
       progress: { version: 3, activeSession: 1, sessions: {}, activity: [] }
     };
@@ -524,6 +535,7 @@
         completedAt: completed ? (previous.completedAt || savedAt) : null
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
+      onlineSync?.push(state.progress);
     }
 
     function loadSession(number) {
@@ -535,7 +547,7 @@
       state.reviewIndex = 0;
       state.questions = [];
       state.questionIndex = 0;
-      state.answer = null;
+      state.answer = {};
       state.roundStartCount = state.mastered.size;
     }
 
@@ -791,7 +803,7 @@
       state.phase = "test";
       state.questions = shuffle(remaining).map(makeQuestion);
       state.questionIndex = 0;
-      state.answer = null;
+      state.answer = {};
       state.roundStartCount = state.mastered.size;
       save();
       render();
@@ -803,13 +815,14 @@
       return escapeHtml(item.example).replace(pattern, '<span class="blank">_____</span>');
     }
 
-    function choose(optionId) {
-      if (state.answer !== null) return;
-      const question = state.questions[state.questionIndex];
+    function choose(questionIndex, optionId) {
+      const answerKey = String(questionIndex);
+      if (Object.prototype.hasOwnProperty.call(state.answer, answerKey)) return;
+      const question = state.questions[questionIndex];
       const answerWord = WORD_BY_ID.get(question.wordId);
       const selectedWord = WORD_BY_ID.get(optionId);
       const correct = optionId === question.wordId;
-      state.answer = optionId;
+      state.answer[answerKey] = optionId;
       state.progress.activity.push({
         id: window.crypto && typeof window.crypto.randomUUID === "function"
           ? window.crypto.randomUUID()
@@ -825,61 +838,64 @@
       });
       if (correct) state.mastered.add(question.wordId);
       save();
+      const scrollTop = window.scrollY;
+      render();
+      window.scrollTo(0, scrollTop);
+    }
+
+    function finishTest() {
+      if (Object.keys(state.answer).length !== state.questions.length) return;
+      state.phase = state.mastered.size === currentWords().length ? "complete" : "round-summary";
+      save();
       render();
     }
 
-    function nextQuestion() {
-      if (state.answer === null) return;
-      if (state.questionIndex < state.questions.length - 1) {
-        state.questionIndex += 1;
-        state.answer = null;
-        render();
-      } else {
-        state.phase = state.mastered.size === currentWords().length ? "complete" : "round-summary";
-        save();
-        render();
-      }
-    }
-
     function renderTest() {
-      const question = state.questions[state.questionIndex];
-      const item = WORD_BY_ID.get(question.wordId);
-      const answered = state.answer !== null;
-      const correct = state.answer === question.wordId;
-      const choices = question.options.map(function(optionId, index) {
-        const option = WORD_BY_ID.get(optionId);
-        const isCorrect = answered && optionId === question.wordId;
-        const isWrong = answered && optionId === state.answer && !correct;
-        return '<button class="choice ' + (isCorrect ? "correct" : "") + ' ' + (isWrong ? "wrong" : "") +
-          '" data-option="' + optionId + '" type="button"' + (answered ? " disabled" : "") + '>' +
-          '<small>' + (index + 1) + '</small>' + escapeHtml(option.word) + '</button>';
+      const answeredCount = Object.keys(state.answer).length;
+      const questions = state.questions.map(function(question, questionIndex) {
+        const item = WORD_BY_ID.get(question.wordId);
+        const answerKey = String(questionIndex);
+        const answered = Object.prototype.hasOwnProperty.call(state.answer, answerKey);
+        const selectedId = state.answer[answerKey];
+        const correct = selectedId === question.wordId;
+        const choices = question.options.map(function(optionId, optionIndex) {
+          const option = WORD_BY_ID.get(optionId);
+          const isCorrect = answered && optionId === question.wordId;
+          const isWrong = answered && optionId === selectedId && !correct;
+          return '<button class="choice ' + (isCorrect ? "correct" : "") + ' ' + (isWrong ? "wrong" : "") +
+            '" data-question="' + questionIndex + '" data-option="' + optionId + '" type="button"' +
+            (answered ? " disabled" : "") + '><small>' + (optionIndex + 1) + '</small>' +
+            escapeHtml(option.word) + '</button>';
+        }).join("");
+        return '<section class="test-question ' + (answered ? "answered" : "") + '" id="question-' + questionIndex + '">' +
+          '<div class="test-question-head"><div><p class="prompt-label">Simple meaning</p><p class="test-meaning">' +
+          escapeHtml(item.meaning) + '</p></div><span class="test-question-number">' + (questionIndex + 1) + '</span></div>' +
+          '<p class="sentence">' + blankSentence(item) + '</p><div class="choices">' + choices + '</div>' +
+          '<div class="feedback ' + (answered ? (correct ? "good" : "try") : "") + '" role="status">' +
+          (answered ? (correct ? '✓ Correct — <strong>' + escapeHtml(item.word) + '</strong> is mastered.' :
+            'Not yet. The answer is <strong>' + escapeHtml(item.word) + '</strong>. It will return next round.') : "") +
+          '</div></section>';
       }).join("");
 
       card.innerHTML =
-        '<div class="card-head"><p>Session ' + state.session + ' · round ' + state.round + ' · choose the missing word</p><span class="counter">' +
-        (state.questionIndex + 1) + ' of ' + state.questions.length + '</span></div>' +
-        '<div class="test-body"><div class="test-layout"><div class="test-copy"><p class="prompt-label">Simple meaning</p>' +
-        '<p class="test-meaning">' + escapeHtml(item.meaning) + '</p>' +
-        '<p class="sentence">' + blankSentence(item) + '</p><div class="choices">' + choices + '</div>' +
-        '<div class="feedback ' + (answered ? (correct ? "good" : "try") : "") + '" id="feedback" role="status">' +
-        (answered ? (correct ? '✓ Correct — <strong>' + escapeHtml(item.word) + '</strong> is mastered.' :
-          'Not yet. The answer is <strong>' + escapeHtml(item.word) + '</strong>. It will return next round.') : "") +
-        '</div></div><div class="picture test-picture" role="img" aria-label="Picture clue for the missing word">' +
-        '<span class="picture-art" aria-hidden="true" style="' + illustrationStyle(item.art) + '"></span>' +
-        '<p>' + escapeHtml(item.meaning) + '</p></div></div></div><div class="card-actions">' +
+        '<div class="card-head"><p>Session ' + state.session + ' · round ' + state.round + ' · all questions</p><span class="counter">' +
+        answeredCount + ' of ' + state.questions.length + ' answered</span></div>' +
+        '<div class="test-all-body"><div class="test-list">' + questions + '</div></div><div class="card-actions test-all-actions">' +
         '<button class="button secondary" id="review-again" type="button">Review words</button>' +
-        '<button class="button" id="next-question" type="button"' + (answered ? "" : " disabled") + '>' +
-        (state.questionIndex === state.questions.length - 1 ? "Finish round" : "Next question") + '</button></div>';
+        '<button class="button" id="finish-test" type="button"' +
+        (answeredCount === state.questions.length ? "" : " disabled") + '>Finish round</button></div>';
 
       document.querySelectorAll("[data-option]").forEach(function(button) {
-        button.addEventListener("click", function() { choose(Number(button.dataset.option)); });
+        button.addEventListener("click", function() {
+          choose(Number(button.dataset.question), Number(button.dataset.option));
+        });
       });
       document.querySelector("#review-again").addEventListener("click", function() {
         state.phase = "review";
         state.reviewIndex = 0;
         render();
       });
-      document.querySelector("#next-question").addEventListener("click", nextQuestion);
+      document.querySelector("#finish-test").addEventListener("click", finishTest);
     }
 
     function renderRoundSummary() {
@@ -948,14 +964,38 @@
       if (button) changeSession(Number(button.dataset.session));
     });
 
-    document.addEventListener("keydown", function(event) {
-      if (state.phase !== "test" || state.answer !== null) return;
-      const number = Number(event.key);
-      if (number >= 1 && number <= 4) {
-        const question = state.questions[state.questionIndex];
-        choose(question.options[number - 1]);
-      }
-    });
+    function validOnlineProgress(value) {
+      return Boolean(value && (value.version === 2 || value.version === 3) &&
+        value.sessions && typeof value.sessions === "object" && Array.isArray(value.activity));
+    }
+
+    function adoptOnlineProgress(remote) {
+      state.progress = {
+        version: 3,
+        activeSession: remote.activeSession || 1,
+        sessions: remote.sessions,
+        activity: Array.isArray(remote.activity) ? remote.activity : []
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
+      loadSession(state.progress.activeSession);
+      render();
+    }
+
+    function connectOnlineSync() {
+      if (!window.MarcoOnlineSync) return;
+      onlineSync = window.MarcoOnlineSync.create({
+        appId: "harry-vocabulary-to-learn-200",
+        studentName: "Harry",
+        validate: validOnlineProgress,
+        score: function(progress) {
+          return Object.keys(progress.sessions || {}).reduce(function(total, key) {
+            return total + validMastered(Number(key), progress.sessions[key]?.mastered).length;
+          }, 0);
+        },
+        onRemote: adoptOnlineProgress
+      });
+      void onlineSync.start(state.progress);
+    }
 
     async function initialize() {
       const response = await fetch("../words.json?v=1502");
@@ -975,9 +1015,10 @@
       }
       WORD_BY_ID = new Map(WORDS.map(function(item) { return [item.id, item]; }));
       document.querySelector(".intro").textContent =
-        "Harry's selected 200 To-learn words are split into eight 25-word sessions, each with its own picture clue.";
+        "Harry's selected 200 To-learn words are split into eight 25-word sessions. Review with picture clues, then answer every test question together on one page.";
       restore();
       render();
+      connectOnlineSync();
     }
 
     initialize().catch(function(error) {
