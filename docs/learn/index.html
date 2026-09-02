@@ -329,6 +329,35 @@
     .miss-meta { text-align: right; }
     .miss-meta span { display: inline-block; padding: 5px 8px; border-radius: 999px; background: #f9e7e3; color: #923e3e; font-size: .64rem; font-weight: 900; }
     .miss-meta small { display: block; margin-top: 5px; color: #8b97a5; font-size: .62rem; }
+    .round-history { display: grid; gap: 10px; }
+    .round-record { overflow: hidden; border: 1px solid #dce6e5; border-radius: 14px; background: white; }
+    .round-record-head {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 11px;
+      align-items: center;
+      padding: 12px 14px;
+      background: #f8fbfa;
+    }
+    .round-record-number {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #e8f4f1;
+      color: var(--green);
+      font-size: .76rem;
+      font-weight: 900;
+    }
+    .round-record-title { min-width: 0; }
+    .round-record-title strong { display: block; color: #30475b; font-size: .82rem; }
+    .round-record-title small { display: block; margin-top: 3px; color: #8491a0; font-size: .65rem; }
+    .round-record-score { color: #4c6072; font-size: .71rem; font-weight: 900; white-space: nowrap; }
+    .round-record-score.has-misses { color: #913f3f; }
+    .round-misses { display: flex; flex-wrap: wrap; gap: 7px; padding: 12px 14px 14px; border-top: 1px solid #e8efed; }
+    .round-miss-word { padding: 7px 10px; border-radius: 999px; background: #f9e7e3; color: #893c3c; font: .82rem Georgia, serif; }
+    .round-perfect { margin: 0; padding: 12px 14px 14px; border-top: 1px solid #e8efed; color: var(--success); font-size: .75rem; font-weight: 800; }
     .empty-record { margin: 0; padding: 16px; border: 1px dashed #cbdcd8; border-radius: 12px; background: #f8fcfb; color: #687689; font-size: .78rem; line-height: 1.5; }
 
     .toast { position: fixed; right: 18px; bottom: 18px; z-index: 10; max-width: 320px; padding: 12px 15px; border-radius: 11px; background: #173f54; color: white; font-size: .8rem; font-weight: 750; box-shadow: 0 13px 34px rgba(23, 63, 84, .3); }
@@ -372,6 +401,8 @@
       .session-records { grid-template-columns: 1fr; }
       .miss-row { grid-template-columns: 1fr auto; }
       .miss-detail { grid-column: 1 / -1; grid-row: 2; }
+      .round-record-head { grid-template-columns: auto minmax(0, 1fr); }
+      .round-record-score { grid-column: 2; white-space: normal; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -408,7 +439,7 @@
     <section class="card" id="card" aria-live="polite"><div class="center-body"><div><div class="seal" aria-hidden="true">…</div><h2>Loading to-learn words</h2></div></div></section>
     <section class="record-card" id="record-card" aria-labelledby="record-title">
       <div class="record-head">
-        <div><h2 id="record-title">Progress record</h2><p>Every test answer is kept with its day, round, date, and time. Missed words stay in the record even after they are mastered.</p></div>
+        <div><h2 id="record-title">Progress record</h2><p>Every test answer is kept with its day, round, date, and time. Each round shows exactly which words were missed, even after they are mastered.</p></div>
         <span class="record-badge">Saved automatically</span>
       </div>
       <div id="record-content"><p class="empty-record">Your dated learning record will appear here after the first test answer.</p></div>
@@ -686,6 +717,8 @@
       state.progress.sessions[sessionKey] = {
         mastered: Array.from(state.mastered),
         round: state.round,
+        phase: state.phase,
+        roundStartCount: state.roundStartCount,
         completed: completed,
         startedAt: previous.startedAt || savedAt,
         lastStudiedAt: savedAt,
@@ -700,11 +733,17 @@
       const stored = state.progress.sessions[String(state.session)] || {};
       state.mastered = new Set(validMastered(state.session, stored.mastered));
       state.round = Math.max(1, Number(stored.round) || 1);
-      state.phase = state.mastered.size === currentWords().length ? "complete" : "review";
+      state.phase = state.mastered.size === currentWords().length
+        ? "complete"
+        : stored.phase === "round-summary"
+          ? "round-summary"
+          : "review";
       state.questions = [];
       state.questionIndex = 0;
       state.answer = {};
-      state.roundStartCount = state.mastered.size;
+      state.roundStartCount = state.phase === "round-summary"
+        ? Math.min(state.mastered.size, Math.max(0, Number(stored.roundStartCount) || 0))
+        : state.mastered.size;
     }
 
     function restore() {
@@ -785,46 +824,55 @@
         );
       }
 
-      const missedByWord = new Map();
+      const roundGroups = new Map();
       activity.forEach(function(entry) {
-        if (entry.correct) return;
-        const existing = missedByWord.get(entry.wordId) || {
-          wordId: entry.wordId,
-          word: entry.word,
-          count: 0,
-          lastSelectedWord: entry.selectedWord,
-          lastAt: entry.answeredAt,
-          session: entry.session,
-          round: entry.round
+        const session = Math.min(SESSION_COUNT, Math.max(1, Number(entry.session || entry.day) || 1));
+        const round = Math.max(1, Number(entry.round) || 1);
+        const key = session + ":" + round;
+        const group = roundGroups.get(key) || {
+          session: session,
+          round: round,
+          entries: [],
+          lastAt: entry.answeredAt
         };
-        existing.count += 1;
-        existing.word = entry.word || existing.word;
-        existing.lastSelectedWord = entry.selectedWord || existing.lastSelectedWord;
-        existing.lastAt = entry.answeredAt || existing.lastAt;
-        existing.session = entry.session || existing.session;
-        existing.round = entry.round || existing.round;
-        missedByWord.set(entry.wordId, existing);
+        group.entries.push(entry);
+        group.lastAt = entry.answeredAt || group.lastAt;
+        roundGroups.set(key, group);
       });
 
-      const missedRows = Array.from(missedByWord.values()).sort(function(a, b) {
-        return new Date(b.lastAt).getTime() - new Date(a.lastAt).getTime();
-      }).map(function(entry) {
-        const item = WORD_BY_ID.get(entry.wordId);
-        const meaning = item ? item.meaning : "Saved missed word";
-        return '<div class="miss-row"><div class="miss-word"><strong>' + escapeHtml(entry.word) +
-          '</strong><span>' + escapeHtml(meaning) + '</span></div><div class="miss-detail">Last chose <strong>' +
-          escapeHtml(entry.lastSelectedWord || "another word") + '</strong><br>Day ' + entry.session +
-          ' · Round ' + entry.round + ' · <time datetime="' + escapeHtml(entry.lastAt || "") + '">' +
-          escapeHtml(formatDateTime(entry.lastAt)) + '</time></div><div class="miss-meta"><span>' +
-          entry.count + (entry.count === 1 ? " miss" : " misses") + '</span><small>' +
-          (wordIsMastered(entry.wordId) ? "Mastered later" : "Still learning") + '</small></div></div>';
+      const roundRows = Array.from(roundGroups.values()).sort(function(a, b) {
+        return a.session - b.session || a.round - b.round;
+      }).map(function(group) {
+        const answeredWordIds = new Set();
+        const missedWords = new Map();
+        group.entries.forEach(function(entry) {
+          answeredWordIds.add(entry.wordId);
+          if (!entry.correct && !missedWords.has(entry.wordId)) {
+            missedWords.set(entry.wordId, entry.word || "Saved missed word");
+          }
+        });
+        const missCount = missedWords.size;
+        const correctFirstTry = Math.max(0, answeredWordIds.size - missCount);
+        const resultCopy = correctFirstTry + " correct · " + missCount + " missed";
+        const misses = Array.from(missedWords.entries()).map(function(pair) {
+          const masteredLabel = wordIsMastered(pair[0]) ? " — mastered later" : " — still learning";
+          return '<span class="round-miss-word">' + escapeHtml(pair[1]) + escapeHtml(masteredLabel) + '</span>';
+        }).join("");
+        return '<div class="round-record"><div class="round-record-head"><span class="round-record-number">' +
+          group.round + '</span><div class="round-record-title"><strong>Day ' + group.session + ' · Round ' +
+          group.round + '</strong><small><time datetime="' + escapeHtml(group.lastAt || "") + '">' +
+          escapeHtml(formatDateTime(group.lastAt)) + '</time></small></div><span class="round-record-score ' +
+          (missCount ? "has-misses" : "") + '">' + resultCopy + '</span></div>' +
+          (missCount
+            ? '<div class="round-misses" aria-label="Words missed in Day ' + group.session + ', Round ' + group.round + '">' + misses + '</div>'
+            : '<p class="round-perfect">No words missed in this round.</p>') + '</div>';
       }).join("");
 
       recordContent.innerHTML = stats +
         '<div class="record-section"><h3>Daily progress and dates</h3><div class="session-records">' +
         sessionRows.join("") + '</div></div>' +
-        '<div class="record-section"><h3>Words missed</h3><div class="miss-list">' +
-        (missedRows || '<p class="empty-record">No missed words yet. Any future misses will stay listed here with the chosen answer, day, round, date, and time.</p>') +
+        '<div class="record-section"><h3>Misses by day and round</h3><div class="round-history">' +
+        (roundRows || '<p class="empty-record">No rounds completed yet. Round 1, Round 2, and later misses will appear separately here.</p>') +
         '</div></div>';
     }
 
